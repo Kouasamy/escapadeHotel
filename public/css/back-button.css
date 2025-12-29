@@ -1,0 +1,101 @@
+/* Bouton de retour - Position fixe en bas à gauche */
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background-color: #B78F62;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-button:hover {
+  background-color: #9a7549;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:active {
+  transform: scale(0.95);
+}
+
+/* Flèche de retour */
+.back-button svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.back-button:hover svg {
+  transform: translateX(-2px);
+}
+
+/* Animation scroll-hide */
+.back-button.scroll-hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100%);
+}
+
+.back-button {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
+}
+
+/* Responsive - Téléphone */
+@media (max-width: 640px) {
+  .back-button {
+    width: 45px;
+    height: 45px;
+    bottom: 75px; /* Positionné au-dessus du bouton contact (qui est à ~20px du bas + hauteur ~35px) */
+    left: 20px; /* À gauche, au même endroit que le bouton "Nous contacter" */
+    right: auto; /* Annuler la position right */
+  }
+  
+  .back-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Responsive - Tablette */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .back-button {
+    width: 48px;
+    height: 48px;
+    bottom: 80px; /* Positionné au-dessus du bouton contact */
+    left: 20px; /* À gauche, au même endroit que le bouton "Nous contacter" */
+    right: auto; /* Annuler la position right */
+  }
+  
+  .back-button svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Responsive - Desktop */
+@media (min-width: 1025px) {
+  .back-button {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .back-button svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+

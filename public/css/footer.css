@@ -1,0 +1,460 @@
+/* CSS for footer section */
+.site-footer {
+    background-color: rgba(30, 17, 2, 0.87);
+    color: var(--color-white);
+    padding: 15px 0 30px; /* Réduit de 20px/45px à 15px/30px */
+}
+
+.site-footer .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.footer-top {
+    text-align: center;
+}
+
+.footer-logo {
+    width: 220px; /* Réduit de 280px */
+    height: auto;
+    margin-top: 20px; /* Réduit de 30px */
+    margin-bottom: 40px; /* Réduit de 76px */
+    display: block; /* Ensures it's a block element */
+    margin-left: auto; /* Centers horizontally */
+    margin-right: auto; /* Centers horizontally */
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    gap: 15px; /* Réduit de 20px */
+    padding: 0 40px; /* Réduit de 60px */
+    margin-bottom: 60px; /* Réduit de 115px */
+}
+
+.footer-title-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px; /* Reduced from 50px */
+    width: 200px; /* Reduced from 230px */
+    height: 40px; /* Reduced from 50px */
+    text-align: center;
+}
+
+.footer-title-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 230px;
+    height: 50px;
+    z-index: 1;
+}
+
+.footer-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    font-size: 22px; /* Reduced from 26px */
+    font-weight: 0;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 100%; 
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 12px; /* Reduced from 18px */
+    text-align: left;
+}
+
+.footer-menu a {
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    font-size: 20px; /* Reduced from 26px */
+    font-weight: 0;
+    text-align: left;
+}
+
+.footer-contact-form .form-group {
+    margin-bottom: 25px; /* Reduced from 45px */
+}
+
+.footer-contact-form input,
+.footer-contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: var(--color-white);
+    width: 206px;
+    padding: 5px 0; /* Réduit de 8px */
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    font-size: 15px; /* Réduit de 17px */
+    opacity: 0.65;
+}
+.footer-contact-form textarea {
+    border-bottom: 1px solid white;
+    resize: none;
+}
+.footer-contact-form .form-group:has(textarea) {
+    border-bottom: 1px solid var(--color-white);
+}
+
+.footer-contact-form input::placeholder,
+.footer-contact-form textarea::placeholder {
+    color: var(--color-white);
+    opacity: 0.65;
+}
+
+.btn-submit {
+    background-color: rgba(183, 143, 98, 0.77);
+    border: none;
+    color: var(--color-white);
+    padding: 8px 20px;
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    font-size: 14px;
+    border-radius: 13px 0px 13px 0px;
+    cursor: pointer;
+    width: 90px;
+    height: 34px;
+    display: block;
+    margin-left: calc((206px - 90px) / 2); /* Centrer le bouton (90px) par rapport au textarea (206px) */
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .btn-submit {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.footer-contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Reduced from 40px */
+    margin-bottom: 30px; /* Reduced from 50px */
+}
+
+/* Sections de réservation et paiement - sur la même ligne */
+/* Wrapper pour mettre les sections de réservation et paiement sur la même ligne */
+.footer-reservation-payment-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Sections de réservation et paiement */
+.footer-reservation-section,
+.footer-payment-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 auto;
+}
+
+.footer-section-title {
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced from 10px */
+    font-size: 16px; /* Reduced from 18px */
+    text-decoration: none;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: inherit;
+}
+.contact-item:first-child span {
+    font-family: 'Big Caslon', serif;
+}
+.contact-item img {
+    width: 34px;
+    height: 34px;
+}
+
+.footer-contact-info .separator {
+    width: 1px;
+    height: 40px; /* Reduced from 51px */
+    background-color: var(--color-white);
+}
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Section paiement - Wave et Orange Money - Identique à footer-contact-info */
+.footer-payment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Same as footer-contact-info */
+    margin-bottom: 30px; /* Same as footer-contact-info */
+}
+
+.payment-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Same as contact-item */
+    font-size: 16px; /* Same as contact-item */
+    text-decoration: none;
+}
+
+.payment-item img {
+    width: 34px; /* Same as contact-item img */
+    height: 34px; /* Same as contact-item img */
+}
+
+.payment-item span {
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    font-size: 16px; /* Same as contact-item */
+}
+
+.footer-payment .separator {
+    width: 1px;
+    height: 40px; /* Same as footer-contact-info .separator */
+    background-color: var(--color-white);
+}
+
+.footer-payment .separator img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+.footer-bottom a {
+    font-family: 'Big Caslon', serif;
+}
+.footer-bottom span {
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    text-align: center;
+}
+
+/* Responsive Tablette - Spécifiquement pour 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .footer-contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: nowrap;
+    }
+    
+    .footer-contact-info .contact-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+        width: auto;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-contact-info .contact-item span,
+    .footer-contact-info .contact-item a {
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    
+    .footer-contact-info .separator {
+        display: none;
+    }
+    
+    .footer-payment {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: nowrap;
+    }
+    
+    .footer-payment .payment-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+        width: auto;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-payment .payment-item span {
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    
+    .footer-payment .separator {
+        display: none;
+    }
+}
+
+/* Spécifique pour 1024px exactement */
+@media (width: 1024px) {
+    .footer-contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: nowrap;
+    }
+    
+    .footer-contact-info .contact-item {
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        width: auto;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-contact-info .contact-item span,
+    .footer-contact-info .contact-item a {
+        white-space: nowrap !important;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    
+    .footer-contact-info .separator {
+        display: none;
+    }
+    
+    .footer-payment {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: nowrap;
+    }
+    
+    .footer-payment .payment-item {
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        width: auto;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-payment .payment-item span {
+        white-space: nowrap !important;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    
+    .footer-payment .separator {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        padding: 0;
+    }
+    .footer-menu, .footer-contact-form {
+        text-align: center;
+    }
+    .footer-contact-info {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .footer-contact-info .contact-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    .footer-contact-info .contact-item span,
+    .footer-contact-info .contact-item a {
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .footer-contact-info .separator {
+        display: none;
+    }
+    .footer-payment {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .footer-payment .payment-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    .footer-payment .payment-item span {
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .footer-payment .separator {
+        display: none;
+    }
+    .footer-reservation-payment-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer-payment {
+        gap: 20px;
+    }
+    .payment-item img {
+        width: 34px;
+        height: 34px;
+    }
+    .payment-item span {
+        font-size: 16px;
+    }
+}

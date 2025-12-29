@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generated Page</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Jost:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style id="sections-styles">
+/* CSS for section section:menu */
+.menu-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 280ms ease, transform 280ms ease;
+    will-change: opacity, transform;
+  }
+
+  .menu-container.is-hidden {
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+  }
+  .menu-container.is-closing {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .menu-header {
+    position: absolute;
+    top: 49px;
+    left: 65px;
+    right: 65px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 80px;
+    z-index: 10;
+  }
+
+  .menu-close-button,
+  .menu-lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .menu-close-button img {
+    transition: transform 280ms ease, opacity 280ms ease;
+    will-change: transform, opacity;
+    cursor: pointer;
+  }
+  .menu-close-button img.is-closing {
+    transform: rotate(90deg) scale(0.9);
+    opacity: 0.6;
+  }
+  
+  .menu-lang-switcher {
+    gap: 11px;
+  }
+
+  .menu-lang-switcher .active {
+    text-decoration: underline;
+  }
+
+  .menu-logo {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 159.11px;
+    height: 148.23px;
+    z-index: 10;
+  }
+
+  .logo-part {
+    position: absolute;
+  }
+
+  .menu-content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100%;
+  }
+
+  .menu-nav {
+    padding-top: 286px;
+    padding-left: 88px;
+  }
+
+  .menu-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .nav-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .nav-text {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-sans);
+    font-size: 32px;
+    font-weight: 0;
+    padding-left: 141px; /* Center text inside the pill shape */
+  }
+  
+  .nav-line {
+    position: absolute;
+    left: 78px; /* Ajusté pour correspondre au nouveau padding-left */
+    top: 24px; /* 310px (from figma) - 286px (nav top) */
+    opacity: 0;
+    transform: translateX(-8px) scaleX(0.9);
+    transform-origin: left center;
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  .nav-item:hover .nav-line {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+  }
+
+  .nav-item:hover {
+    transform: translateX(12px);
+  }
+
+  .image-showcase {
+    position: relative;
+    padding-top: 247px;
+  }
+
+  /* Staggered entrance for menu items */
+  .menu-nav li {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .menu-nav li:nth-child(1) { animation-delay: 60ms; }
+  .menu-nav li:nth-child(2) { animation-delay: 120ms; }
+  .menu-nav li:nth-child(3) { animation-delay: 180ms; }
+  .menu-nav li:nth-child(4) { animation-delay: 240ms; }
+  .menu-nav li:nth-child(5) { animation-delay: 300ms; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .image-container {
+    width: 800px;
+    height: 458px;
+    border-radius: 85px 0 85px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    contain: paint;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Crossfade layer for smooth image transitions */
+  .image-transition-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 420ms ease, transform 420ms ease;
+    will-change: opacity, transform;
+    pointer-events: none;
+  }
+
+  .image-transition-layer.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .deco-corner-top {
+    position: absolute;
+    top: 193px;
+    right: 219px; /* Tout en haut à droite de l'image */
+    z-index: 6;
+    transform: rotate(-0.38deg);
+  }
+
+  .deco-corner-bottom {
+    position: absolute;
+    top: calc(247px + 458px - 80px); /* Monter un peu plus */
+    left: -61px; /* Position encore plus à gauche */
+    z-index: 6;
+    transform: rotate(0.38deg);
+  }
+
+  @media (max-width: 1280px) {
+    .menu-container {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      border-radius: 0;
+    }
+    .menu-content {
+      grid-template-columns: 1fr;
+      padding: 150px 20px 40px;
+    }
+    .menu-header {
+      left: 20px;
+      right: 20px;
+      top: 30px;
+    }
+    .menu-logo {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 30px;
+    }
+    .menu-nav {
+      padding: 0;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .menu-nav ul {
+      align-items: center;
+    }
+    .nav-line {
+      display: none;
+    }
+    .image-showcase {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .image-container {
+      width: 100%;
+      max-width: 658.19px;
+      height: auto;
+      aspect-ratio: 658.19 / 429;
+    }
+    .deco-corner-top {
+      top: 150px;
+      right: 50px;
+    }
+    .deco-corner-bottom {
+      top: 200px;
+      left: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .menu-header {
+      top: 20px;
+    }
+    .menu-logo {
+      top: 80px;
+      transform: translateX(-50%) scale(0.8);
+    }
+    .menu-content {
+      padding-top: 220px;
+    }
+    .nav-text {
+      font-size: 24px;
+      padding-left: 30px;
+    }
+    .nav-item {
+      height: 40px;
+    }
+  }
+  </style>
+  <script src="global.js" defer></script>
+</head>
+<body>
+<section id="menu-section">
+  <div class="menu-container">
+    <header class="menu-header">
+      <a href="#" class="menu-close-button">
+        <img src="images/542_446.svg" alt="Close Icon">
+        <span>FERMER</span>
+      </a>
+      <div class="menu-lang-switcher">
+        <a href="#" class="active">FR</a>
+        <img src="images/542_445.svg" alt="Language separator">
+        <a href="#">EN</a>
+      </div>
+    </header>
+
+    <!--merged image-->
+    <div class="menu-logo">
+      <img src="images/542_454.svg" alt="Logo element" class="logo-part" style="top: 0.35px; left: 0px; width: 157.75px; height: 147.67px;">
+      <img src="images/542_453.svg" alt="Logo element" class="logo-part" style="top: 2.35px; left: 33.41px; width: 120.47px; height: 130.42px;">
+      <img src="images/542_457.svg" alt="Logo element" class="logo-part" style="top: 46.62px; left: 36.8px; width: 108.29px; height: 83.41px;">
+    </div>
+
+    <main class="menu-content">
+      <nav class="menu-nav">
+        <ul>
+          <li>
+            <a href="#chambres" class="nav-item" data-image="images/IMG_1341.jpg">
+              <img src="images/542_575.svg" class="nav-line" alt="">
+              <img src="images/542_560.svg" class="nav-bg" alt="">
+              <span class="nav-text">CHAMBRES & SUITES</span>
+            </a>
+          </li>
+          <li>
+            <a href="#restaurant" class="nav-item" data-image="../img/27.jpg">
+              <img src="images/542_575.svg" class="nav-line" alt="">
+              <img src="images/542_467.svg" class="nav-bg" alt="">
+              <span class="nav-text">LE RESTAURANT</span>
+            </a>
+          </li>
+          <li>
+            <a href="#lounge" class="nav-item" data-image="img/10.jpg">
+              <img src="images/542_575.svg" class="nav-line" alt="">
+              <img src="images/542_471.svg" class="nav-bg" alt="">
+              <span class="nav-text">LE LOUNGE</span>
+            </a>
+          </li>
+          <li>
+            <a href="#evenementiel" class="nav-item" data-image="images/0E1A2828.jpg">
+              <img src="images/542_575.svg" class="nav-line" alt="">
+              <img src="images/542_564.svg" class="nav-bg" alt="">
+              <span class="nav-text">ÉVÈNEMENTIEL</span>
+            </a>
+          </li>
+          <li>
+            <a href="#apropos" class="nav-item" data-image="images/IMG_1837.jpg">
+              <img src="images/542_575.svg" class="nav-line" alt="">
+              <img src="images/542_567.svg" class="nav-bg" alt="">
+              <span class="nav-text">A PROPOS</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="image-showcase">
+        <img src="images/542_461.svg" class="deco-corner-top" alt="Decorative corner">
+        <div class="image-container">
+          <img src="images/IMG_1341.jpg" alt="Hotel exterior at night">
+          <img class="image-transition-layer" alt="transition layer" />
+        </div>
+        <img src="images/542_458.svg" class="deco-corner-bottom" alt="Decorative corner">
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- Bouton de retour -->
+<button id="back-button" class="back-button" aria-label="Retour à la page précédente" title="Retour">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+  </svg>
+</button>
+
+<!-- Bouton scroll to top -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page" title="Haut de page">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<script src="../js/navigation-tracker.js" defer></script>
+<link rel="stylesheet" href="../css/back-button.css">
+<script src="../js/back-button.js" defer></script>
+<link rel="stylesheet" href="../css/scroll-to-top.css">
+<script src="../js/scroll-to-top.js" defer></script>
+</body>
+</html>

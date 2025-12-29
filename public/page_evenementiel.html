@@ -1,0 +1,2493 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Optimisations de performance -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+
+  <!-- SEO Meta Tags -->
+  <title>ÉVÈNEMENTIEL - L'Escapade Hotel Assinie | Salles de réception</title>
+  <meta name="description" content="Organisez vos événements à L'Escapade Hotel Assinie. Salles de réception, mariages, séminaires et événements d'entreprise dans un cadre exceptionnel.">
+  <meta name="keywords" content="ÉVÈNEMENTIEL Assinie, salle de réception Assinie, mariage Assinie, séminaire Assinie">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://www.escapadehotel.com/page_evenementiel.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.escapadehotel.com/page_evenementiel.html">
+  <meta property="og:title" content="ÉVÈNEMENTIEL - L'Escapade Hotel Assinie">
+  <meta property="og:description" content="Organisez vos événements à L'Escapade Hotel Assinie. Salles de réception, mariages, séminaires.">
+  <meta property="og:image" content="https://www.escapadehotel.com/images/568_819.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ÉVÈNEMENTIEL - L'Escapade Hotel Assinie">
+  <meta name="twitter:description" content="Organisez vos événements à L'Escapade Hotel Assinie.">
+  <meta name="twitter:image" content="https://www.escapadehotel.com/images/568_819.png">
+
+  <!-- Preconnect pour améliorer les performances des CDN -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://fonts.cdnfonts.com">
+
+  <!-- Preload des ressources critiques -->
+  <link rel="preload" as="image" href="images/568_819.svg" fetchpriority="high">
+  <link rel="preload" as="image" href="images/568_939.svg" fetchpriority="high">
+
+  <!-- Prefetch des ressources non critiques -->
+  <link rel="prefetch" as="script" href="https://cdn.tailwindcss.com">
+  <link rel="prefetch" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+  <link rel="prefetch" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+  <link rel="icon" type="image/png" href="images/568_819.png">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style1.css">
+  <link rel="stylesheet" href="css/hero-footer-responsive.css">
+  <link rel="stylesheet" href="css/responsive.css">
+    <style>
+    /* Reveal animation for plats - support direction and configurable timing via JS */
+    .reveal { opacity: 0; transform: scale(0.98); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.up { transform: translateY(24px) scale(0.98); }
+    .reveal.left { transform: translateX(-24px) scale(0.98); }
+    .reveal.right { transform: translateX(24px) scale(0.98); }
+    .reveal.show { opacity: 1; transform: translateX(0) translateY(0) scale(1); }
+    /* Small hover polish for plat images */
+    .reveal img { transition: transform .35s ease, opacity .35s ease; }
+    .reveal:hover img { transform: translateY(-6px) scale(1.02); }
+
+    /* Custom title border height for ÉVÈNEMENTIEL section */
+    .title-border-events {
+      height: 77px;
+    }
+
+
+    /* Réduction des margin-top des paragraphes */
+    .events-overlay-text p.mt-6 {
+      margin-top: 0.75rem !important; /* Réduit de 1.5rem à 0.75rem */
+    }
+
+    /* Remonter la div events-overlay-text */
+    .events-overlay-text {
+      transform: translateY(-60px);
+      padding-top: 0;
+    }
+
+    /* Taille du texte sur l'image de fond à 14px sur desktop uniquement */
+    @media (min-width: 1280px) {
+      .events-overlay-text p {
+        font-size: 14px !important;
+        line-height: 21px !important;
+      }
+    }
+
+    /* Overlay sombre caché par défaut (desktop) */
+    .events-overlay-dark {
+      display: none;
+    }
+
+     /* Styles pour la vidéo hero - standards web */
+     #hero .hero-bg-video,
+     #hero video {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       z-index: -1;
+       display: block;
+       visibility: visible;
+       opacity: 1;
+       background-color: transparent;
+       pointer-events: none;
+     }
+
+     /* Image fallback */
+     .hero-bg-fallback {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       z-index: -2;
+    }
+
+    /* Responsive adjustments for MacBook screens (1280px - 1440px) */
+    @media (min-width: 1280px) and (max-width: 1440px) {
+      /* Reduce section padding */
+      #evenementiel {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+      }
+
+      /* Reduce vertical spacing between elements */
+      #evenementiel .space-y-24 > * + * {
+        margin-top: 3.5rem !important;
+      }
+
+      /* Reduce gaps between flex items */
+      #evenementiel .gap-12 {
+        gap: 2.5rem !important;
+      }
+
+      /* Reduce image heights */
+      #evenementiel img[class*="h-[400px]"] {
+        height: 320px !important;
+      }
+
+      #evenementiel img[class*="h-[450px]"] {
+        height: 360px !important;
+      }
+
+      /* Reduce height of the background image section */
+      div.relative.w-full.py-24.mb-9.overflow-hidden[class*="h-\[750px\]"] {
+        height: 550px !important;
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      /* Alternative selector for the background section */
+      section#evenementiel + div.relative {
+        height: 550px !important;
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      /* Reduce spacing in text blocks */
+      #evenementiel .space-y-6 > * + * {
+        margin-top: 1rem !important;
+      }
+
+      /* Reduce margin-top on second block */
+      #evenementiel .mt-12 {
+        margin-top: 2rem !important;
+      }
+
+      /* Reduce text spacing in list */
+      #evenementiel .space-y-2 > * + * {
+        margin-top: 0.4rem !important;
+      }
+
+      /* Reduce paragraph spacing in overlay section */
+      .relative.w-full.py-24.mb-9 .mt-6 {
+        margin-top: 1rem !important;
+      }
+
+      /* Remonter la div events-overlay-text sur MacBook */
+      .events-overlay-text {
+        transform: translateY(-40px) !important;
+      }
+    }
+
+    /* Responsive pour tablettes et petits écrans */
+    @media (min-width: 1025px) and (max-width: 1279px) {
+      .events-overlay-text {
+        position: absolute !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        margin-top: 1.5rem !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        /* Dégradé beige/crème très transparent harmonisé avec la couleur du texte (#956F40) */
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 245, 235, 0.15),
+          rgba(245, 238, 225, 0.12),
+          rgba(240, 230, 215, 0.10),
+          rgba(235, 225, 205, 0.08)
+        );
+        border-radius: 0 !important;
+        padding: 1.5rem 2rem !important;
+        padding-top: 0.5rem !important;
+        z-index: 10 !important;
+      }
+
+      /* Contenu du texte centré horizontalement */
+      .events-overlay-text > * {
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      /* Pas d'overlay sur toute l'image - l'image reste entièrement visible */
+      .events-overlay-container .events-overlay-dark {
+        display: none !important;
+      }
+
+      /* Cacher l'overlay glassmorphism */
+      .events-overlay-container::after {
+        display: none !important;
+      }
+
+       /* Texte - taille 20px sur tablette */
+      .events-overlay-text p {
+         color: #7A5A33 !important; /* Version plus foncée pour meilleure lisibilité */
+         font-size: 20px !important;
+         line-height: 30px !important;
+         letter-spacing: 0.01em;
+         word-spacing: -0.02em;
+       }
+
+      /* Réduction des margin-top des paragraphes */
+      .events-overlay-text p.mt-6 {
+        margin-top: 0.4rem !important;
+      }
+
+      /* Centrer et réduire les spans de statut sur tablette */
+      article > div > div.flex.items-center.justify-between span.text-sm,
+      article > div > div.flex.items-center.justify-between span[class*="text-sm"],
+      article div.flex.items-center.justify-between.text-lg span.text-sm,
+      article div.flex.items-center.justify-between[class*="text-lg"] span.text-sm,
+      article div.flex.items-center.justify-between span[data-translate="eventsSunsetSchedule"],
+      article div.flex.items-center.justify-between span[data-translate="eventsBrunchSchedule"],
+      article div.flex.items-center.justify-between span[data-translate="eventsCorporateSchedule"],
+      article div.flex.items-center.justify-between span[data-translate="eventsWeddingSchedule"],
+      article div.flex.items-center.justify-between.text-lg span[class*="text-sm"],
+      article div.flex.items-center.justify-between[class*="text-lg"] span[class*="text-sm"] {
+        text-align: center !important;
+        align-self: center !important;
+        width: 100% !important;
+        font-size: 0.65rem !important; /* Taille légèrement augmentée pour "À venir" - toujours plus petit que les titres */
+        line-height: 1.3 !important;
+      }
+
+      /* S'assurer que les titres (font-normal sans text-sm) restent plus grands */
+      article > div > div.flex.items-center.justify-between span.font-normal:not(.text-sm),
+      article div.flex.items-center.justify-between.text-lg span.font-normal:not(.text-sm) {
+        font-size: clamp(1.05rem, 2.6vw, 1.2rem) !important; /* Taille text-lg pour les titres */
+      }
+    }
+
+    /* Responsive pour tablettes moyennes */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .events-overlay-text {
+        position: absolute !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        margin-top: 1.5rem !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        /* Dégradé beige/crème très transparent harmonisé avec la couleur du texte (#956F40) */
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 245, 235, 0.15),
+          rgba(245, 238, 225, 0.12),
+          rgba(240, 230, 215, 0.10),
+          rgba(235, 225, 205, 0.08)
+        );
+        border-radius: 0 !important;
+        padding: 1.5rem 2rem !important;
+        padding-top: 0.5rem !important;
+        z-index: 10 !important;
+      }
+
+      /* Contenu du texte centré horizontalement */
+      .events-overlay-text > * {
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      /* Pas d'overlay sur toute l'image - l'image reste entièrement visible */
+      .events-overlay-container .events-overlay-dark {
+        display: none !important;
+      }
+
+      /* Cacher l'overlay glassmorphism */
+      .events-overlay-container::after {
+        display: none !important;
+      }
+
+       /* Texte - taille 20px sur tablette moyenne */
+       .events-overlay-text p {
+         color: #7A5A33 !important; /* Version plus foncée pour meilleure lisibilité */
+         font-size: 20px !important;
+         line-height: 30px !important;
+         letter-spacing: 0.01em;
+         word-spacing: -0.02em;
+       }
+
+      /* Réduction des margin-top des paragraphes */
+      .events-overlay-text p.mt-6 {
+        margin-top: 0.4rem !important;
+      }
+
+      /* Centrer et réduire les spans de statut sur tablette moyenne */
+      article > div > div.flex.items-center.justify-between span.text-sm,
+      article > div > div.flex.items-center.justify-between span[class*="text-sm"],
+      article div.flex.items-center.justify-between.text-lg span.text-sm,
+      article div.flex.items-center.justify-between[class*="text-lg"] span.text-sm,
+      article div.flex.items-center.justify-between span[data-translate="eventsSunsetSchedule"],
+      article div.flex.items-center.justify-between span[data-translate="eventsBrunchSchedule"],
+      article div.flex.items-center.justify-between span[data-translate="eventsCorporateSchedule"],
+      article div.flex.items-center.justify-between span[data-translate="eventsWeddingSchedule"],
+      article div.flex.items-center.justify-between.text-lg span[class*="text-sm"],
+      article div.flex.items-center.justify-between[class*="text-lg"] span[class*="text-sm"] {
+        text-align: center !important;
+        align-self: center !important;
+        width: 100% !important;
+        font-size: 0.65rem !important; /* Taille légèrement augmentée pour "À venir" - toujours plus petit que les titres */
+        line-height: 1.3 !important;
+      }
+
+      /* S'assurer que les titres (font-normal sans text-sm) restent plus grands */
+      article > div > div.flex.items-center.justify-between span.font-normal:not(.text-sm),
+      article div.flex.items-center.justify-between.text-lg span.font-normal:not(.text-sm) {
+        font-size: clamp(1.05rem, 2.6vw, 1.2rem) !important; /* Taille text-lg pour les titres */
+      }
+    }
+
+    /* Responsive pour mobile */
+    @media (max-width: 768px) {
+      /* Ajuster la hauteur du conteneur sur mobile - AUGMENTER LA HAUTEUR DE L'IMAGE */
+      .events-overlay-container {
+        height: auto !important;
+        min-height: 1000px !important; /* Augmenté pour rendre l'image plus longue */
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+
+      /* Augmenter la hauteur de l'image DJI_0290 1.png au responsive téléphone */
+      .events-overlay-container img[src*="DJI_0290"] {
+        height: 100% !important;
+        min-height: 1000px !important;
+        object-fit: cover !important;
+      }
+
+      .events-overlay-text {
+        position: absolute !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding-top: 3rem !important;
+        /* Dégradé beige/crème très transparent harmonisé avec la couleur du texte (#956F40) */
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 245, 235, 0.15),
+          rgba(245, 238, 225, 0.12),
+          rgba(240, 230, 215, 0.10),
+          rgba(235, 225, 205, 0.08)
+        );
+        border-radius: 0 !important;
+        padding: 1rem 3.5rem !important;
+        padding-top: 0.75rem !important;
+        padding-left: 3.5rem !important;
+        padding-right: 3.5rem !important;
+        z-index: 10 !important;
+      }
+
+      /* Contenu du texte centré horizontalement */
+      .events-overlay-text > * {
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      /* Pas d'overlay sur toute l'image - l'image reste entièrement visible */
+      .events-overlay-container .events-overlay-dark {
+        display: none !important;
+      }
+
+      /* Cacher l'overlay glassmorphism */
+      .events-overlay-container::after {
+        display: none !important;
+      }
+
+      /* Texte - taille réduite à 10.5px sur mobile */
+      .events-overlay-text p {
+        color: #7A5A33 !important; /* Version plus foncée pour meilleure lisibilité */
+        font-size: 10.5px !important;
+        line-height: 16px !important;
+        letter-spacing: 0.01em;
+        word-spacing: -0.02em;
+      }
+
+      /* Marge entre les paragraphes sur mobile */
+      .events-overlay-text p.mt-6 {
+        margin-top: 0.5rem !important;
+      }
+    }
+
+    /* Responsive pour très petits écrans */
+    @media (max-width: 480px) {
+      /* Ajuster la hauteur du conteneur sur très petits écrans - AUGMENTER LA HAUTEUR DE L'IMAGE */
+      .events-overlay-container {
+        height: auto !important;
+        min-height: 900px !important; /* Augmenté pour rendre l'image plus longue */
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+      }
+
+      /* Augmenter la hauteur de l'image DJI_0290 1.png au responsive téléphone */
+      .events-overlay-container img[src*="DJI_0290"] {
+        height: 100% !important;
+        min-height: 900px !important;
+        object-fit: cover !important;
+      }
+
+      .events-overlay-text {
+        position: absolute !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        margin-top: 3rem !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        /* Dégradé beige/crème très transparent harmonisé avec la couleur du texte (#956F40) */
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 245, 235, 0.15),
+          rgba(245, 238, 225, 0.12),
+          rgba(240, 230, 215, 0.10),
+          rgba(235, 225, 205, 0.08)
+        );
+        border-radius: 0 !important;
+        padding: 0.75rem 2.5rem !important;
+        padding-top: 0.5rem !important;
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+        z-index: 10 !important;
+      }
+
+      /* Contenu du texte centré horizontalement */
+      .events-overlay-text > * {
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      /* Pas d'overlay sur toute l'image - l'image reste entièrement visible */
+      .events-overlay-container .events-overlay-dark {
+        display: none !important;
+      }
+
+      /* Cacher l'overlay glassmorphism */
+      .events-overlay-container::after {
+        display: none !important;
+      }
+
+      /* Texte - taille réduite à 10.5px sur très petits écrans */
+      .events-overlay-text p {
+        color: #7A5A33 !important; /* Version plus foncée pour meilleure lisibilité */
+        font-size: 10.5px !important;
+        line-height: 16px !important;
+        letter-spacing: 0.005em;
+        word-spacing: -0.03em;
+      }
+
+      /* Marge entre les paragraphes sur très petits écrans */
+      .events-overlay-text p.mt-6 {
+        margin-top: 0.5rem !important;
+      }
+    }
+
+    /* Responsive pour très petits téléphones */
+    @media (max-width: 360px) {
+      /* Ajuster la hauteur du conteneur sur très petits téléphones - AUGMENTER LA HAUTEUR DE L'IMAGE */
+      .events-overlay-container {
+        min-height: 850px !important; /* Augmenté pour rendre l'image plus longue */
+        padding-top: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
+      }
+
+      /* Augmenter la hauteur de l'image DJI_0290 1.png au responsive téléphone */
+      .events-overlay-container img[src*="DJI_0290"] {
+        height: 100% !important;
+        min-height: 850px !important;
+        object-fit: cover !important;
+      }
+
+      .events-overlay-text {
+        position: absolute !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        margin-top: 3rem !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        /* Dégradé beige/crème très transparent harmonisé avec la couleur du texte (#956F40) */
+        background: linear-gradient(
+          to bottom,
+          rgba(250, 245, 235, 0.15),
+          rgba(245, 238, 225, 0.12),
+          rgba(240, 230, 215, 0.10),
+          rgba(235, 225, 205, 0.08)
+        );
+        border-radius: 0 !important;
+        padding: 0.5rem 2rem !important;
+        padding-top: 0.4rem !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+        z-index: 10 !important;
+      }
+
+      /* Contenu du texte centré horizontalement */
+      .events-overlay-text > * {
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      /* Pas d'overlay sur toute l'image - l'image reste entièrement visible */
+      .events-overlay-container .events-overlay-dark {
+        display: none !important;
+      }
+
+      /* Cacher l'overlay glassmorphism */
+      .events-overlay-container::after {
+        display: none !important;
+      }
+
+      /* Texte - taille réduite à 10.5px sur très petits téléphones */
+      .events-overlay-text p {
+        color: #7A5A33 !important; /* Version plus foncée pour meilleure lisibilité */
+        font-size: 10.5px !important;
+        line-height: 16px !important;
+        letter-spacing: 0.003em;
+        word-spacing: -0.04em;
+      }
+
+      /* Marge entre les paragraphes sur très petits téléphones */
+      .events-overlay-text p.mt-6 {
+        margin-top: 0.5rem !important;
+      }
+    }
+  </style>
+  <!-- Style inline pour cacher le contenu immédiatement pendant le chargement -->
+  <style>
+    /* Cacher TOUT le contenu sauf le loader pendant le chargement */
+    body[data-loading="true"] > *:not(#page-loader) {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      }
+    body[data-loading="true"] section:not(#page-loader),
+    body[data-loading="true"] main {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+    /* S'assurer que le loader reste visible */
+    #page-loader {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      z-index: 99999 !important;
+    }
+     /* Empêcher le scroll pendant le chargement */
+     body[data-loading="true"] {
+       overflow: hidden !important;
+     }
+
+      /* Aligner les spans des événements à gauche sur téléphone */
+      @media (max-width: 768px) {
+        /* Cibler les divs contenant les titres et statuts des événements dans les articles */
+        article > div > div.flex.items-center.justify-between {
+          justify-content: flex-start !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 1rem !important;
+        }
+
+        /* Aligner les spans à gauche par défaut */
+        article > div > div.flex.items-center.justify-between span {
+          text-align: left !important;
+        }
+
+        /* Centrer les spans de statut (text-sm font-[Futura_Md_BT] font-normal text-black) */
+        article > div > div.flex.items-center.justify-between span.text-sm,
+        article > div > div.flex.items-center.justify-between span[class*="text-sm"],
+        article div.flex.items-center.justify-between.text-lg span.text-sm,
+        article div.flex.items-center.justify-between[class*="text-lg"] span.text-sm,
+        article div.flex.items-center.justify-between span[data-translate="eventsSunsetSchedule"],
+        article div.flex.items-center.justify-between span[data-translate="eventsBrunchSchedule"],
+        article div.flex.items-center.justify-between span[data-translate="eventsCorporateSchedule"],
+        article div.flex.items-center.justify-between span[data-translate="eventsWeddingSchedule"],
+        article div.flex.items-center.justify-between.text-lg span[class*="text-sm"],
+        article div.flex.items-center.justify-between[class*="text-lg"] span[class*="text-sm"] {
+          text-align: center !important;
+          align-self: center !important;
+          width: 100% !important;
+          font-size: 0.65rem !important; /* Taille légèrement augmentée pour "À venir" - toujours plus petit que les titres */
+          line-height: 1.3 !important;
+        }
+
+        /* S'assurer que les titres (font-normal sans text-sm) restent plus grands */
+        article > div > div.flex.items-center.justify-between span.font-normal:not(.text-sm),
+        article div.flex.items-center.justify-between.text-lg span.font-normal:not(.text-sm) {
+          font-size: clamp(1.05rem, 2.6vw, 1.2rem) !important; /* Taille text-lg pour les titres */
+        }
+      }
+   </style>
+  <!-- Image Optimizer pour améliorer les performances -->
+  <script src="js/image-optimizer.js" defer></script>
+  <script src="js/performance-enhancer.js" defer></script>
+
+  <!-- Script de traduction chargé tôt pour appliquer la langue rapidement -->
+  <script src="js/translations.js"></script>
+
+  <!-- Script pour supprimer complètement les contrôles vidéo -->
+  <script src="js/remove-video-controls.js"></script>
+  <script src="js/page-loader.js" defer></script>
+
+  <!-- Script inline minimal pour appliquer la langue immédiatement -->
+  <script>
+    (function() {
+      const STORAGE_KEY = 'escapade-lang';
+      const FALLBACK_LANG = 'fr';
+      const stored = window.localStorage?.getItem(STORAGE_KEY);
+      const lang = (stored && (stored === 'fr' || stored === 'en')) ? stored : FALLBACK_LANG;
+      if (document.documentElement) {
+        document.documentElement.lang = lang;
+      }
+    })();
+  </script>
+</head>
+<body class=" text-white overflow-x-hidden" style="font-family: 'Futura Md BT', 'Futura', sans-serif;" data-page="events" data-loading="true">
+<div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Chargement">
+  <div class="loader-inner">
+    <span class="loader-ring" aria-hidden="true"></span>
+    <p class="loader-text">L'ESCAPADE</p>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="menu-cluster site-header__start">
+      <!-- Bouton burger -->
+      <button id="openMenu" class="menu-button flex flex-row gap-1.5 items-center group mr-4" aria-label="Ouvrir le menu" title="Ouvrir le menu">
+        <img src="images/568_939.svg" alt="Menu Icon" class="w-8 h-8 md:w-12 md:h-12">
+        <span class="text-sm md:text-base" data-translate="menu">MENU</span>
+      </button>
+
+      <!-- Sélecteur de langue -->
+      <div class="lang-switcher">
+        <a href="#" class="text-sm md:text-base font-medium" data-lang="fr">FR</a>
+        <img src="images/568_837.svg" alt="" class="lang-separator w-3 h-3 md:w-4 md:h-4">
+        <a href="#" class="text-sm md:text-base" data-lang="en">EN</a>
+      </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="site-header__logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/568_819.svg" alt="Logo L'Escapade" class="w-[120px] md:w-[150px]" />
+      </a>
+    </div>
+
+    <!-- Navigation principale -->
+    <nav class="header-nav site-header__end">
+      <!--merged image-->
+      <a href="page_reservation1.html" class="btn-wrapper relative inline-flex items-center justify-center hidden md:inline-block">
+        <img src="images/568_838.svg" alt="" class="btn-bg absolute inset-0 w-full h-full object-contain pointer-events-none">
+        <span class="btn-text relative text-sm md:text-base font-medium text-white px-6 py-2" data-translate="reserveSuite">Réserver une suite</span>
+      </a>
+      <!--merged image-->
+      <a href="#paiement" class="btn-wrapper relative inline-flex items-center justify-center hidden md:inline-flex">
+        <img src="images/568_833.svg" alt="" class="btn-bg absolute inset-0 w-full h-full object-contain pointer-events-none">
+        <span class="btn-text relative text-sm md:text-md font-medium text-white px-6 py-2" data-translate="reserveSpace">Réserver un espace</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- MENU BURGER (plein écran) -->
+<section id="menu-section">
+  <div class="menu-container is-hidden" id="menuOverlay">
+    <header class="menu-header">
+      <a href="#" class="menu-close-button">
+        <img src="Menu/images/542_446.svg" alt="Close Icon">
+        <span data-translate="close">FERMER</span>
+      </a>
+      <!--merged image-->
+      <a href="index.html" class="menu-logo">
+        <img src="Menu/images/542_454.svg" alt="Logo element" class="logo-part" style="top: 0.35px; left: 0px; width: 157.75px; height: 147.67px;">
+        <img src="Menu/images/542_453.svg" alt="Logo element" class="logo-part" style="top: 2.35px; left: 33.41px; width: 120.47px; height: 130.42px;">
+        <img src="Menu/images/542_457.svg" alt="Logo element" class="logo-part" style="top: 46.62px; left: 36.8px; width: 108.29px; height: 83.41px;">
+      </a>
+      <div class="menu-lang-switcher">
+        <a href="#" data-lang="fr">FR</a>
+        <img src="Menu/images/542_445.svg" alt="Language separator">
+        <a href="#" data-lang="en">EN</a>
+      </div>
+    </header>
+
+    <main class="menu-content">
+      <nav class="menu-nav">
+        <ul>
+          <li>
+            <a href="page_suite.html" class="nav-item" data-image="Menu/images/IMG_1341.jpg">
+              <img src="Menu/images/542_575.svg" class="nav-line" alt="">
+              <img src="Menu/images/542_560.svg" class="nav-bg" alt="">
+              <span class="nav-text" data-translate="roomsSuites">CHAMBRES & SUITES</span>
+            </a>
+          </li>
+          <li>
+            <a href="restaurant.html" class="nav-item" data-image="img/27.jpg">
+              <img src="Menu/images/542_575.svg" class="nav-line" alt="">
+              <img src="Menu/images/542_467.svg" class="nav-bg" alt="">
+              <span class="nav-text" data-translate="restaurant">LE RESTAURANT</span>
+            </a>
+          </li>
+          <li>
+            <a href="lounge.html" class="nav-item" data-image="img/10.jpg">
+              <img src="Menu/images/542_575.svg" class="nav-line" alt="">
+              <img src="Menu/images/542_471.svg" class="nav-bg" alt="">
+              <span class="nav-text" data-translate="lounge">LE LOUNGE</span>
+            </a>
+          </li>
+          <li>
+            <a href="page_evenementiel.html" class="nav-item" data-image="Menu/images/0E1A2828.jpg">
+              <img src="Menu/images/542_575.svg" class="nav-line" alt="">
+              <img src="Menu/images/542_564.svg" class="nav-bg" alt="">
+              <span class="nav-text" data-translate="event">ÉVÈNEMENTIEL</span>
+            </a>
+          </li>
+          <li>
+            <a href="apropos.html" class="nav-item" data-image="Menu/images/IMG_1837.jpg">
+              <img src="Menu/images/542_575.svg" class="nav-line" alt="">
+              <img src="Menu/images/542_567.svg" class="nav-bg" alt="">
+              <span class="nav-text" data-translate="about">À PROPOS</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="image-showcase">
+        <img src="Menu/images/542_461.svg" class="deco-corner-top" alt="Decorative corner">
+        <div class="image-container">
+          <img src="Menu/images/IMG_1341.jpg" alt="Hotel exterior at night">
+          <img class="image-transition-layer" alt="transition layer" />
+        </div>
+        <img src="Menu/images/542_458.svg" class="deco-corner-bottom" alt="Decorative corner">
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- CSS pour le menu -->
+<!-- CSS pour le menu - chargé en lazy pour ne pas bloquer le rendu initial -->
+<link rel="stylesheet" href="Menu/global.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="Menu/global.css"></noscript>
+<style id="menu-styles">
+/* ============================================
+   * CSS for section section:menu
+   * Menu Overlay - Optimisé pour tous les écrans
+   * ============================================ */
+
+/*------------------------------------------*
+ *      STRUCTURE GLOBALE - CONTAINER       *
+ *------------------------------------------*/
+.menu-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: var(--text-color);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 280ms ease, transform 280ms ease;
+    will-change: opacity, transform;
+    z-index: 50;
+  }
+
+  .menu-container.is-hidden {
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+  }
+
+  .menu-container.is-closing {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .menu-header {
+    position: absolute;
+    top: 49px;
+    left: 65px;
+    right: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    z-index: 10;
+  }
+
+  /* Sur desktop, positionner le logo dans le header de manière absolue en haut au centre */
+  .menu-header .menu-logo {
+    position: absolute;
+    top: -33px; /* Positionner au-dessus du header */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 112px;
+    z-index: 10;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .menu-header .menu-logo .logo-part {
+    transform: scale(0.75);
+  }
+
+
+  .menu-close-button,
+  .menu-lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  .menu-close-button img {
+    transition: transform 280ms ease, opacity 280ms ease;
+    will-change: transform, opacity;
+    cursor: pointer;
+  }
+  .menu-close-button img.is-closing {
+    transform: rotate(90deg) scale(0.9);
+    opacity: 0.6;
+  }
+
+  .menu-lang-switcher {
+    gap: 11px;
+  }
+
+  .menu-lang-switcher .active {
+    text-decoration: underline;
+  }
+
+  /* Logo positionné absolument en dehors du header sur desktop */
+  .menu-logo:not(.menu-header .menu-logo) {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px; /* Réduit de 159.11px */
+    height: 112px; /* Réduit de 148.23px */
+    z-index: 10;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .menu-logo .logo-part {
+    transform: scale(0.75); /* Réduction globale de 25% pour toutes les parties du logo */
+  }
+
+  @media (max-width: 768px) {
+    /* Logo centré horizontalement au responsive */
+    .menu-header {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Cacher le menu-logo sur mobile */
+    .menu-header .menu-logo,
+    .menu-logo {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      left: -9999px !important;
+    }
+
+    .menu-header .menu-logo .logo-part,
+    .menu-logo .logo-part {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    .menu-header .menu-close-button {
+      flex: 0 0 auto;
+      justify-content: flex-start;
+    }
+
+    .menu-header .menu-lang-switcher {
+      flex: 0 0 auto;
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+
+    /* Centrer chaque logo-part horizontalement au responsive (768px) */
+    /* Le conteneur .menu-logo est déjà centré avec left: 50% et transform: translate(-50%, -50%) */
+    /* Les logo-part doivent être centrés par rapport au conteneur */
+    /* Largeur max du logo = 157.75px, centre à 78.875px depuis la gauche originale */
+
+    .menu-header .menu-logo .logo-part {
+      position: absolute;
+      transform-origin: center;
+    }
+
+    /* Partie 1: left original = 0px, width = 157.75px */
+    /* Centre de la partie = 78.875px depuis la gauche du logo */
+    /* On centre par rapport au conteneur: left = 50% - (largeur_scalée / 2) */
+    .menu-header .menu-logo .logo-part:nth-child(1) {
+      left: calc(50% - (157.75px * 0.6 / 2)) !important;
+      top: 0.35px !important;
+      transform: scale(0.6) !important;
+    }
+
+    /* Partie 2: left original = 33.41px, width = 120.47px */
+    /* Centre de la partie = 33.41 + 60.235 = 93.645px depuis la gauche du logo */
+    /* Décalage depuis le centre du logo (78.875px) = 93.645 - 78.875 = 14.77px */
+    .menu-header .menu-logo .logo-part:nth-child(2) {
+      left: calc(50% + (93.645px - 78.875px) * 0.6 - (120.47px * 0.6 / 2)) !important;
+      top: 2.35px !important;
+      transform: scale(0.6) !important;
+    }
+
+    /* Partie 3: left original = 36.8px, width = 108.29px */
+    /* Centre de la partie = 36.8 + 54.145 = 90.945px depuis la gauche du logo */
+    /* Décalage depuis le centre du logo (78.875px) = 90.945 - 78.875 = 12.07px */
+    .menu-header .menu-logo .logo-part:nth-child(3) {
+      left: calc(50% + (90.945px - 78.875px) * 0.6 - (108.29px * 0.6 / 2)) !important;
+      top: 46.62px !important;
+      transform: scale(0.6) !important;
+    }
+
+    /* Logo en dehors du header (si présent) */
+    .menu-logo:not(.menu-header .menu-logo) {
+      top: 30px;
+      width: 96px;
+      height: 89px;
+    }
+    .menu-logo:not(.menu-header .menu-logo) .logo-part {
+      transform: scale(0.6);
+    }
+  }
+
+  .logo-part {
+    position: absolute;
+  }
+
+  /*------------------------------------------*
+   *      MENU CONTENT - LAYOUT GRID          *
+   *------------------------------------------*/
+  .menu-content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100%;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /*------------------------------------------*
+   *      MENU-NAV - NAVIGATION GAUCHE       *
+   *------------------------------------------*/
+  .menu-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
+  }
+
+  .menu-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+    text-decoration: none;
+    color: inherit;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav-bg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    z-index: 1;
+    object-fit: contain;
+  }
+
+  .nav-text {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-sans);
+    font-size: 32px;
+    font-weight: 0;
+    padding-left: 141px;
+    padding-right: 40px;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: 100%;
+  }
+
+  .nav-line {
+    position: absolute;
+    left: 78px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-8px) scaleX(0.9);
+    transform-origin: left center;
+    opacity: 0;
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  .nav-item:hover .nav-line {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scaleX(1);
+  }
+
+  .nav-item:hover {
+    transform: translateX(12px);
+  }
+
+  /*------------------------------------------*
+   *      IMAGE SHOWCASE - CÔTÉ DROIT        *
+   *------------------------------------------*/
+  .image-showcase {
+    position: relative;
+    padding-top: 247px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Staggered entrance for menu items */
+  .menu-nav li {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .menu-nav li:nth-child(1) { animation-delay: 60ms; }
+  .menu-nav li:nth-child(2) { animation-delay: 120ms; }
+  .menu-nav li:nth-child(3) { animation-delay: 180ms; }
+  .menu-nav li:nth-child(4) { animation-delay: 240ms; }
+  .menu-nav li:nth-child(5) { animation-delay: 300ms; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .image-container {
+    width: 800px;
+    height: 458px;
+    border-radius: 85px 0 85px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    contain: paint;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Crossfade layer for smooth image transitions */
+  .image-transition-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 420ms ease, transform 420ms ease;
+    will-change: opacity, transform;
+    pointer-events: none;
+  }
+
+  .image-transition-layer.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .deco-corner-top {
+    position: absolute;
+    top: 193px;
+    right: 5px; /* Tout en haut à droite de l'image */
+    z-index: 6;
+    transform: rotate(-0.38deg);
+  }
+
+  .deco-corner-bottom {
+    position: absolute;
+    top: calc(247px + 458px - 80px); /* Monter un peu plus */
+    left: -61px; /* Position encore plus à gauche */
+    z-index: 6;
+    transform: rotate(0.38deg);
+  }
+
+  /* ============================================
+   * OPTIMISATION 1440P - MACBOOK PRO / RETINA
+   * ============================================ */
+  @media (min-width: 1440px) {
+    .menu-content {
+      grid-template-columns: 40% 60%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .image-container {
+      width: 800px;
+      height: 458px;
+    }
+  }
+
+  /* ============================================
+   * OPTIMISATION LAPTOP 1282px → 1509px
+   * Centrage vertical parfait menu-nav / image-showcase
+   * ============================================ */
+  @media (min-width: 1282px) and (max-width: 1509px) {
+    /* Structure globale : alignement vertical parfait */
+    .menu-content {
+      display: grid;
+      grid-template-columns: 46% 54%;
+      align-items: center; /* ★ CENTRAGE VERTICAL DU MENU-NAV ET IMAGE-SHOWCASE */
+      column-gap: 42px;
+      height: 100%;
+    }
+
+    /* Menu-nav / Navigation gauche */
+    .menu-nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;   /* ★ CENTRE LE BLOC DU MENU */
+      align-items: flex-start;   /* Garde l'alignement naturel des liens */
+      height: auto;
+    }
+
+    /* Espacement entre les items */
+    .menu-nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .menu-nav ul li {
+      margin: 0; /* Le gap gère tout */
+    }
+
+    /* Conteneur <a> */
+    .menu-nav .nav-item {
+      position: relative;
+      max-width: 360px;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Fond décoratif (pilule) */
+    .menu-nav .nav-bg {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) scale(0.90);
+      max-width: 340px;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Ligne décorative au hover - masquée pour cette plage */
+    .menu-nav .nav-line {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    /* Texte du menu – éviter les "…" et les collisions */
+    .menu-nav .nav-text {
+      position: relative;
+      z-index: 2;
+      font-size: 1.35rem;
+      padding: 10px 32px;
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: unset;
+      letter-spacing: 0.4px;
+    }
+
+    /* Image Showcase (côté droit) */
+    .image-showcase {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* ★ Centre l'image verticalement */
+      padding-top: 0;
+      position: relative; /* Pour positionner les décoratifs en dehors de l'image */
+      align-items: center; /* Centre horizontalement le container */
+    }
+
+    .image-showcase .image-container {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 400px;
+      position: relative;
+      border-radius: 85px 0 85px 0; /* ★ CONSERVE LE BORDER-RADIUS ORIGINAL - PAS DE MODIFICATION */
+      overflow: hidden; /* Conserve l'overflow original pour l'image */
+      margin: 0 auto; /* Centre le container */
+    }
+
+    /* ★ CONSERVE LE BORDER-RADIUS ORIGINAL - HERITE DU CONTAINER */
+    .image-showcase .image-container img {
+      max-height: 400px;
+      border-radius: inherit !important; /* ★ HERITE DU BORDER-RADIUS ORIGINAL (85px 0 85px 0) */
+      object-fit: cover;
+    }
+
+    .image-showcase .image-transition-layer {
+      max-height: 400px;
+      border-radius: inherit !important; /* ★ HERITE DU BORDER-RADIUS ORIGINAL */
+    }
+
+    /* Décors top & bottom - POSITIONNÉS EN DEHORS DE L'IMAGE */
+    /* Positionnés par rapport à .image-showcase pour être visibles en dehors de .image-container */
+    .image-showcase .deco-corner-top {
+      position: absolute;
+      /* Position en haut à droite : depuis le centre vertical, remonter de la moitié de la hauteur + espacement */
+      top: calc(50% - 200px - 12px); /* Centre vertical - moitié hauteur max (200px) - espacement (12px) */
+      right: 12px; /* ★ EN DEHORS à droite - espacement de 12px depuis le bord de .image-showcase */
+      transform: rotate(-0.38deg); /* ★ CONSERVE L'ORIENTATION ORIGINALE */
+      z-index: 6;
+      opacity: 0.95;
+    }
+
+    .image-showcase .deco-corner-bottom {
+      position: absolute;
+      /* Position en bas à gauche : depuis le centre vertical, descendre de la moitié de la hauteur + espacement */
+      bottom: calc(50% - 200px - 12px); /* Centre vertical inversé - moitié hauteur max (200px) - espacement (12px) */
+      left: 12px; /* ★ EN DEHORS à gauche - espacement de 12px depuis le bord de .image-showcase */
+      transform: rotate(0.38deg); /* ★ CONSERVE L'ORIENTATION ORIGINALE */
+      z-index: 6;
+      opacity: 0.95;
+    }
+  }
+
+  /* ============================================
+   * CORRECTION DÉCORATIFS LAPTOP 1024px → 1509px
+   * Coins décoratifs stabilisés aux extrémités naturelles de l'image
+   * ============================================ */
+  @media (min-width: 1024px) and (max-width: 1509px) {
+    /* S'assurer que .image-showcase permet aux décoratifs d'être visibles en dehors */
+    .image-showcase {
+      position: relative;
+      overflow: visible; /* Permet aux décoratifs d'être visibles en dehors */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Position relative pour .image-container afin de référencer les décoratifs */
+    .image-showcase .image-container {
+      position: relative;
+    }
+
+    /* Coins décoratifs supprimés pour le responsive laptop */
+    .image-showcase .deco-corner-top {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    .image-showcase .deco-corner-bottom {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+  }
+
+  /* ============================================
+   * SPÉCIFICITÉS TECHNIQUES 1024px → 1600px
+   * ============================================ */
+  @media (min-width: 1024px) and (max-width: 1600px) {
+    /* 6.1. Image-container : ajouter un margin-top subtil */
+    .image-container {
+      margin-top: 20px;
+    }
+
+    /* 6.2. Deco-corner-top : ajuster la position (sauf pour 1024px-1509px déjà couvert) */
+    @media (min-width: 1510px) and (max-width: 1600px) {
+      .deco-corner-top {
+        margin-left: calc(100% - 219px); /* Position à l'extrémité de .image-container */
+      }
+    }
+  }
+
+  /* ============================================
+   * RESPONSIVE TABLETTE / MOBILE UNIFIÉ
+   * 768px → 1280px (mobile = tablette)
+   * ============================================ */
+  @media (max-width: 1280px) {
+    /* Responsive unifié : Mobile = Tablette */
+    .menu-container {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .menu-content {
+      grid-template-columns: 1fr;
+      padding: 80px 20px 30px !important;
+      padding-top: 80px !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-header {
+      left: 20px;
+      right: 20px;
+      top: 20px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+      position: relative;
+      padding: 10px 0;
+    }
+
+    /* Cacher le menu-logo sur mobile/tablette */
+    .menu-header .menu-logo,
+    .menu-logo {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      left: -9999px !important;
+    }
+
+    .menu-header .menu-logo .logo-part,
+    .menu-logo .logo-part {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    .menu-header .menu-close-button {
+      flex: 0 0 auto;
+      justify-content: flex-start;
+      font-size: 14px;
+      gap: 10px;
+    }
+
+    .menu-header .menu-close-button img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .menu-header .menu-lang-switcher {
+      flex: 0 0 auto;
+      justify-content: flex-end;
+      margin-left: auto;
+      font-size: 14px;
+      gap: 8px;
+    }
+
+    .menu-header .menu-lang-switcher img {
+      width: 10px;
+      height: 10px;
+    }
+
+    /* Menu-nav : réductions de taille */
+    .menu-nav {
+      padding: 0;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .menu-nav ul {
+      align-items: center;
+      width: 100%;
+      gap: 14px; /* Réduction de l'espacement */
+    }
+
+    .nav-item {
+      justify-content: center;
+      height: 44px; /* Réduction de hauteur */
+      max-width: 100%;
+    }
+
+    .nav-text {
+      padding-left: 0;
+      text-align: center;
+      font-size: 22px; /* Réduction de taille de police */
+      padding: 8px 16px;
+    }
+
+    .nav-line {
+      display: none;
+    }
+
+    /* UNIFORMISATION TOTALE DES NAV-BG - TOUTES LA MÊME TAILLE ET LARGEUR */
+    .nav-bg,
+    .nav-item .nav-bg,
+    .nav-item img.nav-bg,
+    .menu-nav .nav-item .nav-bg,
+    .menu-nav li .nav-item .nav-bg,
+    .menu-nav li a .nav-bg,
+    /* Sélecteurs spécifiques pour LOUNGE et A PROPOS */
+    .nav-item[href*="lounge"] .nav-bg,
+    .nav-item[href*="apropos"] .nav-bg,
+    .nav-item[href*="lounge.html"] .nav-bg,
+    .nav-item[href*="apropos.html"] .nav-bg,
+    a[href*="lounge"] .nav-bg,
+    a[href*="apropos"] .nav-bg,
+    a[href*="lounge.html"] .nav-bg,
+    a[href*="apropos.html"] .nav-bg,
+    /* Tous les autres sélecteurs possibles */
+    .menu-nav a[href*="suite"] .nav-bg,
+    .menu-nav a[href*="restaurant"] .nav-bg,
+    .menu-nav a[href*="evenementiel"] .nav-bg {
+      width: 280px !important;
+      height: 44px !important;
+      max-width: 280px !important;
+      min-width: 280px !important;
+      margin: 0 auto !important;
+      left: 50% !important;
+      transform: translateX(-50%) translateY(-50%) !important;
+      object-fit: fill !important;
+      object-position: center !important;
+    }
+
+    /* S'assurer que tous les nav-item ont la même largeur */
+    .nav-item,
+    .menu-nav .nav-item,
+    .menu-nav li .nav-item,
+    .nav-item[href*="lounge"],
+    .nav-item[href*="apropos"],
+    .menu-nav a[href*="suite"],
+    .menu-nav a[href*="restaurant"],
+    .menu-nav a[href*="evenementiel"] {
+      width: 280px !important;
+      max-width: 280px !important;
+      min-width: 280px !important;
+    }
+
+    /* Ajustement spécifique pour TOUTES les nav-items sur tablette pour que les textes soient entièrement encadrés */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      /* CHAMBRES & SUITES */
+      .nav-item[href*="page_suite"] .nav-bg,
+      .nav-item[href*="suite"] .nav-bg,
+      .menu-nav a[href*="suite"] .nav-bg {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="page_suite"],
+      .nav-item[href*="suite"],
+      .menu-nav a[href*="suite"] {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="page_suite"] .nav-text,
+      .nav-item[href*="suite"] .nav-text[data-translate="roomsSuites"] {
+        font-size: 20px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap !important;
+      }
+
+      /* LE RESTAURANT */
+      .nav-item[href*="restaurant"] .nav-bg,
+      .menu-nav a[href*="restaurant"] .nav-bg {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="restaurant"],
+      .menu-nav a[href*="restaurant"] {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="restaurant"] .nav-text,
+      .nav-item[href*="restaurant"] .nav-text[data-translate="restaurant"] {
+        font-size: 20px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap !important;
+      }
+
+      /* LE LOUNGE */
+      .nav-item[href*="lounge"] .nav-bg,
+      .menu-nav a[href*="lounge"] .nav-bg {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="lounge"],
+      .menu-nav a[href*="lounge"] {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="lounge"] .nav-text,
+      .nav-item[href*="lounge"] .nav-text[data-translate="lounge"] {
+        font-size: 20px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap !important;
+      }
+
+      /* ÉVÈNEMENTIEL */
+      .nav-item[href*="evenementiel"] .nav-bg,
+      .menu-nav a[href*="evenementiel"] .nav-bg {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="evenementiel"],
+      .menu-nav a[href*="evenementiel"] {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="evenementiel"] .nav-text,
+      .nav-item[href*="evenementiel"] .nav-text[data-translate="event"] {
+        font-size: 20px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap !important;
+      }
+
+      /* A PROPOS */
+      .nav-item[href*="apropos"] .nav-bg,
+      .menu-nav a[href*="apropos"] .nav-bg {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="apropos"],
+      .menu-nav a[href*="apropos"] {
+        width: 320px !important;
+        max-width: 320px !important;
+        min-width: 320px !important;
+      }
+
+      .nav-item[href*="apropos"] .nav-text,
+      .nav-item[href*="apropos"] .nav-text[data-translate="about"] {
+        font-size: 20px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* Image-showcase : réductions */
+    .image-showcase {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .image-container {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      aspect-ratio: 658.19 / 429;
+      margin-top: 0;
+    }
+
+    .deco-corner-top,
+    .image-showcase .deco-corner-top {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    .deco-corner-bottom,
+    .image-showcase .deco-corner-bottom {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+  }
+
+  /* ============================================
+   * OPTIMISATION TRÈS PETIT ÉCRAN < 480px
+   * Améliorations spécifiques pour petits écrans
+   * ============================================ */
+  @media (max-width: 480px) {
+    .menu-content {
+      padding-top: 100px;
+      padding-bottom: 20px;
+    }
+
+    .menu-header {
+      top: 15px;
+      left: 15px;
+      right: 15px;
+    }
+
+    .menu-header .menu-close-button {
+      font-size: 12px;
+      gap: 8px;
+    }
+
+    .menu-header .menu-close-button img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .menu-header .menu-lang-switcher {
+      font-size: 12px;
+      gap: 6px;
+    }
+
+    .menu-header .menu-lang-switcher img {
+      width: 10px;
+      height: 10px;
+    }
+
+    .nav-text {
+      font-size: 20px; /* Encore plus petit sur très petit écran */
+      padding: 6px 12px;
+    }
+
+    .nav-item {
+      height: 38px;
+      width: 260px !important;
+      max-width: 260px !important;
+    }
+
+    /* UNIFORMISATION TOTALE DES NAV-BG SUR TRÈS PETIT ÉCRAN - TOUTES LA MÊME TAILLE ET LARGEUR */
+    .nav-bg,
+    .nav-item .nav-bg,
+    .nav-item img.nav-bg,
+    .menu-nav .nav-item .nav-bg,
+    .menu-nav li .nav-item .nav-bg,
+    .menu-nav li a .nav-bg,
+    /* Sélecteurs spécifiques pour LOUNGE et A PROPOS */
+    .nav-item[href*="lounge"] .nav-bg,
+    .nav-item[href*="apropos"] .nav-bg,
+    .nav-item[href*="lounge.html"] .nav-bg,
+    .nav-item[href*="apropos.html"] .nav-bg,
+    a[href*="lounge"] .nav-bg,
+    a[href*="apropos"] .nav-bg,
+    a[href*="lounge.html"] .nav-bg,
+    a[href*="apropos.html"] .nav-bg,
+    /* Tous les autres sélecteurs possibles */
+    .menu-nav a[href*="suite"] .nav-bg,
+    .menu-nav a[href*="restaurant"] .nav-bg,
+    .menu-nav a[href*="evenementiel"] .nav-bg {
+      width: 260px !important;
+      height: 38px !important;
+      max-width: 260px !important;
+      min-width: 260px !important;
+      margin: 0 auto !important;
+      left: 50% !important;
+      transform: translateX(-50%) translateY(-50%) !important;
+      object-fit: fill !important;
+      object-position: center !important;
+    }
+
+    /* S'assurer que tous les nav-item ont la même largeur sur très petit écran */
+    .nav-item,
+    .menu-nav .nav-item,
+    .menu-nav li .nav-item,
+    .nav-item[href*="lounge"],
+    .nav-item[href*="apropos"],
+    .menu-nav a[href*="suite"],
+    .menu-nav a[href*="restaurant"],
+    .menu-nav a[href*="evenementiel"] {
+      height: 38px !important;
+      width: 260px !important;
+      max-width: 260px !important;
+      min-width: 260px !important;
+    }
+
+    .menu-nav ul {
+      gap: 12px;
+    }
+
+    .image-container {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-header {
+      left: 20px;
+      right: 20px;
+      top: 30px;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .menu-header {
+      top: 20px;
+      left: 15px;
+      right: 15px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+      position: relative;
+      padding: 0;
+    }
+
+    /* Cacher le menu-logo sur mobile */
+    .menu-header .menu-logo,
+    .menu-logo {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      left: -9999px !important;
+    }
+
+    .menu-header .menu-logo .logo-part,
+    .menu-logo .logo-part {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    .menu-header .menu-close-button {
+      flex: 0 0 auto;
+      justify-content: flex-start;
+    }
+
+    .menu-header .menu-lang-switcher {
+      flex: 0 0 auto;
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+    .menu-close-button {
+      font-size: 12px;
+      gap: 8px;
+    }
+    .menu-close-button img {
+      width: 16px;
+      height: 16px;
+    }
+    .menu-lang-switcher {
+      font-size: 12px;
+      gap: 6px;
+    }
+    .menu-lang-switcher img {
+      width: 10px;
+      height: 10px;
+    }
+    .menu-content {
+      padding-top: 100px !important;
+      padding: 100px 2.5rem 20px !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-text {
+      font-size: 24px;
+      padding-left: 0;
+      text-align: center;
+    }
+    /* UNIFORMISATION TOTALE DES NAV-BG SUR MOBILE 480px - TOUTES LA MÊME TAILLE ET LARGEUR */
+    .nav-bg,
+    .nav-item .nav-bg,
+    .nav-item img.nav-bg,
+    .menu-nav .nav-item .nav-bg,
+    .menu-nav li .nav-item .nav-bg,
+    .menu-nav li a .nav-bg,
+    /* Sélecteurs spécifiques pour LOUNGE et A PROPOS */
+    .nav-item[href*="lounge"] .nav-bg,
+    .nav-item[href*="apropos"] .nav-bg,
+    .nav-item[href*="lounge.html"] .nav-bg,
+    .nav-item[href*="apropos.html"] .nav-bg,
+    a[href*="lounge"] .nav-bg,
+    a[href*="apropos"] .nav-bg,
+    a[href*="lounge.html"] .nav-bg,
+    a[href*="apropos.html"] .nav-bg,
+    /* Tous les autres sélecteurs possibles */
+    .menu-nav a[href*="suite"] .nav-bg,
+    .menu-nav a[href*="restaurant"] .nav-bg,
+    .menu-nav a[href*="evenementiel"] .nav-bg {
+      width: 280px !important;
+      height: 40px !important;
+      max-width: 280px !important;
+      min-width: 280px !important;
+      margin: 0 auto !important;
+      left: 50% !important;
+      transform: translateX(-50%) translateY(-50%) !important;
+      object-fit: fill !important;
+      object-position: center !important;
+    }
+
+    .nav-item,
+    .menu-nav .nav-item,
+    .menu-nav li .nav-item,
+    .nav-item[href*="lounge"],
+    .nav-item[href*="apropos"],
+    .menu-nav a[href*="suite"],
+    .menu-nav a[href*="restaurant"],
+    .menu-nav a[href*="evenementiel"] {
+      height: 40px !important;
+      justify-content: center !important;
+      width: 280px !important;
+      max-width: 280px !important;
+      min-width: 280px !important;
+    }
+  }
+  </style>
+
+<!-- SCRIPT pour le menu -->
+<script src="Menu/global.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('openMenu');
+    const menuContainer = document.querySelector('.menu-container');
+    const closeButton = document.querySelector('.menu-close-button');
+
+    if (menuButton && menuContainer) {
+      menuButton.addEventListener('click', () => {
+        menuContainer.classList.remove('is-hidden');
+        menuContainer.style.pointerEvents = 'auto';
+        // Ajouter une classe au body pour indiquer que le menu est ouvert
+        document.body.classList.add('menu-overlay-open');
+      });
+    }
+
+    if (closeButton && menuContainer) {
+      closeButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        menuContainer.classList.add('is-closing');
+        // Retirer la classe du body
+        document.body.classList.remove('menu-overlay-open');
+        setTimeout(() => {
+          menuContainer.classList.remove('is-closing');
+          menuContainer.classList.add('is-hidden');
+          menuContainer.style.pointerEvents = 'none';
+        }, 300);
+      });
+    }
+  });
+</script>
+
+
+    <!-- Animation simple -->
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.98); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-fadeIn { animation: fadeIn 0.4s ease-out; }
+
+      /* Header and contact button animations */
+      .scroll-hide {
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      header.scroll-hide {
+        transform: translateY(-100%);
+      }
+
+      .hero-footer .contact-btn.scroll-hide {
+        transform: translateY(100%);
+      }
+
+      header, .hero-footer .contact-btn {
+        transition: all 0.3s ease;
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('header');
+        const contactBtn = document.querySelector('.hero-footer .contact-btn') || document.querySelector('.btn-wrapper.contact-btn');
+        let lastScroll = window.scrollY;
+
+        // Vérifie si on a scrollé plus de 100px
+        function checkScroll() {
+          const currentScroll = window.scrollY;
+
+          if (currentScroll > lastScroll && currentScroll > 100) {
+            // On scroll vers le bas
+            header.classList.add('scroll-hide');
+            contactBtn.classList.add('scroll-hide');
+          } else {
+            // On scroll vers le haut
+            header.classList.remove('scroll-hide');
+            contactBtn.classList.remove('scroll-hide');
+          }
+
+          lastScroll = currentScroll;
+        }
+
+        // Ajoute l'événement scroll avec throttling
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              checkScroll();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      });
+    </script>
+
+
+  <!-- Section ESCAPADE - Structure identique à index.html -->
+  <section id="hero">
+    <div class="hero-container">
+      <!-- Vidéo de fond : TABLE 1 (identique à index.html) -->
+      <video class="hero-bg-video" autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="auto" controls="false" controlslist="nodownload nofullscreen noremoteplayback" fetchpriority="high">
+      <source src="video/TABLE1.mp4" type="video/mp4">
+    </video>
+      <!-- Image de fallback si la vidéo ne charge pas sur Android -->
+      <img src="images/DJI_0290 1.png" alt="Événement à L'Escapade" class="hero-bg-fallback" style="display: none;" />
+
+    <!-- Overlay sombre (au-dessus de l'image mais sous le contenu) -->
+    <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+    <!-- CONTENU PRINCIPAL -->
+    <div class="relative z-10 flex flex-col items-center justify-center text-center h-full space-y-6">
+      <h1 class="text-7xl text-white font-[Big_Caslon]" data-translate="eventsHeroTitle">ÉVÈNEMENTIEL</h1>
+    </div>
+
+    <footer class="hero-footer">
+      <!--merged image - Bouton Nous contactez -->
+      <a href="#contact" class="btn-wrapper contact-btn">
+        <img src="images/568_840.svg" alt="" class="btn-bg" loading="lazy">
+        <span class="btn-text" data-translate="contactUs">Nous Contacter</span>
+      </a>
+      <!--merged image - Bouton Réserver une suite (visible uniquement sur mobile) -->
+      <a href="page_reservation1.html" class="btn-wrapper btn-reserve-space-mobile">
+        <img src="images/568_833.svg" alt="" class="btn-bg" loading="lazy">
+        <span class="btn-text" data-translate="reserveSuite">Réserver une suite</span>
+      </a>
+    </footer>
+    </div>
+  </section>
+
+
+
+   <section id="evenementiel" class="bg-white py-24 px-6 md:px-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto space-y-24">
+
+    <!-- Titre principal -->
+    <div class="text-center">
+      <div class="title-wrapper">
+        <img src="images/574_538.png" alt="Decorative border" class="title-border title-border-events">
+        <h1 class="main-title" style="margin-left: 80px;" data-translate="eventsSectionTitle">
+         ÉVÈNEMENTS À <span class="highlight "> L'ESCAPADE</span>
+        </h1>
+      </div>
+
+    </div>
+
+    <!-- Bloc 1 : image droite + texte gauche -->
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <!-- Texte -->
+      <div class="w-full md:w-1/2 text-right space-y-6">
+        <p class="font-[Futura_Md_BT] text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-[#000000]" data-translate="eventsParagraph1">
+          L'Escapade est la scène idéale pour célébrer les grands moments de la vie. Mariages au bord de l'eau,
+          anniversaires, retraites en petit comité ou grandes célébrations réunissant jusqu'à 2 000 invités :
+          chaque événement trouve ici son écrin.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="relative w-full md:w-1/2">
+        <img src="img/38.jpg" alt="Mariage au bord de l’eau"
+             class="w-full h-[400px] object-cover rounded-[70px_0px] shadow-[0_8px_30px_rgba(0,0,0,0.1)]" />
+             <img src="media/510_6.svg" alt="Decorative element" class="deco-element deco-1 absolute -top-10 -right-10 w-20 h-24" />
+          <img src="media/510_8.svg" alt="Decorative element" class="deco-element deco-2 absolute -bottom-10 -left-10 w-20 h-20" />
+      </div>
+    </div>
+
+    <!-- Bloc 2 : image gauche + texte droite -->
+    <div class="flex flex-col md:flex-row-reverse items-center gap-12 mt-12">
+      <!-- Texte -->
+      <div class="w-full md:w-1/2 space-y-6">
+        <div class="font-[Futura_Md_BT] text-[18px] md:text-[22px] leading-[28px] md:leading-[30px] text-[#000000]">
+          <p data-translate="eventsSpacesTitle" class="text-[20px] md:text-[24px] leading-[30px] md:leading-[34px]">Nos espaces s'adaptent à toutes vos envies :</p>
+          <ul class="list-none space-y-2 mt-4">
+            <li data-translate="eventsSpace1">● une plage naturelle face à la lagune pour des cérémonies inoubliables,</li>
+            <li data-translate="eventsSpace2">● une piscine extérieure pour des soirées animées,</li>
+            <li data-translate="eventsSpace3">● un lounge et un restaurant raffinés pour des réceptions élégantes,</li>
+            <li data-translate="eventsSpace4">● un salon dédié aux séminaires, team building et rencontres professionnelles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="relative w-full md:w-1/2">
+        <img src="img/39.jpg" alt="Séminaire et événements professionnels"
+             class="w-full h-[450px] object-cover rounded-[0px_70px] shadow-[0_8px_30px_rgba(0,0,0,0.1)]" />
+              <img src="media/314_45.svg" alt="Decorative element" class="deco-element deco-1 absolute -top-10 -left-10 w-20 h-24" />
+              <img src="media/314_41.svg" alt="Decorative element" class="deco-element deco-2 absolute -bottom-10 -right-10 w-20 h-20" />
+      </div>
+    </div>
+
+
+
+
+  </section>
+
+<div class="relative w-full py-24  overflow-hidden h-[750px] events-overlay-container">
+      <!-- Image de fond -->
+      <div class="absolute inset-0">
+        <img src="images/DJI_0290 1.png" alt="Événement à L'Escapade"
+             class="w-full h-full object-cover" />
+
+      </div>
+
+      <!-- Overlay sombre pour améliorer la lisibilité au responsive -->
+      <div class="events-overlay-dark"></div>
+
+     <!-- Texte superposé -->
+      <div class="relative z-20 max-w-5xl mx-auto text-start px-6 events-overlay-text">
+      <p class="font-[Futura_Md_BT] text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-[#956F40]" data-translate="eventsParagraph2">
+        À L'Escapade, élégance et nature se rejoignent pour offrir un cadre où se créent les souvenirs les plus précieux
+        et où naissent les plus belles inspirations.
+      </p>
+      <p class="font-[Futura_Md_BT] text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-[#956F40] mt-6" data-translate="eventsParagraph3">
+        Profitez pleinement de votre événement, nous nous occupons du reste. De la mise en place à la décoration, en
+        passant par la restauration, l'animation et même l'hébergement des invités, notre équipe coordonne chaque détail
+        avec soin et flexibilité.
+      </p>
+      <p class="font-[Futura_Md_BT] text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-[#956F40] mt-6" data-translate="eventsParagraph4">
+        Vous pouvez choisir vos propres prestataires, ou confier l'ensemble à notre organisation pour une prestation
+        clé en main, toujours adaptée à vos envies.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Section des événements -->
+  <section class="bg-white py-20 px-6 md:px-16">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center">
+        <div class="title-wrapper">
+          <img src="images/574_538.png" alt="Decorative border" class="title-border title-border-events">
+        <h2 class="main-title" style="margin-left: 70px;" data-translate="eventsListTitle">ÉVÈNEMENTS À <span class="highlight">L'ESCAPADE</span></h2>
+        </div>
+       <p class="font-[Futura_Md_BT] font-normal text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-black mt-6" data-translate="eventsListIntro">
+          Retour en images sur nos événements récents : des rendez-vous hebdomadaires qui font vibrer la lagune.
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2" id="dynamic-events-container">
+        <!-- Les événements seront chargés dynamiquement ici depuis l'API Laravel -->
+        <!-- Contenu statique de fallback (sera remplacé par le JS) -->
+        <article class="p-6 border border-[#B78F62]/30 rounded-[40px_0] shadow-[0_8px_25px_rgba(0,0,0,0.05)] bg-white flex flex-col gap-4">
+          <div class="relative w-full h-[320px] rounded-[30px_0] overflow-hidden">
+             <img src="images/Event1.png" alt="La Boutique Éphémère" class="w-full h-full object-cover">
+          </div>
+          <div class="flex items-center justify-between text-black font-[Futura_Md_BT] font-normal text-lg uppercase tracking-[0.2em]">
+             <span class="font-normal" data-translate="eventsSunsetTitle">La Boutique Éphémère</span>
+             <span class="text-sm font-[Futura_Md_BT] font-normal text-black" data-translate="eventsSunsetSchedule">À venir</span>
+          </div>
+           <p class="font-[Futura_Md_BT] font-normal text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-black" data-translate="eventsSunsetDescription">
+             Une alliance inédite entre trois maisons de prestige qui s'unissent pour créer une expérience lifestyle inédite au cœur de L'Escapade Hotel. Du 20 décembre au 5 janvier, plongez dans un univers où la Haute Couture, la Maroquinerie d'art et la Beauté premium se rencontrent pour sublimer vos fêtes de fin d'année. La Boutique éphémère vous ouvre ses portes de 16 h à 21 h.
+          </p>
+          <div class="flex items-center justify-end text-sm font-[Futura_Md_BT] font-normal text-black">
+             <span data-translate="eventsSunsetTime">Édition du 20 décembre 2025 au 5 janvier 2026</span>
+          </div>
+        </article>
+
+        <article class="p-6 border border-[#B78F62]/30 rounded-[0_40px] shadow-[0_8px_25px_rgba(0,0,0,0.05)] bg-white flex flex-col gap-4">
+          <div class="relative w-full h-[320px] rounded-[0_30px] overflow-hidden">
+            <img src="images/imagesEvent1.JPG" alt="Brunch lagunaire" class="w-full h-full object-cover">
+          </div>
+          <div class="flex items-center justify-between text-black font-[Futura_Md_BT] font-normal text-lg uppercase tracking-[0.2em]">
+            <span class="font-normal" data-translate="eventsBrunchTitle">Pilates Sunset avec  <br> Core Fitness</span>
+            <span class="text-sm font-[Futura_Md_BT] font-normal text-black" data-translate="eventsBrunchSchedule">À venir</span>
+          </div>
+          <p class="font-[Futura_Md_BT] font-normal text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-black" data-translate="eventsBrunchDescription">
+            L'Escapade proposera une séance exclusive de Pilates Sunset en collaboration avec Core
+Fitness et le coach Baba. Une expérience bien-être au coucher du soleil, pensée pour allier
+énergie, détente et cadre inspirant.
+          </p>
+          <div class="flex items-center justify-end text-sm font-[Futura_Md_BT] font-normal text-black">
+            <span data-translate="eventsBrunchTime">Édition du 17 janvier 2026</span>
+          </div>
+        </article>
+
+        <article class="p-6 border border-[#B78F62]/30 rounded-[40px_0] shadow-[0_8px_25px_rgba(0,0,0,0.05)] bg-white flex flex-col gap-4">
+          <div class="relative w-full h-[320px] rounded-[30px_0] overflow-hidden">
+            <img src="images/EventNoel.jpg" alt="Corporate retreats" class="w-full h-full object-contain object-center">
+          </div>
+          <div class="flex items-center justify-between text-black font-[Futura_Md_BT] font-normal text-lg uppercase tracking-[0.2em]">
+            <span class="font-normal" data-translate="eventsCorporateTitle">Dîners et Déjeuner de Noël </span>
+            <span class="text-sm font-[Futura_Md_BT] font-normal text-black" data-translate="eventsCorporateSchedule">A venir</span>
+          </div>
+          <p class="font-[Futura_Md_BT] font-normal text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-black" data-translate="eventsCorporateDescription">
+            Les 24 et 25 décembre, L'Escapade invite ses hôtes à célébrer Noël autour d'un dîner à
+            l'assiette puis d'un déjeuner buffet, tous deux accompagnés d'un cocktail de bienvenue.
+            Deux moments chaleureux pour vivre la magie des fêtes dans un décor tropical.
+          </p>
+          <div class="flex items-center justify-end text-sm font-[Futura_Md_BT] font-normal text-black">
+            <span data-translate="eventsCorporateCapacity">Édition du 24 & 25 décembre 2025</span>
+          </div>
+        </article>
+
+        <article class="p-6 border border-[#B78F62]/30 rounded-[0_40px] shadow-[0_8px_25px_rgba(0,0,0,0.05)] bg-white flex flex-col gap-4">
+          <div class="relative w-full h-[320px] rounded-[0_30px] overflow-hidden">
+            <img src="images/imagesEvent2.JPG" alt="Mariages et célébrations" class="w-full h-full object-contain">
+          </div>
+          <div class="flex items-center justify-between text-black font-[Futura_Md_BT] font-normal text-lg uppercase tracking-[0.2em]">
+            <span class="font-normal" data-translate="eventsWeddingTitle">Saint-Sylvestre & <br> Brunch du Nouvel An</span>
+            <span class="text-sm font-[Futura_Md_BT] font-normal text-black" data-translate="eventsWeddingSchedule">A venir</span>
+          </div>
+          <p class="font-[Futura_Md_BT] font-normal text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-black" data-translate="eventsWeddingDescription">
+            L’Escapade propose des packs exclusifs pour un réveillon tout en élégance, comprenant
+suite, dîner et champagne. Le 1er janvier, un brunch festif au bord de la lagune marquera
+l’entrée en douceur dans la nouvelle année.
+          </p>
+          <div class="flex items-center justify-end text-sm font-[Futura_Md_BT] font-normal text-black">
+            <span data-translate="eventsWeddingCapacity">Édition du 31 décembre 2025 & 1er janvier 2026</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+      <!-- FOOTER -->
+  <section id="footer-section">
+  <footer class="site-footer text-white ">
+      <div class="container">
+        <div class="footer-top">
+          <img src="images/527e11cd0fcc42350d0710d865057dc9385bcebf.png" alt="L'ESCAPADE Logo" class="footer-logo">
+          <div class="footer-grid">
+            <div class="footer-menu">
+              <!--merged image-->
+              <div class="footer-title-wrapper">
+                <img src="images/427_66.svg" alt="" class="footer-title-bg">
+                <h3 class="footer-title">MENU</h3>
+              </div>
+              <nav>
+                <ul>
+                  <li><a href="page_suite.html" data-translate="footerMenuRooms">Chambres & Suites</a></li>
+                  <li><a href="restaurant.html" data-translate="footerMenuRestaurant">Restaurant</a></li>
+                  <li><a href="lounge.html" data-translate="footerMenuLounge">Lounge</a></li>
+                  <li><a href="page_evenementiel.html" data-translate="footerMenuEvents">Évènementiel</a></li>
+                  <li><a href="apropos.html" data-translate="footerMenuAbout">À propos</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="footer-contact-form" id="contact">
+              <!--merged image-->
+              <div class="footer-title-wrapper">
+                <img src="images/427_67.svg" alt="" class="footer-title-bg">
+                <h3 class="footer-title">CONTACT</h3>
+              </div>
+              <form id="contact-form">
+                <div class="form-group"><input type="text" name="name" placeholder="Nom" required></div>
+                <div class="form-group"><input type="text" name="first_name" placeholder="Prénom" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Adresse e-mail" required></div>
+                <div class="form-group"><input type="tel" name="phone" placeholder="Numéro de téléphone"></div>
+                <div class="form-group"><textarea name="message" placeholder="Ecrivez votre message" rows="3" required></textarea></div>
+                <button type="submit" class="btn-submit">Envoyer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer-contact-info" id="paiement">
+          <a href="tel:+2250719700000" class="contact-item" title="Payer par Wave">
+            <img src="images/WaveLogo.png" alt="Logo Wave" loading="lazy">
+            <span>+225 07 19 70 00 00</span>
+          </a>
+          <div class="separator"><img src="images/Vector.png" alt="" loading="lazy" decoding="async" data-optimized="true"></div>
+          <a href="tel:+2250797793820" class="contact-item" title="Payer par Orange Money">
+            <img src="images/logoOrange.png" alt="Logo Orange Money" loading="lazy">
+            <span>+225 07 97 79 38 20</span>
+          </a>
+          <div class="separator"><img src="images/Vector.png" alt=""></div>
+          <div class="contact-item">
+            <img src="images/427_62.svg" alt="Phone Icon">
+            <span>+225 07-16-70-00-00</span>
+          </div>
+          <div class="separator"><img src="images/Vector.png" alt=""></div>
+          <div class="contact-item">
+            <img src="images/427_56.svg" alt="Email Icon">
+            <a href="mailto:contact@escapadehotel.com">contact@escapadehotel.com</a>
+          </div>
+          <div class="separator"><img src="images/Vector.png" alt=""></div>
+          <div class="contact-item">
+            <img src="images/427_50.svg" alt="Location Icon">
+            <span>Assinie, Km 12, Côte d'Ivoire</span>
+          </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+          <a href="#">Termes & Conditions</a>
+          <span>©2025 – Tous droits réservés par l'Escapade.</span>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- Scripts GSAP pour animations smooth scroll -->
+  <script src="js/gsap-animations.js"></script>
+  <script src="js/background-loader.js" defer></script>
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Tailwind CSS - chargé en bas de page de manière asynchrone -->
+  <script src="https://cdn.tailwindcss.com" async></script>
+
+  <!-- GSAP pour animations - chargé en bas de page avec defer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+  <!-- Scripts GSAP pour animations smooth scroll -->
+  <script src="js/gsap-animations.js" defer></script>
+  <script src="js/background-loader.js" defer></script>
+
+  <!-- Script optimisé pour forcer l'autoplay des vidéos sur mobile (identique à index.html) -->
+  <script defer>
+    // Attendre que la page soit complètement chargée avant de gérer les vidéos
+    window.addEventListener('load', function() {
+      // Fonction pour forcer la lecture des vidéos critiques (hero uniquement)
+      function forceVideoPlay(video) {
+        if (!video || video.dataset.videoLoaded === 'true') return;
+
+        video.muted = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.setAttribute('x5-playsinline', '');
+
+        // Charger la vidéo seulement maintenant
+        if (video.readyState === 0) {
+          video.load();
+        }
+
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            video.dataset.videoLoaded = 'true';
+            // Cacher le fallback si la vidéo joue
+            const fallbackImg = document.querySelector('.hero-bg-fallback');
+            if (fallbackImg) {
+              fallbackImg.style.display = 'none';
+            }
+          }).catch(error => {
+            // Tentative de lecture automatique échouée, réessayer après un délai
+            setTimeout(() => {
+              video.play().catch(() => {
+                // Si la lecture échoue encore, afficher le fallback après un délai
+                setTimeout(() => {
+                  if (video.paused) {
+                    const fallbackImg = document.querySelector('.hero-bg-fallback');
+                    if (fallbackImg) {
+                      fallbackImg.style.display = 'block';
+                    }
+                  }
+                }, 2000);
+              });
+            }, 500);
+          });
+        }
+      }
+
+      // Appliquer uniquement aux vidéos critiques (hero) après un court délai - identique à index.html
+      setTimeout(function() {
+        const heroVideo = document.querySelector('#hero .hero-bg-video') || document.querySelector('#hero video');
+        if (heroVideo) {
+          forceVideoPlay(heroVideo);
+
+          // Réessayer si la vidéo est mise en pause (certains navigateurs mobiles)
+          heroVideo.addEventListener('pause', function() {
+            if (this.hasAttribute('autoplay') && !document.hidden) {
+              setTimeout(() => {
+                this.play().catch(() => {});
+              }, 100);
+            }
+          });
+
+          // Écouter les erreurs de chargement et réessayer
+          heroVideo.addEventListener('error', function() {
+            setTimeout(() => {
+              this.load();
+              this.play().catch(() => {
+                const fallbackImg = document.querySelector('.hero-bg-fallback');
+                if (fallbackImg) {
+                  fallbackImg.style.display = 'block';
+                }
+              });
+            }, 1000);
+          });
+
+          // Écouter canplay pour forcer la lecture
+          heroVideo.addEventListener('canplay', function() {
+            this.play().catch(() => {});
+          }, { once: true });
+        }
+
+        // Réessayer lors du changement de visibilité de la page (uniquement pour vidéo hero)
+        document.addEventListener('visibilitychange', function() {
+          if (!document.hidden && heroVideo && heroVideo.hasAttribute('autoplay')) {
+            forceVideoPlay(heroVideo);
+          }
+        });
+      }, 300);
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const targetParagraphs = document.querySelectorAll('#evenementiel p, .events-overlay-text p');
+
+      targetParagraphs.forEach((paragraph) => {
+        if (paragraph.dataset.sentencesFormatted === 'true') return;
+
+        const text = paragraph.textContent.trim();
+        if (!text.includes('.')) return;
+
+        const sentences = text.split('.').map((sentence) => sentence.trim()).filter(Boolean);
+        if (sentences.length <= 1) return;
+
+        const hadTrailingDot = text.endsWith('.');
+        const rebuilt = sentences
+          .map((sentence, index) => {
+            const isLast = index === sentences.length - 1;
+            const punctuation = isLast && !hadTrailingDot ? '' : '.';
+            const lineBreak = isLast ? '' : '<br>';
+            return `${sentence}${punctuation}${lineBreak}`;
+          })
+          .join('');
+
+        paragraph.innerHTML = rebuilt;
+        paragraph.dataset.sentencesFormatted = 'true';
+      });
+    });
+  </script>
+  <!-- Script pour détecter le header sur fond blanc -->
+  <script src="js/header-scroll-detection.js" defer></script>
+  <!-- Script pour le comportement scroll hide/show -->
+  <script src="js/scroll-hide-behavior.js" defer></script>
+  <!-- Script pour le menu avec toggle header/footer -->
+  <script src="js/menu-header-footer-toggle.js" defer></script>
+  <!-- Script pour charger dynamiquement les événements depuis Laravel -->
+  <script src="js/dynamic-events.js" defer></script>
+
+  <!-- Bouton de retour -->
+  <button id="back-button" class="back-button" aria-label="Retour à la page précédente" title="Retour">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>
+  </button>
+
+  <!-- Bouton scroll to top -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page" title="Haut de page">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <script src="js/navigation-tracker.js" defer></script>
+  <link rel="stylesheet" href="css/back-button.css">
+  <script src="js/back-button.js" defer></script>
+  <link rel="stylesheet" href="css/scroll-to-top.css">
+  <script src="js/scroll-to-top.js" defer></script>
+  <script src="js/contact-form.js" defer></script>
+</body>
+</html>

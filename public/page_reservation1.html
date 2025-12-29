@@ -1,0 +1,552 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escapade</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="images/568_819.png">
+  <link rel="stylesheet" href="css/style1.css">
+  <link rel="stylesheet" href="css/reservation.css">
+  <script src="js/page-loader.js" defer></script>
+</head>
+<body class=" text-white overflow-x-hidden" style="font-family: 'Futura Md BT', 'Futura', sans-serif;" data-page="reservation-step1">
+<div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="" data-translate-attr="aria-label" data-translate="loading">
+  <div class="loader-inner">
+    <span class="loader-ring" aria-hidden="true"></span>
+    <p class="loader-text" data-translate="escapadeLoader">L'ESCAPADE</p>
+  </div>
+</div>
+<section id="reservation" class="relative h-[800px] w-full overflow-hidden">
+  <!-- Image de fond -->
+  <img src="img/42.jpg" alt="Vue aérienne L’Escapade"
+       class="absolute inset-0 w-full h-full object-cover" />
+
+  <!-- Overlay sombre -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+
+
+  <!-- Barre de progression (étapes) -->
+  <div class="absolute top-0 left-0 w-full bg-white ">
+    <section id="progress-bar">
+  <header class="progress-header">
+    <div class="progress-header__container">
+      <a href="index.html" class="progress-header__logo" aria-label="Homepage">
+        <img src="images/427_501.svg" alt="L'escapade Logo">
+      </a>
+      <nav class="progress-header__nav" aria-label="Checkout Progress">
+        <ol class="progress-steps">
+          <li class="progress-step is-complete">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/Group.png" alt="Step 1 Completed">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepDate">Date</span>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+          <li class="progress-step is-active">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/324_442.svg" alt="Step 2: Current Step">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepCategory">Catégorie</span>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+          <li class="progress-step">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/324_445.svg" alt="Step 3">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepDetails">Details & confirmation</span>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+          <li class="progress-step">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/324_447.svg" alt="Step 4">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepPayment">Paiement</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+</section>
+  </div>
+
+  <section id="reservation-date" class="absolute bottom-[-40px] left-0 right-0 py-32  px-6 md:px-16 overflow-hidden md:mt-10">
+
+  <!-- Conteneur principal -->
+  <div class="max-w-xl mt-32 mx-auto bg-[#BB996B]/90 rounded-[0_70px] p-10 md:p-16 text-white shadow-lg backdrop-blur-sm text-center relative">
+
+    <!-- Image décorative en haut à gauche -->
+    <img src="images/Group234.png" alt="" class="absolute -top-12 -left-12 md:-top-16 md:-left-16 z-10 w-24 h-24 md:w-32 md:h-32">
+
+    <!-- Image décorative en bas à droite -->
+    <img src="images/Group175.png" alt="" class="absolute -bottom-12 -right-12 md:-bottom-16 md:-right-16 z-10 w-24 h-24 md:w-32 md:h-32">
+
+    <!-- Formulaire -->
+    <form class="space-y-10 flex flex-col items-center" method="POST" action="/reservations/step1">
+
+      <!-- Dates -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <!-- Arrivée -->
+        <div class="form-field-wrapper date-field flex justify-center" data-field="arrival">
+          <img src="images/305_711.png" alt="" class="field-bg date-field-bg">
+          <input type="date" id="arrival" name="check_in" class="date-input" min="" required>
+          <label for="arrival" class="field-label">
+            <span class="label-text" data-translate="arrival">Arrivée</span>
+            <span class="date-value"></span>
+          </label>
+        </div>
+        <!-- Départ -->
+        <div class="form-field-wrapper date-field flex justify-center" data-field="departure">
+          <img src="images/305_711.png" alt="" class="field-bg date-field-bg">
+          <input type="date" id="departure" name="check_out" class="date-input" min="" required>
+          <label for="departure" class="field-label">
+            <span class="label-text" data-translate="departure">Départ</span>
+            <span class="date-value"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Invités -->
+      <div class="w-full flex justify-center">
+        <div class="form-field-wrapper guest-field w-full md:w-[calc(50%-1rem)] flex justify-center">
+          <img src="images/305_711.png" alt="" class="field-bg guest-field-bg">
+          <label for="guests" class="field-label" id="guest-label">
+            <span class="label-text" data-translate="guests">Invités</span>
+            <span class="guest-value" style="display: none;">1</span>
+          </label>
+          <div class="guest-stepper">
+            <img src="images/568_943.svg" alt="minus" class="guest-minus" id="guest-minus">
+            <img src="images/568_944.svg" alt="plus" class="guest-plus" id="guest-plus">
+          </div>
+          <input type="number" id="guests" name="guests" class="guest-input" value="1" min="0" max="20" required>
+        </div>
+      </div>
+
+      <!-- Bouton -->
+      <div class="pt-6">
+        <button type="submit" class="inline-block bg-[#673800] text-white font-[Futura_Md_BT] text-[19px] px-10 py-3 rounded-[20px_0px] hover:bg-[#8c5a29] transition duration-300 text-center border-0 cursor-pointer">
+          <span data-translate="reservationNext">Suivant</span>
+        </button>
+      </div>
+      <input type="hidden" name="_token" id="csrf-token-reservation" value="">
+    </form>
+  </div>
+
+</section>
+
+</section>
+<script src="js/booking-form.js"></script>
+<style>
+  /* Styles pour le formulaire de réservation */
+  .form-field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    min-height: 50px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .form-field-wrapper.date-field {
+    cursor: pointer;
+  }
+
+  .form-field-wrapper.guest-field {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Sur mobile : centrer les éléments */
+  @media (max-width: 767px) {
+    .form-field-wrapper.date-field {
+      justify-content: center;
+    }
+
+    .form-field-wrapper.guest-field {
+      justify-content: center;
+    }
+  }
+
+  .form-field-wrapper .field-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Sur mobile : toutes les images font 50% et sont centrées */
+  .date-field .field-bg.date-field-bg {
+    width: 50%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .guest-field .field-bg.guest-field-bg {
+    width: 50%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  /* Réduction de la hauteur des images sur mobile */
+  @media (max-width: 767px) {
+    .date-field .field-bg.date-field-bg {
+      height: 55%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .guest-field .field-bg.guest-field-bg {
+      height: 55%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /* Sur desktop : les date-field reprennent 100% */
+  @media (min-width: 768px) {
+    .date-field .field-bg.date-field-bg {
+      width: 100%;
+      left: 0;
+      right: 0;
+      transform: none;
+      height: 100%;
+      top: 0;
+    }
+
+    .form-field-wrapper.date-field {
+      justify-content: space-between;
+    }
+
+    .form-field-wrapper.guest-field {
+      justify-content: flex-start;
+    }
+
+    .guest-field .field-bg.guest-field-bg {
+      left: 0;
+      transform: none;
+      height: 100%;
+      top: 0;
+    }
+  }
+
+  .field-label {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+  }
+
+  .guest-field .field-label {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .date-field .field-label {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Sur mobile : centrer les labels */
+  @media (max-width: 767px) {
+    .date-field .field-label {
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .guest-field .field-label {
+      justify-content: center;
+      margin: 0 auto;
+    }
+  }
+
+  .field-label .label-text {
+    font-size: 18px;
+    display: inline;
+  }
+
+  .field-label .date-value {
+    font-size: 16px;
+    margin-top: 0;
+    opacity: 0.9;
+    min-height: 20px;
+    display: none;
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+
+  .field-label .date-value[style*="display: inline"] {
+    display: inline !important;
+  }
+
+  .date-field .field-label .date-value {
+    position: relative;
+    top: 0;
+  }
+
+  .date-field .field-label .label-text[style*="display: none"] ~ .date-value {
+    display: inline !important;
+    font-size: 16px;
+    margin-top: 0;
+  }
+
+  .field-label .guest-value {
+    display: inline;
+    opacity: 1;
+    font-size: 18px;
+    margin-top: 0;
+    margin-left: 8px;
+  }
+
+  .field-label .label-text[style*="display: none"] + .guest-value,
+  .field-label .date-value[style*="display: inline"] {
+    display: inline !important;
+  }
+
+  .date-input,
+  .guest-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .date-input {
+    left: 0;
+    top: 0;
+  }
+
+  .guest-input {
+    left: 0;
+    width: 80%;
+  }
+
+  .guest-stepper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .guest-field .guest-stepper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-100%);
+    padding-right: 10px;
+    margin-left: 20px;
+    z-index: 3;
+  }
+
+  /* Sur mobile : centrer le stepper par rapport à l'image */
+  @media (max-width: 767px) {
+    .guest-field .guest-stepper {
+      left: 75%;
+      transform: translateX(-100%);
+      margin-left: 15px;
+    }
+  }
+
+  .guest-stepper img {
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 24px;
+    height: 24px;
+  }
+
+  .guest-stepper img:hover {
+    opacity: 0.7;
+  }
+
+  .guest-stepper img:active {
+    opacity: 0.5;
+  }
+
+  /* Réduction de la taille des images guest-minus et guest-plus sur mobile */
+  @media (max-width: 767px) {
+    .guest-stepper img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  /* Centrage et alignement des inputs sur mobile uniquement */
+  @media (max-width: 767px) {
+    /* Centrer le conteneur principal */
+    #reservation-date .max-w-xl {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Centrer le formulaire et tous ses éléments */
+    #reservation-date .max-w-xl form {
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Centrer la grille des dates */
+    #reservation-date .max-w-xl form .grid {
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Centrer les wrappers de champs de date */
+    #reservation-date .max-w-xl .form-field-wrapper.date-field {
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    /* Centrer les labels des dates */
+    #reservation-date .max-w-xl .date-field .field-label {
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Centrer le conteneur du champ invités */
+    #reservation-date .max-w-xl .w-full.flex.justify-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Centrer le champ invités */
+    #reservation-date .max-w-xl .guest-field {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Centrer le label des invités */
+    #reservation-date .max-w-xl .guest-field .field-label {
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      text-align: center;
+      flex: 1;
+    }
+
+    /* Centrer le stepper des invités */
+    #reservation-date .max-w-xl .guest-field .guest-stepper {
+      position: relative;
+      left: auto;
+      transform: none;
+      margin-left: 8px;
+      margin-right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    /* Centrer le bouton */
+    #reservation-date .max-w-xl .pt-6 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  /* Application des mêmes border-radius que reservation4.html pour mobile et tablette */
+  .bg-\[#BB996B\]\/90,
+  div[class*="bg-[#BB996B]"] {
+    border-radius: 0 140px 0 140px;
+  }
+
+  /* Tablette */
+  @media (max-width: 1024px) {
+    .bg-\[#BB996B\]\/90,
+    div[class*="bg-[#BB996B]"] {
+      border-radius: 0 100px 0 100px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .bg-\[#BB996B\]\/90,
+    div[class*="bg-[#BB996B]"] {
+      border-radius: 0 70px 0 70px;
+    }
+  }
+
+  /* Petit mobile */
+  @media (max-width: 480px) {
+    .bg-\[#BB996B\]\/90,
+    div[class*="bg-[#BB996B]"] {
+      border-radius: 0 50px 0 50px;
+    }
+  }
+</style>
+
+<!-- Bouton de retour -->
+<button id="back-button" class="back-button" aria-label="Retour à la page précédente" title="Retour">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+  </svg>
+</button>
+
+<!-- Bouton scroll to top -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page" title="Haut de page">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<script src="js/translations.js"></script>
+<script src="js/csrf-token.js" defer></script>
+<script src="js/navigation-tracker.js" defer></script>
+<link rel="stylesheet" href="css/back-button.css">
+<script src="js/back-button.js" defer></script>
+<link rel="stylesheet" href="css/scroll-to-top.css">
+<script src="js/scroll-to-top.js" defer></script>
+<link rel="stylesheet" href="css/responsive.css">
+</body>
+</html>

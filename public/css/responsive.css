@@ -1,0 +1,1395 @@
+/* -------------------------------------------------------------
+ * Global responsive enhancements for ESCAPADE front-end
+ * -------------------------------------------------------------
+ * This stylesheet layers on top of the existing page-specific CSS
+ * to provide consistent behaviour across breakpoints without
+ * altering the original desktop layouts.
+ * ------------------------------------------------------------- */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main,
+section,
+header,
+footer {
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Laptop layout preservation (1024px – 1511px) */
+@media (min-width: 1024px) and (max-width: 1511px) {
+  html {
+    font-size: 94%;
+  }
+  body {
+    letter-spacing: 0.02em;
+  }
+  .menu-container {
+    padding-block: clamp(0.5rem, 1.6vw, 1.25rem);
+    padding-inline: clamp(0.25rem, 1.2vw, 1.25rem);
+  }
+  .menu-content {
+    width: min(94vw, 1280px);
+    margin-inline: auto;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(1.4rem, 2.8vw, 2.4rem);
+    padding: clamp(3rem, 5.8vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem);
+  }
+  .menu-nav ul {
+    gap: clamp(0.85rem, 2.4vw, 1.4rem);
+  }
+  .nav-item {
+    gap: clamp(0.45rem, 1.6vw, 0.85rem);
+    padding: clamp(0.3rem, 1vw, 0.65rem);
+  }
+  .nav-text {
+    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+    padding-inline: clamp(0.2rem, 0.9vw, 0.6rem);
+  }
+  .menu-close-button,
+  .menu-lang-switcher {
+    font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+    gap: clamp(0.35rem, 1.2vw, 0.65rem);
+  }
+  .menu-lang-switcher img,
+  .menu-close-button img {
+    width: clamp(16px, 2vw, 20px);
+    height: clamp(16px, 2vw, 20px);
+  }
+  .image-showcase {
+    padding-block: clamp(0.5rem, 2vw, 1rem);
+  }
+  .image-container {
+    width: min(60vw, 520px);
+    border-radius: 70px 0 70px 0;
+  }
+  .image-container img {
+    border-radius: inherit;
+  }
+  [data-hero],
+  .welcome-section,
+  .restaurant-section,
+  .lounge-section,
+  .lounge-gallery-section,
+  .suites-section,
+  [data-page="suite-list"] .suite-grid,
+  .faq-section,
+  .site-footer .container {
+    padding-left: clamp(1.25rem, 2.5vw, 2rem);
+    padding-right: clamp(1.25rem, 2.5vw, 2rem);
+  }
+  [data-hero] h1,
+  .main-title {
+    font-size: clamp(2.3rem, 3vw, 2.8rem) !important;
+  }
+  .hero-button,
+  .btn,
+  .contact-btn,
+  .search-button {
+    transform: scale(0.94);
+    transform-origin: center;
+  }
+  .suite-grid {
+    gap: clamp(2.1rem, 3.4vw, 2.9rem) clamp(1.4rem, 2.3vw, 1.9rem);
+  }
+  .suite-image {
+    height: clamp(280px, 32vw, 340px);
+  }
+}
+
+/* Hide decorative nav line exactly at 1024px */
+@media (width: 1024px) {
+  .nav-line {
+    display: none !important;
+  }
+}
+
+/* Large desktop – keep content centred on ultra wide displays */
+@media (min-width: 1600px) {
+  body {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  header,
+  footer,
+  section,
+  .page-container,
+  .max-w-7xl,
+  .max-w-5xl {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .max-w-7xl {
+    padding-left: clamp(56px, 4vw, 120px);
+    padding-right: clamp(56px, 4vw, 120px);
+  }
+}
+
+/* -------------------------------------------------------------
+ * Shared typography scaling (Tailwind CDN classes)
+ * ------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .text-7xl {
+    font-size: clamp(2.8rem, 5vw, 3.6rem) !important;
+    line-height: 1.1 !important;
+  }
+  .text-6xl {
+    font-size: clamp(2.4rem, 4.4vw, 3.2rem) !important;
+  }
+  .text-5xl {
+    font-size: clamp(2.1rem, 3.8vw, 2.8rem) !important;
+  }
+  .text-\[40px\] {
+    font-size: clamp(2.1rem, 4.2vw, 2.6rem) !important;
+  }
+  .text-\[32px\],
+  .text-\[31px\] {
+    font-size: clamp(1.8rem, 3.6vw, 2.2rem) !important;
+  }
+  .text-\[28px\],
+  .text-\[26px\],
+  .text-\[24px\] {
+    font-size: clamp(1.45rem, 3.2vw, 1.75rem) !important;
+    line-height: 1.4 !important;
+  }
+  .text-\[22px\],
+  .text-\[21px\] {
+    font-size: clamp(1.2rem, 2.8vw, 1.4rem) !important;
+    line-height: 1.5 !important;
+  }
+  .text-\[20px\],
+  .text-\[19px\],
+  .text-lg {
+    font-size: clamp(1.05rem, 2.6vw, 1.2rem) !important;
+    line-height: 1.55 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .text-7xl {
+    font-size: clamp(2.2rem, 9vw, 2.8rem) !important;
+  }
+  .text-6xl {
+    font-size: clamp(2rem, 8vw, 2.6rem) !important;
+  }
+  .text-\[32px\],
+  .text-\[31px\] {
+    font-size: clamp(1.6rem, 7vw, 1.9rem) !important;
+  }
+  .text-\[28px\],
+  .text-\[26px\],
+  .text-\[24px\] {
+    font-size: clamp(1.35rem, 6vw, 1.55rem) !important;
+  }
+  .text-\[22px\],
+  .text-\[21px\],
+  .text-\[20px\] {
+    font-size: clamp(1.05rem, 5.5vw, 1.25rem) !important;
+  }
+  .text-\[18px\],
+  .text-base {
+    font-size: clamp(0.95rem, 5vw, 1.1rem) !important;
+  }
+}
+
+/* -------------------------------------------------------------
+ * General spacing helpers
+ * ------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+  .px-16,
+  .md\:px-16 {
+    padding-left: clamp(1.5rem, 4vw, 2.75rem) !important;
+    padding-right: clamp(1.5rem, 4vw, 2.75rem) !important;
+  }
+  .py-24,
+  .md\:py-24 {
+    padding-top: clamp(4rem, 9vw, 5.5rem) !important;
+    padding-bottom: clamp(4rem, 9vw, 5.5rem) !important;
+  }
+  .gap-16 {
+    gap: clamp(2rem, 5vw, 3rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .px-16,
+  .md\:px-16 {
+    padding-left: clamp(1.25rem, 5vw, 2rem) !important;
+    padding-right: clamp(1.25rem, 5vw, 2rem) !important;
+  }
+  .py-24,
+  .md\:py-24 {
+    padding-top: clamp(3.25rem, 8vw, 4.5rem) !important;
+    padding-bottom: clamp(3.25rem, 8vw, 4.5rem) !important;
+  }
+  .gap-12 {
+    gap: clamp(1.75rem, 5vw, 2.25rem) !important;
+  }
+  .space-y-12 > * + * {
+    margin-top: clamp(1.75rem, 5vw, 2.25rem) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .px-16,
+  .md\:px-16 {
+    padding-left: clamp(1rem, 6vw, 1.5rem) !important;
+    padding-right: clamp(1rem, 6vw, 1.5rem) !important;
+  }
+  .py-24,
+  .md\:py-24 {
+    padding-top: clamp(2.75rem, 9vw, 3.6rem) !important;
+    padding-bottom: clamp(2.75rem, 9vw, 3.6rem) !important;
+  }
+  .gap-8 {
+    gap: clamp(1.25rem, 5vw, 1.75rem) !important;
+  }
+}
+
+/* -------------------------------------------------------------
+ * Overlay menu responsiveness (shared across pages)
+ * ------------------------------------------------------------- */
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1400px) {
+  .menu-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding: clamp(6rem, 12vw, 9rem) clamp(1.5rem, 5vw, 3.5rem) clamp(2rem, 6vw, 3.5rem);
+  }
+  .menu-header {
+    position: static;
+    padding: clamp(1.5rem, 3vw, 2rem) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1rem, 4vw, 2.5rem);
+  }
+  .menu-logo {
+    display: none !important;
+  }
+  .nav-item {
+    justify-content: center;
+  }
+  .nav-text {
+    padding-left: 0;
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
+  .image-showcase {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .image-container {
+    width: min(88vw, 640px);
+    height: auto;
+    aspect-ratio: 4 / 2.4;
+  }
+  .deco-corner-top {
+    display: block;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 6;
+    width: clamp(40px, 8vw, 60px);
+    height: auto;
+  }
+  .deco-corner-bottom {
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    z-index: 6;
+    width: clamp(40px, 8vw, 60px);
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    padding: clamp(2rem, 6vw, 3.5rem) clamp(1rem, 4vw, 2rem) !important;
+    padding-top: clamp(2rem, 6vw, 3.5rem) !important;
+  }
+  /* Cacher les éléments décoratifs sur tablette et mobile */
+  .deco-corner-top,
+  .deco-corner-bottom,
+  .image-showcase .deco-corner-top,
+  .image-showcase .deco-corner-bottom {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  .menu-nav ul {
+    align-items: center;
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+  .nav-text {
+    font-size: clamp(1.3rem, 4vw, 1.7rem);
+    letter-spacing: 0.08em;
+  }
+  .menu-close-button,
+  .menu-lang-switcher {
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    gap: clamp(0.4rem, 1.5vw, 0.8rem);
+  }
+  .menu-lang-switcher img,
+  .menu-close-button img {
+    width: clamp(16px, 3.5vw, 22px);
+    height: clamp(16px, 3.5vw, 22px);
+  }
+  .image-showcase {
+    width: 100%;
+    max-width: 100%;
+    padding: clamp(0.5rem, 2vw, 1rem) 0;
+    position: relative;
+  }
+  .image-container {
+    width: min(85vw, 480px);
+    height: auto;
+    max-height: clamp(200px, 40vw, 320px);
+    aspect-ratio: 4 / 3;
+  }
+  .deco-corner-top {
+    display: block;
+    position: absolute;
+    top: clamp(-15px, -2vw, -10px);
+    right: clamp(-15px, -2vw, -10px);
+    z-index: 6;
+    width: clamp(35px, 7vw, 50px);
+    height: auto;
+  }
+  .deco-corner-bottom {
+    display: block;
+    position: absolute;
+    bottom: clamp(-15px, -2vw, -10px);
+    left: clamp(-15px, -2vw, -10px);
+    z-index: 6;
+    width: clamp(35px, 7vw, 50px);
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1rem, 5vw, 1.5rem);
+    padding: clamp(1.5rem, 8vw, 2.5rem) clamp(0.75rem, 5vw, 1.5rem) !important;
+    padding-top: clamp(1.5rem, 8vw, 2.5rem) !important;
+  }
+  .menu-nav ul {
+    gap: clamp(0.75rem, 4vw, 1.2rem);
+  }
+  .nav-text {
+    font-size: clamp(1.1rem, 5.5vw, 1.4rem);
+  }
+  .menu-close-button,
+  .menu-lang-switcher {
+    font-size: clamp(0.7rem, 3.5vw, 0.85rem);
+    gap: clamp(0.35rem, 2vw, 0.7rem);
+  }
+  .menu-lang-switcher img,
+  .menu-close-button img {
+    width: clamp(14px, 6vw, 20px);
+    height: clamp(14px, 6vw, 20px);
+  }
+  .image-showcase {
+    width: 100%;
+    max-width: 100%;
+    padding: clamp(0.25rem, 2vw, 0.75rem) 0;
+    position: relative;
+  }
+  .image-container {
+    width: min(90vw, 360px);
+    height: auto;
+    max-height: clamp(180px, 50vw, 280px);
+    aspect-ratio: 4 / 3;
+    border-radius: 50px 0 50px 0;
+  }
+  .deco-corner-top {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  .deco-corner-bottom {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Réduction supplémentaire du padding-top pour très petits téléphones */
+@media (max-width: 480px) {
+  .menu-content {
+    padding-top: clamp(1rem, 6vw, 2rem) !important;
+    padding: clamp(1rem, 6vw, 2rem) clamp(0.75rem, 5vw, 1.5rem) !important;
+  }
+  .deco-corner-top,
+  .deco-corner-bottom {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Cacher le header et hero-footer quand le menu overlay est ouvert sur mobile/tablette */
+@media (max-width: 1024px) {
+  body.menu-overlay-open .site-header,
+  body.menu-overlay-open .hero-header,
+  body.menu-overlay-open .site-header__inner,
+  body.menu-overlay-open .hero-footer,
+  body.menu-overlay-open .contact-btn,
+  body.menu-overlay-open .btn-reserve-space-mobile {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* -------------------------------------------------------------
+ * Hero sections with background imagery
+ * ------------------------------------------------------------- */
+
+[data-hero] {
+  min-height: min(90vh, 820px);
+  display: grid;
+  place-items: center;
+  padding: clamp(8rem, 17vw, 12rem) clamp(1.5rem, 4vw, 3rem) clamp(4rem, 10vw, 6rem);
+  text-align: center;
+}
+
+[data-hero] h1 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+@media (max-width: 992px) {
+  [data-hero] {
+    padding-top: clamp(7rem, 20vw, 9rem);
+    padding-bottom: clamp(3.5rem, 12vw, 5rem);
+  }
+  [data-hero] h1 {
+    font-size: clamp(1.4rem, 5.5vw, 2rem) !important;
+    letter-spacing: 0.14em;
+  }
+  
+  /* Augmentation spécifique pour les h1 dans les divs hero avec classes spécifiques */
+  .relative.z-10.flex.flex-col.items-center.justify-center.text-center.h-full.space-y-6 h1,
+  [data-hero] .relative.z-10 h1,
+  [data-hero] .flex.flex-col.items-center.justify-center h1 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
+  }
+  
+  /* Réduction spécifique pour le h1 hero de la page restaurant */
+  [data-page="restaurant"] [data-hero] h1,
+  [data-hero="restaurant"] h1 {
+    font-size: clamp(1.3rem, 5.2vw, 1.9rem) !important;
+  }
+  
+  /* Augmentation pour restaurant dans les divs spécifiques */
+  [data-page="restaurant"] .relative.z-10.flex.flex-col.items-center.justify-center.text-center.h-full.space-y-6 h1 {
+    font-size: clamp(1.4rem, 5.8vw, 2.1rem) !important;
+  }
+  #contactFab {
+    right: clamp(1.25rem, 5vw, 2rem);
+    bottom: clamp(1.25rem, 5vw, 2rem);
+  }
+  #contactFab .contact-btn {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 576px) {
+  [data-hero] {
+    padding-top: clamp(6.5rem, 22vw, 7.5rem);
+    padding-bottom: clamp(3rem, 14vw, 4rem);
+  }
+  [data-hero] h1 {
+    font-size: clamp(1.2rem, 5.5vw, 1.8rem) !important;
+    letter-spacing: 0.12em;
+  }
+  
+  /* Augmentation spécifique pour les h1 dans les divs hero avec classes spécifiques */
+  .relative.z-10.flex.flex-col.items-center.justify-center.text-center.h-full.space-y-6 h1,
+  [data-hero] .relative.z-10 h1,
+  [data-hero] .flex.flex-col.items-center.justify-center h1 {
+    font-size: clamp(1.3rem, 6vw, 2rem) !important;
+  }
+  
+  /* Réduction spécifique pour le h1 hero de la page restaurant */
+  [data-page="restaurant"] [data-hero] h1,
+  [data-hero="restaurant"] h1 {
+    font-size: clamp(1.15rem, 5.2vw, 1.7rem) !important;
+  }
+  
+  /* Augmentation pour restaurant dans les divs spécifiques */
+  [data-page="restaurant"] .relative.z-10.flex.flex-col.items-center.justify-center.text-center.h-full.space-y-6 h1 {
+    font-size: clamp(1.25rem, 5.8vw, 1.9rem) !important;
+  }
+  [data-hero] .btn-wrapper,
+  [data-hero] .hero-button {
+    transform: scale(0.92);
+  }
+  #contactFab {
+    right: clamp(0.75rem, 5vw, 1.1rem);
+    bottom: clamp(0.75rem, 5vw, 1.1rem);
+  }
+}
+
+/* -------------------------------------------------------------
+ * Page specific adjustments (restaurant, lounge, suites…)
+ * ------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  [data-page="restaurant"] .max-w-7xl,
+  [data-page="lounge"] .max-w-7xl {
+    padding-inline: clamp(1.5rem, 5vw, 2.25rem);
+  }
+  [data-page="restaurant"] .text-right,
+  [data-page="lounge"] .text-right {
+    text-align: left !important;
+  }
+  [data-page="restaurant"] .flex.flex-col.md\:flex-row,
+  [data-page="lounge"] .flex.flex-col.md\:flex-row,
+  [data-page="restaurant"] .flex.flex-col.md\:flex-row-reverse,
+  [data-page="lounge"] .flex.flex-col.md\:flex-row-reverse {
+    gap: clamp(1.5rem, 5vw, 2.5rem);
+  }
+  [data-page="restaurant"] img.rounded-\[70px_0\],
+  [data-page="lounge"] img.rounded-\[70px_0\],
+  [data-page="restaurant"] img.rounded-\[0_70px\],
+  [data-page="lounge"] img.rounded-\[0_70px\] {
+    height: auto;
+    max-height: 420px;
+  }
+  [data-page="restaurant"] video,
+  [data-page="lounge"] video {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 576px) {
+  [data-page="restaurant"] .deco-element,
+  [data-page="lounge"] .deco-element {
+    display: none !important;
+  }
+  [data-page="restaurant"] .max-w-7xl > div,
+  [data-page="lounge"] .max-w-7xl > div {
+    gap: clamp(1.25rem, 6vw, 1.75rem);
+  }
+  [data-page="restaurant"] .mt-4,
+  [data-page="lounge"] .mt-4 {
+    margin-top: clamp(0.75rem, 5vw, 1.25rem) !important;
+  }
+}
+
+/* Suites listing */
+@media (max-width: 1200px) {
+  [data-page="suite-list"] .suite-grid,
+  [data-page="reservation"] .suite-grid {
+    gap: clamp(2.5rem, 6vw, 4rem) clamp(1.75rem, 4vw, 2.5rem);
+  }
+  [data-page="suite-list"] .suite-image,
+  [data-page="reservation"] .suite-image {
+    height: clamp(280px, 45vw, 360px);
+  }
+}
+
+@media (max-width: 768px) {
+  [data-page="suite-list"] .suite-grid,
+  [data-page="reservation"] .suite-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 7vw, 3rem);
+  }
+  [data-page="suite-list"] .suite-header,
+  [data-page="suite-list"] .suite-details,
+  [data-page="suite-list"] .suite-footer,
+  [data-page="reservation"] .suite-header,
+  [data-page="reservation"] .suite-details,
+  [data-page="reservation"] .suite-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.5rem, 4vw, 1rem);
+  }
+  [data-page="suite-list"] .suite-price,
+  [data-page="reservation"] .suite-price {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 576px) {
+  [data-page="suite-list"] .suite-image,
+  [data-page="reservation"] .suite-image {
+    height: clamp(220px, 60vw, 280px);
+    border-radius: 60px 0 60px 0;
+  }
+}
+
+/* FAQ alignment */
+.faq-section .faq-toggle {
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .faq-section .faq-toggle {
+    gap: clamp(0.75rem, 4vw, 1rem);
+  }
+  .faq-section .faq-toggle span {
+    flex: 1 1 auto;
+  }
+  .faq-section .faq-icon {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-section .faq-toggle {
+    padding-inline: clamp(1rem, 6vw, 1.25rem);
+  }
+  .faq-section .faq-toggle span {
+    font-size: clamp(0.95rem, 4.8vw, 1.05rem) !important;
+  }
+  .faq-section .faq-icon {
+    width: clamp(22px, 8vw, 28px) !important;
+    height: clamp(22px, 8vw, 28px) !important;
+  }
+}
+
+/* Reservation progression */
+@media (max-width: 992px) {
+  [data-page^="reservation"] .progress-header__container {
+    padding: clamp(0.75rem, 4vw, 1.25rem) clamp(1rem, 4vw, 2.5rem);
+  }
+  [data-page^="reservation"] .progress-steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  [data-page^="reservation"] .progress-step__label {
+    font-size: clamp(0.7rem, 2.4vw, 0.8rem);
+  }
+}
+
+@media (max-width: 576px) {
+  [data-page^="reservation"] .progress-header__container {
+    flex-direction: column;
+    gap: clamp(0.75rem, 5vw, 1.25rem);
+  }
+  [data-page^="reservation"] .progress-steps {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  [data-page^="reservation"] .progress-arrow__icon {
+    width: clamp(26px, 12vw, 32px);
+  }
+}
+
+/* Reservation modals / cards */
+@media (max-width: 768px) {
+  [data-page^="reservation"] .max-w-xl,
+  [data-page^="reservation"] .max-w-2xl,
+  [data-page^="reservation"] .max-w-3xl {
+    margin-inline: clamp(1rem, 6vw, 2rem);
+    padding: clamp(1.75rem, 6vw, 2.25rem) clamp(1.5rem, 5vw, 2rem);
+  }
+}
+
+@media (max-width: 576px) {
+  [data-page^="reservation"] .max-w-xl,
+  [data-page^="reservation"] .max-w-2xl,
+  [data-page^="reservation"] .max-w-3xl {
+    margin-inline: clamp(0.75rem, 7vw, 1.25rem);
+    padding: clamp(1.5rem, 7vw, 1.85rem) clamp(1.25rem, 6vw, 1.6rem);
+    border-radius: 36px 0 36px 0;
+  }
+}
+
+/* Footer refinements */
+@media (max-width: 992px) {
+  .site-footer .footer-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2rem, 6vw, 3rem);
+    padding: 0 !important;
+  }
+  .site-footer .footer-menu,
+  .site-footer .footer-contact-form {
+    text-align: center;
+  }
+  .footer-contact-form form {
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .site-footer .footer-logo {
+    width: clamp(160px, 50vw, 220px);
+  }
+  .site-footer .footer-bottom {
+    flex-direction: column;
+    gap: clamp(0.75rem, 5vw, 1rem);
+  }
+  .site-footer .contact-item {
+    flex-direction: column;
+  }
+}
+
+/* Mobile first-view adjustments */
+@media (max-width: 576px) {
+  .hero-main,
+  .welcome-section,
+  .restaurant-section,
+  .lounge-section,
+  .lounge-gallery-section,
+  .suites-section,
+  [data-page="suite-list"] .suite-grid,
+  .faq-section,
+  .site-footer .container {
+    padding-top: clamp(0.5rem, 4vw, 1.25rem) !important;
+  }
+  .hero-main {
+    min-height: auto;
+    padding-top: clamp(0.5rem, 4vw, 1rem);
+  }
+  [data-hero] {
+    padding-top: clamp(5rem, 18vw, 6.5rem);
+  }
+  [data-hero] .btn-wrapper,
+  .hero-button,
+  .contact-btn {
+    transform: scale(0.9);
+  }
+}
+
+/* -------------------------------------------------------------
+ * Augmentation des tailles de texte au responsive mobile
+ * ------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  /* Augmentation générale des tailles de texte */
+  body {
+    font-size: 18px !important;
+  }
+  
+  /* Titres - Réduction légère pour mobile */
+  h1, .h1, .main-title {
+    font-size: clamp(1rem, 4vw, 1.5rem) !important;
+  }
+  
+  /* Augmentation spécifique pour les h1 dans les divs hero avec classes spécifiques */
+  .relative.z-10.flex.flex-col.items-center.justify-center.text-center.h-full.space-y-6 h1,
+  [data-hero] .relative.z-10 h1,
+  [data-hero] .flex.flex-col.items-center.justify-center h1 {
+    font-size: clamp(1.4rem, 5.8vw, 2.1rem) !important;
+  }
+  
+  /* Réduction spécifique pour les h1 de la page restaurant */
+  [data-page="restaurant"] h1,
+  [data-page="restaurant"] .main-title,
+  #restaurant h1,
+  #restaurant .main-title {
+    font-size: clamp(0.95rem, 3.8vw, 1.4rem) !important;
+  }
+  
+  /* Augmentation pour restaurant dans les divs hero spécifiques */
+  [data-page="restaurant"] .relative.z-10.flex.flex-col.items-center.justify-center.text-center.h-full.space-y-6 h1 {
+    font-size: clamp(1.35rem, 5.5vw, 2rem) !important;
+  }
+  
+  h2, .h2, .suite-title {
+    font-size: clamp(1.2rem, 5vw, 1.65rem) !important;
+  }
+  
+  /* Réduction spécifique pour les h2 encadrés par title-border */
+  h2.main-title,
+  .main-title h2,
+  .title-wrapper h2.main-title {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem) !important;
+  }
+  
+  /* Réduction spécifique pour les h1 dans les decorative borders au responsive téléphone */
+  .title-wrapper .main-title,
+  .title-wrapper h1.main-title,
+  .title-wrapper h2.main-title,
+  .title-border-flipped-wrapper .main-title,
+  .title-border-flipped-wrapper h1.main-title,
+  .title-border-flipped-wrapper h2.main-title,
+  #chef .title-border-flipped-wrapper .main-title,
+  #chef .title-border-flipped-wrapper h1.main-title,
+  #chef .title-border-flipped-wrapper h2.main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper h1.main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper h2.main-title,
+  /* Titre GALERIE dans la section lounge - Réduit pour correspondre à la page lounge.html */
+  #plats .title-wrapper .main-title,
+  #plats .title-wrapper h1.main-title,
+  .title-border-lounge-gallery ~ .main-title,
+  .title-border-lounge-gallery + .main-title,
+  #plats .title-border-lounge-gallery + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page lounge.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+  
+  /* Titre NOS PLATS dans la section restaurant - Réduit pour correspondre à la page restaurant.html */
+  .title-border-restaurant-dishes ~ .main-title,
+  .title-border-restaurant-dishes + .main-title,
+  #restaurant .title-border-restaurant-dishes + .main-title,
+  [data-page="restaurant"] .title-border-restaurant-dishes + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page restaurant.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+  
+  h3, .h3 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
+  }
+  
+  /* Paragraphes et texte */
+  p, .text-base, .font-\[Futura_Md_BT\] {
+    font-size: clamp(18px, 5vw, 20px) !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Textes spécifiques */
+  .suite-price, .amenity-label, .details-link {
+    font-size: clamp(15px, 3.5vw, 17px) !important;
+  }
+  
+  .subtitle, .hero-text {
+    font-size: clamp(18px, 5vw, 20px) !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Boutons */
+  .btn, .btn-primary, .btn-text {
+    font-size: clamp(15px, 3.5vw, 17px) !important;
+    padding: clamp(10px, 2.5vw, 12px) clamp(16px, 4vw, 20px) !important;
+  }
+  
+  /* Navigation et liens */
+  .nav-text, .menu-nav .nav-text {
+    font-size: clamp(18px, 4.5vw, 22px) !important;
+  }
+  
+  /* Section titles */
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+  }
+  
+  /* Footer */
+  .site-footer p, .site-footer a, .site-footer span {
+    font-size: clamp(14px, 3.5vw, 16px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Encore plus grand sur très petits écrans */
+  body {
+    font-size: 17px !important;
+  }
+  
+  /* Titres - Réduction légère pour très petits écrans */
+  h1, .h1, .main-title {
+    font-size: clamp(0.85rem, 3.8vw, 1.25rem) !important;
+  }
+  
+  /* Augmentation spécifique pour les h1 dans les divs hero avec classes spécifiques */
+  .relative.z-10.flex.flex-col.items-center.justify-center.text-center.h-full.space-y-6 h1,
+  [data-hero] .relative.z-10 h1,
+  [data-hero] .flex.flex-col.items-center.justify-center h1 {
+    font-size: clamp(1.3rem, 6vw, 2rem) !important;
+  }
+  
+  /* Réduction spécifique pour les h1 de la page restaurant */
+  [data-page="restaurant"] h1,
+  [data-page="restaurant"] .main-title,
+  #restaurant h1,
+  #restaurant .main-title {
+    font-size: clamp(0.8rem, 3.5vw, 1.15rem) !important;
+  }
+  
+  /* Augmentation pour restaurant dans les divs hero spécifiques */
+  [data-page="restaurant"] .relative.z-10.flex.flex-col.items-center.justify-center.text-center.h-full.space-y-6 h1 {
+    font-size: clamp(1.25rem, 5.8vw, 1.9rem) !important;
+  }
+  
+  h2, .h2, .suite-title {
+    font-size: clamp(1.1rem, 6vw, 1.5rem) !important;
+  }
+  
+  /* Réduction spécifique pour les h2 encadrés par title-border */
+  h2.main-title,
+  .main-title h2,
+  .title-wrapper h2.main-title {
+    font-size: clamp(0.95rem, 4vw, 1.3rem) !important;
+  }
+  
+  /* Réduction spécifique pour les h1 dans les decorative borders au responsive téléphone (480px) */
+  .title-wrapper .main-title,
+  .title-wrapper h1.main-title,
+  .title-wrapper h2.main-title,
+  .title-border-flipped-wrapper .main-title,
+  .title-border-flipped-wrapper h1.main-title,
+  .title-border-flipped-wrapper h2.main-title,
+  #chef .title-border-flipped-wrapper .main-title,
+  #chef .title-border-flipped-wrapper h1.main-title,
+  #chef .title-border-flipped-wrapper h2.main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper h1.main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper h2.main-title,
+  /* Titre GALERIE dans la section lounge - Réduit pour correspondre à la page lounge.html */
+  #plats .title-wrapper .main-title,
+  #plats .title-wrapper h1.main-title,
+  .title-border-lounge-gallery ~ .main-title,
+  .title-border-lounge-gallery + .main-title,
+  #plats .title-border-lounge-gallery + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page lounge.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+  
+  /* Titre NOS PLATS dans la section restaurant - Réduit pour correspondre à la page restaurant.html */
+  .title-border-restaurant-dishes ~ .main-title,
+  .title-border-restaurant-dishes + .main-title,
+  #restaurant .title-border-restaurant-dishes + .main-title,
+  [data-page="restaurant"] .title-border-restaurant-dishes + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page restaurant.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+  
+  p, .text-base, .font-\[Futura_Md_BT\] {
+    font-size: clamp(17px, 5.5vw, 19px) !important;
+  }
+  
+  .suite-price, .amenity-label, .details-link {
+    font-size: clamp(14px, 4vw, 16px) !important;
+  }
+  
+  .btn, .btn-primary, .btn-text {
+    font-size: clamp(14px, 4vw, 16px) !important;
+  }
+  
+  .nav-text, .menu-nav .nav-text {
+    font-size: clamp(16px, 5vw, 20px) !important;
+  }
+}
+
+/* -------------------------------------------------------------
+ * Vidéos - Lecture automatique en boucle au responsive mobile
+ * Suppression complète des contrôles et bouton play
+ * ------------------------------------------------------------- */
+
+/* Cacher TOUS les contrôles vidéo au responsive mobile */
+@media (max-width: 768px) {
+  /* Supprimer tous les contrôles natifs */
+  video,
+  video::-webkit-media-controls,
+  video::-webkit-media-controls-enclosure,
+  video::-webkit-media-controls-panel,
+  video::-webkit-media-controls-play-button,
+  video::-webkit-media-controls-start-playback-button,
+  video::-webkit-media-controls-overlay-play-button,
+  video::-webkit-media-controls-timeline,
+  video::-webkit-media-controls-current-time-display,
+  video::-webkit-media-controls-time-remaining-display,
+  video::-webkit-media-controls-mute-button,
+  video::-webkit-media-controls-volume-slider,
+  video::-webkit-media-controls-fullscreen-button {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+  }
+
+  /* Forcer la lecture automatique et masquer les contrôles */
+  video {
+    controls: none !important;
+    pointer-events: none !important;
+  }
+
+  video[controls],
+  video[controls="true"] {
+    controls: none !important;
+  }
+
+  /* Cacher spécifiquement le bouton play au centre */
+  video::before,
+  video::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Empêcher l'affichage des contrôles au touch */
+  video:active,
+  video:focus {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Encore plus strict sur très petits écrans */
+  video {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    controls: none !important;
+    pointer-events: none !important;
+  }
+
+  /* Cacher tous les overlays et boutons */
+  video::-webkit-media-controls-overlay-enclosure,
+  video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+}
+
+/* -------------------------------------------------------------
+ * Augmentation des paragraphes avec classes Tailwind au responsive mobile
+ * ------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  /* Augmenter les paragraphes avec classes Tailwind text-[18px] */
+  p[class*="text-[18px]"] {
+    font-size: clamp(19px, 5.5vw, 21px) !important;
+  }
+
+  /* Augmenter les paragraphes avec classes Tailwind text-[22px] */
+  p[class*="text-[22px]"] {
+    font-size: clamp(20px, 6vw, 23px) !important;
+  }
+
+  /* Augmenter les paragraphes avec classes Tailwind text-[19px] */
+  p[class*="text-[19px]"] {
+    font-size: clamp(18px, 5.5vw, 20px) !important;
+  }
+
+  /* Augmenter les paragraphes avec classes Tailwind text-[20px] */
+  p[class*="text-[20px]"] {
+    font-size: clamp(19px, 5.5vw, 21px) !important;
+  }
+  
+  /* Harmoniser tous les textes avec font-[Futura_Md_BT] text-[18px] md:text-[22px] sur index.html */
+  /* Appliquer la même taille que les paragraphes p avec cette classe */
+  .restaurant-text p,
+  .lounge-text p,
+  .lounge-gallery-text p,
+  p[class*="text-[18px]"][class*="md:text-[22px]"] {
+    font-size: clamp(19px, 5.5vw, 21px) !important;
+    line-height: clamp(28px, 7vw, 30px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Encore plus grand sur très petits écrans */
+  p[class*="text-[18px]"] {
+    font-size: clamp(18px, 6vw, 20px) !important;
+  }
+
+  p[class*="text-[22px]"] {
+    font-size: clamp(19px, 6.5vw, 22px) !important;
+  }
+
+  p[class*="text-[19px]"] {
+    font-size: clamp(17px, 6vw, 19px) !important;
+  }
+
+  p[class*="text-[20px]"] {
+    font-size: clamp(18px, 6vw, 20px) !important;
+  }
+  
+  /* Harmoniser tous les textes avec font-[Futura_Md_BT] text-[18px] md:text-[22px] sur index.html */
+  /* Appliquer la même taille que les paragraphes p avec cette classe */
+  .restaurant-text p,
+  .lounge-text p,
+  .lounge-gallery-text p,
+  p[class*="text-[18px]"][class*="md:text-[22px]"] {
+    font-size: clamp(18px, 6vw, 20px) !important;
+    line-height: clamp(28px, 7.5vw, 30px) !important;
+  }
+}
+
+/* -------------------------------------------------------------
+ * Réduction des boutons avec couleur #B78F62 au responsive
+ * ------------------------------------------------------------- */
+@media (max-width: 992px) {
+  /* Réduire les boutons avec bg-[#B78F62] sur tablette */
+  a[class*="bg-[#B78F62]"],
+  button[class*="bg-[#B78F62]"],
+  .btn-reserve-main,
+  a.bg-\[#B78F62\] {
+    font-size: clamp(15px, 3.5vw, 17px) !important;
+    padding: clamp(8px, 2vw, 10px) clamp(20px, 5vw, 24px) !important;
+    transform: scale(0.92);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Réduire encore plus sur mobile */
+  a[class*="bg-[#B78F62]"],
+  button[class*="bg-[#B78F62]"],
+  .btn-reserve-main,
+  a.bg-\[#B78F62\] {
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    padding: clamp(7px, 2.2vw, 9px) clamp(18px, 4.5vw, 22px) !important;
+    transform: scale(0.88);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Réduction maximale sur très petits écrans */
+  a[class*="bg-[#B78F62]"],
+  button[class*="bg-[#B78F62]"],
+  .btn-reserve-main,
+  a.bg-\[#B78F62\] {
+    font-size: clamp(13px, 4vw, 15px) !important;
+    padding: clamp(6px, 2.5vw, 8px) clamp(16px, 4vw, 20px) !important;
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+}
+
+/* -------------------------------------------------------------
+ * Taille uniforme pour toutes les title-border au responsive tablette
+ * ------------------------------------------------------------- */
+@media (max-width: 992px) {
+  /* Taille uniforme pour TOUTES les title-border sur tablette */
+  .title-border,
+  .title-border-restaurant,
+  .title-border-restaurant-dishes,
+  .title-border-lounge,
+  .title-border-lounge-gallery,
+  .title-border-lounge-drinks,
+  .title-border-events,
+  .title-border-flipped {
+    max-width: 514px !important; /* Taille uniforme pour toutes les decorative borders */
+    height: 57px !important; /* Taille uniforme pour toutes les decorative borders */
+  }
+  
+  /* Ajustements pour les title-border-flipped dans les sections spécifiques */
+  #chef .title-border-flipped-wrapper .title-border-flipped,
+  #lounge .title-wrapper.title-border-flipped-wrapper .title-border-flipped {
+    max-width: 514px !important; /* Taille uniforme pour toutes les decorative borders */
+    height: 57px !important; /* Taille uniforme pour toutes les decorative borders */
+  }
+  
+  /* Taille uniforme pour TOUS les h1/h2 dans les decorative borders sur tablette */
+  /* Taille uniforme pour les main-title dans les decorative borders pour tablette UNIQUEMENT (pas téléphone) */
+  @media (min-width: 768px) {
+    .title-wrapper .main-title,
+    .title-wrapper h1.main-title,
+    .title-wrapper h2.main-title,
+    .title-border-flipped-wrapper .main-title,
+    .title-border-flipped-wrapper h1.main-title,
+    .title-border-flipped-wrapper h2.main-title,
+    #chef .title-border-flipped-wrapper .main-title,
+    #chef .title-border-flipped-wrapper h1.main-title,
+    #chef .title-border-flipped-wrapper h2.main-title,
+    #lounge .title-wrapper.title-border-flipped-wrapper .main-title,
+    #lounge .title-wrapper.title-border-flipped-wrapper h1.main-title,
+    #lounge .title-wrapper.title-border-flipped-wrapper h2.main-title {
+      font-size: 32px !important; /* Taille uniforme de 32px pour toutes les decorative borders sur tablette */
+      line-height: 1.2 !important;
+      padding: 0 16px !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  /* Augmenter encore plus sur mobile */
+  .title-border {
+    max-width: 320px !important; /* Augmenté de 280px à 320px */
+    height: 28px !important; /* Augmenté de 25px à 28px */
+  }
+  
+  .title-border-restaurant {
+    height: 36px !important; /* Augmenté de 32px à 36px */
+  }
+  
+  .title-border-restaurant-dishes {
+    height: 26px !important; /* Augmenté de 23px à 26px */
+  }
+  
+  .title-border-lounge {
+    height: 33px !important; /* Augmenté de 29px à 33px */
+  }
+  
+  .title-border-lounge-gallery {
+    height: 25px !important; /* Augmenté de 22px à 25px - correspond à la page lounge.html */
+  }
+  
+  .title-border-restaurant-dishes {
+    height: 26px !important; /* Augmenté de 23px à 26px - correspond à la page restaurant.html */
+  }
+  
+  .title-border-lounge-drinks {
+    height: 35px !important; /* Augmenté de 31px à 35px */
+  }
+  
+  .title-border-events {
+    height: 33px !important; /* Augmenté de 29px à 33px */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Augmentation maximale sur très petits écrans */
+  .title-border {
+    max-width: 340px !important; /* Augmenté de 300px à 340px */
+    height: 30px !important; /* Augmenté de 27px à 30px */
+  }
+  
+  .title-border-restaurant {
+    height: 38px !important; /* Augmenté de 34px à 38px */
+  }
+  
+  .title-border-restaurant-dishes {
+    height: 28px !important; /* Augmenté de 25px à 28px */
+  }
+  
+  .title-border-lounge {
+    height: 35px !important; /* Augmenté de 31px à 35px */
+  }
+  
+  .title-border-lounge-gallery {
+    height: 27px !important; /* Augmenté de 24px à 27px - correspond à la page lounge.html */
+  }
+  
+  .title-border-restaurant-dishes {
+    height: 28px !important; /* Augmenté de 25px à 28px - correspond à la page restaurant.html */
+  }
+  
+  .title-border-lounge-drinks {
+    height: 37px !important; /* Augmenté de 33px à 37px */
+  }
+  
+  .title-border-events {
+    height: 35px !important; /* Augmenté de 31px à 35px */
+  }
+}
+
+/* -------------------------------------------------------------
+ * Empêcher le retour à la ligne pour le titre "NOTRE CHEF & SES SPÉCIALITÉS" au responsive téléphone
+ * ------------------------------------------------------------- */
+@media (max-width: 576px) {
+  #chef .title-border-flipped-wrapper .main-title,
+  #chef .title-border-flipped-wrapper h1.main-title,
+  #chef h1.main-title[data-translate="restaurantChefTitle"] {
+    white-space: nowrap !important;
+    font-size: 16px !important; /* Légèrement réduit pour tenir sur une ligne */
+    line-height: 1.1 !important;
+    padding: 0 6px !important;
+    letter-spacing: -0.01em !important; /* Réduire légèrement l'espacement des lettres */
+  }
+}
+
+@media (max-width: 480px) {
+  #chef .title-border-flipped-wrapper .main-title,
+  #chef .title-border-flipped-wrapper h1.main-title,
+  #chef h1.main-title[data-translate="restaurantChefTitle"] {
+    white-space: nowrap !important;
+    font-size: 15px !important; /* Encore plus réduit pour très petits écrans */
+    line-height: 1.1 !important;
+    padding: 0 5px !important;
+    letter-spacing: -0.02em !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #chef .title-border-flipped-wrapper .main-title,
+  #chef .title-border-flipped-wrapper h1.main-title,
+  #chef h1.main-title[data-translate="restaurantChefTitle"] {
+    white-space: nowrap !important;
+    font-size: 14px !important; /* Encore plus réduit pour très petits téléphones */
+    line-height: 1.05 !important;
+    padding: 0 4px !important;
+    letter-spacing: -0.03em !important;
+  }
+}
+
+/* -------------------------------------------------------------
+ * OPTIMISATION GLOBALE DU CHARGEMENT DES IMAGES - TOUTES LES PAGES
+ * Chargement rapide et prioritaire des images
+ * ------------------------------------------------------------- */
+img {
+  /* Chargement prioritaire */
+  content-visibility: auto;
+  /* Améliorer le rendu */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* Optimisation du décodage */
+  will-change: contents;
+}
+
+/* Images visibles - charger immédiatement */
+img[loading="eager"],
+img[fetchpriority="high"] {
+  content-visibility: visible;
+  will-change: contents;
+}
+
+/* Images lazy - précharger plus tôt */
+img[loading="lazy"] {
+  content-visibility: auto;
+  /* Précharger les images lazy plus tôt pour un affichage plus rapide */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* -------------------------------------------------------------
+ * Réduction spécifique du titre "EVENEMENTS À L'ESCAPADE" au responsive téléphone
+ * ------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Réduire le titre pour éviter le retour à la ligne */
+  h2.main-title[data-translate="eventsListTitle"],
+  #evenementiel h2.main-title {
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem) !important;
+    letter-spacing: 0.02em !important;
+    white-space: nowrap !important;
+    padding: 0 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Réduction encore plus importante sur très petits écrans */
+  h2.main-title[data-translate="eventsListTitle"],
+  #evenementiel h2.main-title {
+    font-size: clamp(0.9rem, 3.8vw, 1.15rem) !important;
+    letter-spacing: 0.01em !important;
+    white-space: nowrap !important;
+    padding: 0 12px !important;
+  }
+}
+
+
+

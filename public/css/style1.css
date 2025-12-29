@@ -1,0 +1,3087 @@
+/* Polices chargées via link tags dans le HTML pour améliorer les performances */
+/* @import bloque le rendu, donc on les charge de manière asynchrone dans le HTML */
+
+:root {
+  --font-heading: 'Big Caslon', serif;
+  --font-body: 'Futura Md BT', sans-serif;
+}
+
+/* Règles globales pour prévenir les débordements */
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Box-sizing global pour tous les éléments */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Polices globales - uniquement Big Caslon et Futura Md BT */
+* {
+  font-family: 'Futura Md BT', 'Futura', sans-serif;
+}
+
+/* Tous les titres utilisent Big Caslon */
+h1, h2, h3, h4, h5, h6,
+.main-title,
+.title,
+[class*="title"],
+.font-heading {
+  font-family: 'Big Caslon', serif !important;
+}
+
+/* Assurer que les spans à l'intérieur des titres utilisent Big Caslon */
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span,
+.main-title span,
+.title span {
+  font-family: 'Big Caslon', serif !important;
+}
+
+/* Tous les paragraphes et textes utilisent Futura Md BT */
+p, span, a, li, td, th, label, input, textarea, button,
+.font-body,
+[class*="font-[Futura"],
+[class*="font-[Futura_Md_BT"] {
+  font-family: 'Futura Md BT', 'Futura', sans-serif !important;
+}
+
+/* Taille standardisée pour tous les paragraphes - Mobile par défaut */
+p:not(.suite-price),
+p.hero-text:not(.suite-price),
+p.subtitle:not(.suite-price),
+p[class*="font-[Futura_Md_BT"]:not(.suite-price),
+p[class*="text-[20px]"]:not(.suite-price),
+p[class*="text-[24px]"]:not(.suite-price),
+p[class*="leading-[30px]"]:not(.suite-price),
+p[class*="leading-[34px]"]:not(.suite-price) {
+  font-size: 12px; /* Taille mobile par défaut */
+  line-height: 20px;
+}
+
+/* Taille desktop pour les paragraphes (min-width: 1280px) */
+@media (min-width: 1280px) {
+  p:not(.suite-price),
+  p.hero-text:not(.suite-price),
+  p.subtitle:not(.suite-price),
+  p[class*="font-[Futura_Md_BT"]:not(.suite-price),
+  p[class*="text-[20px]"]:not(.suite-price),
+  p[class*="text-[24px]"]:not(.suite-price),
+  li:not(.suite-price),
+  #evenementiel li,
+  ul li {
+    font-size: 18px !important;
+    line-height: 27px !important;
+  }
+}
+
+/* Taille tablette pour les paragraphes (1025px - 1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  p:not(.suite-price),
+  p.subtitle:not(.suite-price),
+  p.hero-text:not(.suite-price),
+  p[data-translate]:not(.suite-price),
+  p.font-[Futura_Md_BT]:not(.suite-price),
+  p.text-black:not(.suite-price),
+  p.text-gray-700:not(.suite-price),
+  p.text-white:not(.suite-price),
+  body p:not(.suite-price),
+  section p:not(.suite-price),
+  div p:not(.suite-price),
+  article p:not(.suite-price),
+  main p:not(.suite-price),
+  p[class*="font-[Futura_Md_BT"]:not(.suite-price),
+  p[class*="text-[20px]"]:not(.suite-price),
+  p[class*="text-[24px]"]:not(.suite-price),
+  p[class*="leading-[30px]"]:not(.suite-price),
+  p[class*="leading-[34px]"]:not(.suite-price),
+  li:not(.suite-price),
+  #evenementiel li,
+  ul li {
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+}
+
+/* Taille tablette moyenne pour les paragraphes (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  p:not(.suite-price),
+  p.subtitle:not(.suite-price),
+  p.hero-text:not(.suite-price),
+  p[data-translate]:not(.suite-price),
+  p.font-[Futura_Md_BT]:not(.suite-price),
+  p.text-black:not(.suite-price),
+  p.text-gray-700:not(.suite-price),
+  p.text-white:not(.suite-price),
+  body p:not(.suite-price),
+  section p:not(.suite-price),
+  div p:not(.suite-price),
+  article p:not(.suite-price),
+  main p:not(.suite-price),
+  p[class*="font-[Futura_Md_BT"]:not(.suite-price),
+  p[class*="text-[20px]"]:not(.suite-price),
+  p[class*="text-[24px]"]:not(.suite-price),
+  p[class*="leading-[30px]"]:not(.suite-price),
+  p[class*="leading-[34px]"]:not(.suite-price),
+  li:not(.suite-price),
+  #evenementiel li,
+  ul li {
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+}
+
+/* Taille mobile pour les paragraphes (max-width: 768px) */
+@media (max-width: 768px) {
+  p:not(.suite-price),
+  p.hero-text:not(.suite-price),
+  p.subtitle:not(.suite-price),
+  p[class*="font-[Futura_Md_BT"]:not(.suite-price),
+  p[class*="text-[20px]"]:not(.suite-price),
+  p[class*="text-[24px]"]:not(.suite-price),
+  p[class*="leading-[30px]"]:not(.suite-price),
+  p[class*="leading-[34px]"]:not(.suite-price),
+  li:not(.suite-price),
+  #evenementiel li,
+  ul li {
+    font-size: 12px !important;
+    line-height: 20px !important;
+  }
+}
+
+/* Taille très petits écrans (max-width: 480px) */
+@media (max-width: 480px) {
+  p:not(.suite-price),
+  p.hero-text:not(.suite-price),
+  p.subtitle:not(.suite-price),
+  p[class*="font-[Futura_Md_BT"]:not(.suite-price),
+  p[class*="text-[20px]"]:not(.suite-price),
+  p[class*="text-[24px]"]:not(.suite-price),
+  p[class*="leading-[30px]"]:not(.suite-price),
+  p[class*="leading-[34px]"]:not(.suite-price),
+  li:not(.suite-price),
+  #evenementiel li,
+  ul li {
+    font-size: 12px !important;
+    line-height: 20px !important;
+  }
+}
+
+/* Taille très petits téléphones (max-width: 360px) */
+@media (max-width: 360px) {
+  p:not(.suite-price),
+  p.hero-text:not(.suite-price),
+  p.subtitle:not(.suite-price),
+  p[class*="font-[Futura_Md_BT"]:not(.suite-price),
+  p[class*="text-[20px]"]:not(.suite-price),
+  p[class*="text-[24px]"]:not(.suite-price),
+  p[class*="leading-[30px]"]:not(.suite-price),
+  p[class*="leading-[34px]"]:not(.suite-price),
+  li:not(.suite-price),
+  #evenementiel li,
+  ul li {
+    font-size: 12px !important;
+    line-height: 20px !important;
+  }
+}
+
+/* Ajustement pour les paragraphes avec des tailles spécifiques dans le HTML */
+p.text-sm {
+  font-size: 0.875rem;
+}
+
+p.text-base {
+  font-size: 0.9375rem; /* Légèrement réduit */
+}
+
+p.text-lg {
+  font-size: 1rem;
+}
+
+/* Classes Tailwind font-[Big_Caslon] -> Big Caslon */
+[class*="font-[Big_Caslon"] {
+  font-family: 'Big Caslon', serif !important;
+}
+
+/* Classes Tailwind font-[Futura_Md_BT] -> Futura Md BT */
+[class*="font-[Futura_Md_BT"] {
+  font-family: 'Futura Md BT', 'Futura', sans-serif !important;
+}
+
+/* Classes Tailwind font-[Futura] -> Futura Md BT */
+[class*="font-[Futura"] {
+  font-family: 'Futura Md BT', 'Futura', sans-serif !important;
+}
+
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: none;
+}
+
+.full-bleed-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Règles globales pour prévenir les débordements sur tous les écrans desktop */
+@media (min-width: 1024px) {
+  /* Prévenir les débordements horizontaux sur desktop */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Conteneurs principaux */
+  * {
+    box-sizing: border-box;
+  }
+
+  .full-bleed-image {
+    object-fit: cover;
+    max-width: 100%;
+  }
+
+  /* Répartition avec image réduite sur desktop */
+  .lounge-gallery-section {
+    gap: 40px !important; /* Espace augmenté entre l'image et le texte */
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .lounge-gallery-media {
+    width: 63% !important; /* Réduction de la largeur de l'image (de 70% à 63%) */
+    max-width: 100%;
+    overflow: visible; /* Permet l'affichage des éléments décoratifs */
+  }
+
+  .lounge-gallery-text {
+    width: 30% !important;
+    align-items: flex-end; /* Aligner le texte à droite sur desktop */
+    text-align: right;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Optimisation des formulaires sur desktop */
+  .booking-form {
+    max-width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  /* Assurer que tous les conteneurs ne débordent pas */
+  .hero-container,
+  .welcome-section,
+  .restaurant-section,
+  .lounge-section,
+  .experience-section,
+  .faq-section {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  /* Images et vidéos responsives */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prévenir les débordements de texte */
+  p, h1, h2, h3, h4, h5, h6, .subtitle, .main-title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+}
+
+.lazy-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.04);
+  transition: background-image 320ms ease, background-color 320ms ease;
+}
+
+.lazy-bg.lazy-bg-loaded {
+  background-color: transparent;
+}
+
+.hero-spacer {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Prevent horizontal scroll globally */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* CSS for section section:welcome */
+.welcome-section {
+  padding-top: 115px; /* (Frame Y: -943) - (Title Y: -828) */
+  padding-bottom: 119px; /* (Image Y: -591) - (Subtitle Y: -705 + Height: 65) */
+  text-align: center;
+  background-color: white;
+  color: var(--color-text-primary);
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 66px; /* (Subtitle Y: -705) - (Title Y: -828 + Height: 57) */
+}
+
+.title-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px; /* Réduit de 800px à 680px */
+  height: 59px; /* Réduit de 76px à 65px */
+  z-index: 1;
+}
+
+/* Retourner l'image title-border horizontalement pour certaines sections */
+.title-border-flipped {
+  transform: translate(-50%, -50%) scaleX(-1);
+}
+
+.main-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-heading);
+  font-size: 44px; /* Réduit de 52px à 44px */
+  line-height: 1.25;
+  color: black;
+  margin: 0;
+  padding: 0 32px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35em;
+  text-align: center;
+}
+
+.main-title span {
+  display: inline-block;
+}
+
+/* Styles spécifiques pour les sections NOTRE CHEF et Boissons & Cocktails */
+
+/* Empêcher le retour à la ligne pour le titre "NOTRE CHEF & SES SPÉCIALITÉS" au responsive téléphone */
+@media (max-width: 576px) {
+  #chef .title-border-flipped-wrapper .main-title,
+  #chef .title-border-flipped-wrapper h1.main-title,
+  #chef h1.main-title[data-translate="restaurantChefTitle"] {
+    white-space: nowrap !important;
+    font-size: 16px !important; /* Légèrement réduit pour tenir sur une ligne */
+    line-height: 1.1 !important;
+    padding: 0 6px !important;
+    letter-spacing: -0.01em !important; /* Réduire légèrement l'espacement des lettres */
+  }
+}
+
+@media (max-width: 480px) {
+  #chef .title-border-flipped-wrapper .main-title,
+  #chef .title-border-flipped-wrapper h1.main-title,
+  #chef h1.main-title[data-translate="restaurantChefTitle"] {
+    white-space: nowrap !important;
+    font-size: 15px !important; /* Encore plus réduit pour très petits écrans */
+    line-height: 1.1 !important;
+    padding: 0 5px !important;
+    letter-spacing: -0.02em !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #chef .title-border-flipped-wrapper .main-title,
+  #chef .title-border-flipped-wrapper h1.main-title,
+  #chef h1.main-title[data-translate="restaurantChefTitle"] {
+    white-space: nowrap !important;
+    font-size: 14px !important; /* Encore plus réduit pour très petits téléphones */
+    line-height: 1.05 !important;
+    padding: 0 4px !important;
+    letter-spacing: -0.03em !important;
+  }
+}
+#chef .title-border-flipped-wrapper .title-border-flipped {
+  left: 55% !important; /* Position à 62% au lieu de 48% */
+  width: 780px !important; /* Largeur augmentée de 680px à 780px */
+  height: 80px !important; /* Hauteur légèrement augmentée pour s'adapter */
+}
+
+
+
+/* Pour la section Boissons & Cocktails dans lounge.html */
+#lounge .title-wrapper.title-border-flipped-wrapper .title-border-flipped {
+  left: 49% !important; /* Position à 62% au lieu de 48% */
+  width: 780px !important; /* Largeur augmentée de 680px à 780px */
+  height: 70px !important; /* Hauteur légèrement augmentée pour s'adapter */
+}
+
+#lounge .title-wrapper.title-border-flipped-wrapper .main-title {
+  margin-right: 42px !important; /* Ajuster la marge pour la bordure plus large */
+}
+
+.main-title .highlight {
+  color:rgb(197, 150, 79);
+}
+
+.subtitle {
+  font-size: 21.6px; /* Réduction de 10% (24px * 0.9) */
+  line-height: 1.2; /* 28.77px */
+  max-width: 805px;
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.subtitle strong {
+  font-weight: 700;
+}
+
+/* Styles pour les lang-switcher - gestion des langues actives/inactives */
+.lang-switcher [data-lang],
+.menu-lang-switcher [data-lang] {
+  cursor: pointer;
+  transition: opacity 0.2s ease, font-weight 0.2s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.lang-switcher [data-lang].lang-active,
+.menu-lang-switcher [data-lang].lang-active,
+.menu-lang-switcher [data-lang].active {
+  font-weight: 500;
+  opacity: 1;
+}
+
+.lang-switcher [data-lang]:not(.lang-active),
+.menu-lang-switcher [data-lang]:not(.lang-active):not(.active) {
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.lang-switcher [data-lang]:not(.lang-active):hover,
+.menu-lang-switcher [data-lang]:not(.lang-active):not(.active):hover {
+  opacity: 1;
+}
+
+/* Pour les menu-lang-switcher, le style actif avec underline */
+.menu-lang-switcher [data-lang].active {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .welcome-section {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  /* Réduction des paragraphes au responsive */
+  p {
+    font-size: 0.85em !important;
+  }
+
+  .subtitle {
+    font-size: 18px !important;
+  }
+
+/* --------------------------------------------- */
+/* Responsive refinement & large screen support  */
+/* --------------------------------------------- */
+
+.suite-card {
+  width: 100%;
+}
+
+.suite-card-image {
+  width: 100%;
+  max-width: 283px;
+}
+
+.hero-spacer {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 1280px) {
+  .booking-form {
+    transform: none;
+    left: auto;
+    right: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-main {
+    padding: 22px 14px;
+    min-height: calc(100vh - 170px);
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+    flex-direction: column !important;
+    height: 100%;
+  }
+  .booking-form {
+    padding: 18px 20px;
+    max-width: 340px;
+    width: 98%;
+    margin: 0 auto !important;
+    margin-top: clamp(-32px, -6vw, -18px) !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 32px 0 32px 0;
+    gap: 18px;
+    flex-direction: column;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    align-self: center !important;
+  }
+  .booking-form .form-field-wrapper {
+    width: 200px !important;
+    max-width: 200px;
+    padding: 12px 16px;
+    height: 30px;
+    text-align: center;
+  }
+  .booking-form .form-field-wrapper .field-bg {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+  }
+  .booking-form .guest-stepper {
+    margin-right: 0;
+  }
+  .form-field-wrapper:nth-child(1) { width: 200px !important; }
+  .form-field-wrapper:nth-child(2) { width: 200px !important; }
+  .form-field-wrapper:nth-child(3) { width: 200px !important; }
+  .field-label {
+    font-size: 14px;
+  }
+  .search-button {
+    font-size: 14px;
+    margin-left: 10px;
+    text-align: center;
+    align-self: center;
+  }
+  .hero-footer {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    padding: 10px;
+  }
+  .contact-btn {
+    width: 200px;
+    max-width: 200px;
+    height: 35px;
+  }
+  .contact-btn .btn-text {
+    font-size: 14px;
+  }
+  .suite-card-image {
+    height: 180px;
+  }
+  .hero-spacer {
+    height: 260px;
+  }
+  .faq-section .faq-toggle {
+    padding-inline: 18px;
+    gap: 10px;
+  }
+  .faq-section .faq-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .restaurant-section .restaurant-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+  .restaurant-section .restaurant-text a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+  }
+  .restaurant-section .restaurant-media {
+    max-width: 560px;
+  }
+  .lounge-section .lounge-flex {
+    gap: 48px;
+  }
+  .lounge-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+  }
+  .lounge-text p[data-translate="loungeParagraph2"] {
+    margin-top: -20px !important; /* Fait remonter le texte au responsive */
+  }
+  .lounge-text .deco-element {
+    display: none;
+  }
+  .lounge-media #loungeVideo {
+    height: auto;
+    max-height: 480px;
+    border-radius: 0 50px;
+  }
+  .lounge-gallery-section {
+    gap: 64px; /* Plus d'espace sur mobile/tablette */
+  }
+  .lounge-gallery-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+  }
+  .lounge-gallery-media .relative {
+    height: auto;
+  }
+  .lounge-gallery-media img {
+    height: auto;
+    max-height: 480px;
+  }
+  .faq-section .faq-toggle {
+    justify-content: space-between !important;
+    gap: 16px;
+  }
+  .faq-section .faq-toggle span {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Cacher le menu-logo sur mobile */
+  .menu-header .menu-logo,
+  .menu-logo {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  .menu-header .menu-logo .logo-part,
+  .menu-logo .logo-part {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .hero-main {
+    padding: 22px 14px;
+    min-height: calc(100vh - 170px);
+  }
+  .booking-form {
+    padding: 18px 20px;
+    max-width: 340px;
+    margin-top: clamp(-44px, -10vw, -26px);
+  }
+  .form-field-wrapper {
+    padding: 12px 16px;
+    height: auto;
+  }
+  .form-field-wrapper .field-label {
+    font-size: 12px; /* Réduit de 14px à 12px */
+  }
+  .form-field-wrapper .label-text,
+  .field-label .guest-value {
+    font-size: 12px; /* Réduit de 14px à 12px */
+  }
+  .field-label .date-value {
+    font-size: 11px; /* Réduit de 12.5px à 11px */
+  }
+
+  /* Réduction spécifique pour les champs date-field et guest-field */
+  .form-field-wrapper.date-field .field-label,
+  .form-field-wrapper.date-field .field-label .label-text,
+  .form-field-wrapper.guest-field .field-label,
+  .form-field-wrapper.guest-field .field-label .label-text {
+    font-size: 12px !important;
+  }
+
+  .form-field-wrapper.date-field .field-label .date-value {
+    font-size: 10.5px !important; /* Encore plus réduit pour les dates */
+  }
+
+  .form-field-wrapper.guest-field .field-label .guest-value {
+    font-size: 12px !important;
+  }
+  .guest-stepper {
+    gap: 12px;
+  }
+  .search-button {
+    font-size: 14px;
+    letter-spacing: 0.85px;
+  }
+  .suite-card-image {
+    max-width: 100%;
+    height: 180px;
+  }
+  .restaurant-section {
+    padding-inline: 24px;
+  }
+  .restaurant-section .restaurant-text a {
+    margin: 24px auto 0;
+  }
+  .faq-section .faq-toggle {
+    flex-wrap: wrap;
+  }
+  .faq-section .faq-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .contact-btn {
+    max-width: 220px;
+  }
+  .hero-spacer {
+    height: 260px;
+  }
+  .faq-section .faq-toggle {
+    padding-inline: 18px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-main {
+    padding: 22px 14px;
+    min-height: calc(100vh - 170px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .booking-form {
+    margin: 0 auto;
+    margin-top: clamp(-40px, -8vw, -22px);
+    padding: 18px 20px;
+    width: 98%;
+    max-width: 340px;
+    gap: 18px;
+    border-radius: 32px 0 32px 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .form-field-wrapper {
+    padding: 12px 16px;
+    height: 30px;
+    text-align: center;
+  }
+  .form-field-wrapper:nth-child(1) { width: 200px; }
+  .form-field-wrapper:nth-child(2) { width: 200px; }
+  .form-field-wrapper:nth-child(3) { width: 200px; }
+  .field-label {
+    font-size: 12px; /* Réduit de 14px à 12px */
+  }
+
+  /* Réduction spécifique pour les champs date-field et guest-field */
+  .form-field-wrapper.date-field .field-label,
+  .form-field-wrapper.date-field .field-label .label-text,
+  .form-field-wrapper.guest-field .field-label,
+  .form-field-wrapper.guest-field .field-label .label-text {
+    font-size: 12px !important;
+  }
+
+  .form-field-wrapper.date-field .field-label .date-value {
+    font-size: 10.5px !important; /* Encore plus réduit pour les dates */
+  }
+
+  .form-field-wrapper.guest-field .field-label .guest-value {
+    font-size: 12px !important;
+  }
+
+  .guest-stepper img {
+    width: 24px;
+    height: 24px;
+  }
+  .search-button {
+    font-size: 14px;
+    margin-left: 10px;
+    text-align: center;
+  }
+  .hero-spacer {
+    height: 260px;
+  }
+  .suite-card-image {
+    height: 180px;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 12px;
+    gap: 18px;
+  }
+  /* Réduction générale de tous les paragraphes */
+  p {
+    font-size: 0.8em !important;
+  }
+
+  .restaurant-section .restaurant-text p,
+  .lounge-text p,
+  .lounge-gallery-text p {
+    font-size: 11.5px !important; /* Réduction pour mobile */
+    line-height: 1.6;
+  }
+
+  .subtitle {
+    font-size: 15px !important;
+  }
+  .lounge-text p[data-translate="loungeParagraph2"] {
+    margin-top: -16px !important; /* Fait remonter le texte sur très petits écrans */
+  }
+  .lounge-media #loungeVideo {
+    max-height: 360px;
+  }
+  .lounge-gallery-media img {
+    max-height: 360px;
+  }
+  .faq-section .faq-toggle {
+    padding-inline: 18px;
+    justify-content: space-between !important;
+    gap: 10px;
+  }
+  .faq-section .faq-toggle span {
+    font-size: 13.5px;
+    line-height: 1.4;
+    display: inline-flex;
+    align-items: center;
+  }
+  .faq-section .faq-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .contact-btn {
+    max-width: 220px;
+    width: 200px;
+    height: 35px;
+  }
+  .contact-btn .btn-text {
+    font-size: 14px;
+  }
+  .hero-footer {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Cacher le menu-logo sur mobile */
+  .menu-header .menu-logo,
+  .menu-logo {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  .menu-header .menu-logo .logo-part,
+  .menu-logo .logo-part {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .hero-main {
+    padding: 22px 14px;
+    min-height: calc(100vh - 170px);
+  }
+  .booking-form {
+    padding: 18px 20px;
+    max-width: 340px;
+  }
+  .form-field-wrapper {
+    padding: 12px 16px;
+  }
+
+  /* Réduction spécifique pour les champs date-field et guest-field sur petits écrans */
+  .form-field-wrapper.date-field .field-label,
+  .form-field-wrapper.date-field .field-label .label-text,
+  .form-field-wrapper.guest-field .field-label,
+  .form-field-wrapper.guest-field .field-label .label-text {
+    font-size: 11px !important; /* Encore plus réduit pour très petits écrans */
+  }
+
+  .form-field-wrapper.date-field .field-label .date-value {
+    font-size: 10px !important; /* Encore plus réduit pour les dates */
+  }
+
+  .form-field-wrapper.guest-field .field-label .guest-value {
+    font-size: 11px !important;
+  }
+
+  .suite-card-image {
+    height: 180px;
+  }
+  .contact-btn {
+    max-width: 220px;
+  }
+  .hero-spacer {
+    height: 260px;
+  }
+  .faq-section .faq-toggle {
+    padding-inline: 18px;
+    gap: 10px;
+  }
+  .faq-section .faq-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Réduction spécifique pour les champs date-field et guest-field sur très petits écrans */
+  .form-field-wrapper.date-field .field-label,
+  .form-field-wrapper.date-field .field-label .label-text,
+  .form-field-wrapper.guest-field .field-label,
+  .form-field-wrapper.guest-field .field-label .label-text {
+    font-size: 10px !important; /* Encore plus réduit pour très petits écrans */
+  }
+
+  .form-field-wrapper.date-field .field-label .date-value {
+    font-size: 9px !important; /* Encore plus réduit pour les dates */
+  }
+
+  .form-field-wrapper.guest-field .field-label .guest-value {
+    font-size: 10px !important;
+  }
+
+  /* Réduction des paragraphes pour très petits écrans */
+  p {
+    font-size: 0.7em !important;
+  }
+
+  .subtitle {
+    font-size: 14px !important;
+  }
+
+  .hero-main {
+    min-height: calc(100vh - 150px);
+  }
+  .suite-card-image {
+    height: 160px;
+  }
+  .search-button {
+    width: 100%;
+  }
+  .contact-btn {
+    width: 100%;
+  }
+}
+
+/* Responsive Desktop - Écrans moyens (1600px - 1919px) */
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body {
+    margin: 0 auto;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .welcome-section,
+  .restaurant-section,
+  .lounge-section,
+  .lounge-gallery-section,
+  .faq-section {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(48px, 6vw, 96px);
+    padding-right: clamp(48px, 6vw, 96px);
+  }
+
+  /* Formulaire optimisé pour desktop moyen */
+  .booking-form {
+    gap: 42px;
+    max-width: 850px;
+  }
+
+  .form-field-wrapper {
+    width: 210px !important;
+    height: 35px;
+    padding: 0 15px;
+  }
+
+  .field-label {
+    font-size: 21px;
+  }
+
+  .field-label .label-text {
+    font-size: 21px;
+  }
+
+  .field-label .date-value {
+    font-size: 14px;
+  }
+
+  .field-label .guest-value {
+    font-size: 21px;
+  }
+
+  .search-button {
+    font-size: 21px;
+  }
+
+  .restaurant-section .restaurant-media,
+  .lounge-media {
+    max-width: 850px;
+  }
+
+  .lounge-media #loungeVideo {
+    max-height: 720px;
+  }
+
+  .main-title {
+    font-size: 46px;
+  }
+
+  .subtitle {
+    font-size: 21px;
+    max-width: 850px;
+  }
+
+  .restaurant-section .restaurant-text p,
+  .lounge-text p,
+  .lounge-gallery-text p {
+    font-size: 19px;
+  }
+}
+
+/* Responsive Desktop - Full HD (1920px et plus) */
+@media (min-width: 1920px) {
+  body {
+    margin: 0 auto;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Conteneurs principaux avec max-width pour éviter les débordements */
+  .welcome-section,
+  .restaurant-section,
+  .lounge-section,
+  .lounge-gallery-section,
+  .faq-section {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(64px, 8vw, 120px);
+    padding-right: clamp(64px, 8vw, 120px);
+  }
+
+  /* Formulaire de réservation optimisé */
+  .booking-form {
+    gap: 42px;
+    max-width: 900px;
+  }
+
+  .form-field-wrapper {
+    width: 220px !important;
+    height: 36px;
+    padding: 0 16px;
+  }
+
+  .field-label {
+    font-size: 22px;
+  }
+
+  .field-label .label-text {
+    font-size: 22px;
+  }
+
+  .field-label .date-value {
+    font-size: 15px;
+  }
+
+  .field-label .guest-value {
+    font-size: 22px;
+  }
+
+  .search-button {
+    font-size: 22px;
+  }
+
+  /* Sections média optimisées */
+  .restaurant-section .restaurant-media,
+  .lounge-media {
+    max-width: 900px;
+  }
+
+  .lounge-media #loungeVideo {
+    max-height: 800px;
+  }
+
+  /* Titres optimisés */
+  .main-title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    max-width: 900px;
+  }
+
+  /* Paragraphes optimisés */
+  p {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+  .restaurant-section .restaurant-text p,
+  .lounge-text p,
+  .lounge-gallery-text p {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+
+  /* Prévenir les débordements */
+  .hero-container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-main {
+    max-width: 100%;
+  }
+}
+
+/* Responsive Desktop - 2K (2560px et plus) */
+@media (min-width: 2560px) {
+  .welcome-section,
+  .restaurant-section,
+  .lounge-section,
+  .lounge-gallery-section,
+  .faq-section {
+    max-width: 2000px;
+    padding-left: clamp(80px, 10vw, 160px);
+    padding-right: clamp(80px, 10vw, 160px);
+  }
+
+  .booking-form {
+    gap: 48px;
+    max-width: 1000px;
+  }
+
+  .form-field-wrapper {
+    width: 240px !important;
+    height: 38px;
+  }
+
+  .field-label {
+    font-size: 24px;
+  }
+
+  .field-label .label-text {
+    font-size: 24px;
+  }
+
+  .field-label .date-value {
+    font-size: 16px;
+  }
+
+  .field-label .guest-value {
+    font-size: 24px;
+  }
+
+  .search-button {
+    font-size: 24px;
+  }
+
+  .restaurant-section .restaurant-media,
+  .lounge-media {
+    max-width: 1000px;
+  }
+
+  .main-title {
+    font-size: 52px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+    max-width: 1000px;
+  }
+
+  .restaurant-section .restaurant-text p,
+  .lounge-text p,
+  .lounge-gallery-text p {
+    font-size: 22px;
+  }
+}
+
+/* Responsive Desktop - 4K (3840px et plus) */
+@media (min-width: 3840px) {
+  .welcome-section,
+  .restaurant-section,
+  .lounge-section,
+  .lounge-gallery-section,
+  .faq-section {
+    max-width: 2800px;
+    padding-left: clamp(120px, 12vw, 200px);
+    padding-right: clamp(120px, 12vw, 200px);
+  }
+
+  .booking-form {
+    gap: 54px;
+    max-width: 1200px;
+  }
+
+  .form-field-wrapper {
+    width: 260px !important;
+    height: 40px;
+  }
+
+  .field-label {
+    font-size: 26px;
+  }
+
+  .field-label .label-text {
+    font-size: 26px;
+  }
+
+  .field-label .date-value {
+    font-size: 18px;
+  }
+
+  .field-label .guest-value {
+    font-size: 26px;
+  }
+
+  .search-button {
+    font-size: 26px;
+  }
+
+  .restaurant-section .restaurant-media,
+  .lounge-media {
+    max-width: 1200px;
+  }
+
+  .main-title {
+    font-size: 60px;
+  }
+
+  .subtitle {
+    font-size: 28px;
+    max-width: 1200px;
+  }
+
+  .restaurant-section .restaurant-text p,
+  .lounge-text p,
+  .lounge-gallery-text p {
+    font-size: 24px;
+  }
+}
+
+/* Styles pour optimiser le chargement des images - CHARGEMENT RAPIDE */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* Améliorer le rendu des images */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* Chargement prioritaire */
+  content-visibility: auto;
+}
+
+/* Optimisation pour les images - chargement rapide */
+img[loading="lazy"] {
+  transition: opacity 0.2s ease-in-out;
+  /* Précharger les images lazy plus tôt */
+  content-visibility: auto;
+}
+
+/* Images avec priorité haute - charger immédiatement */
+img[fetchpriority="high"],
+img[loading="eager"] {
+  content-visibility: visible;
+  will-change: contents;
+}
+
+/* Masquer complètement les contrôles vidéo sur toutes les vidéos */
+/* ============================================
+   SUPPRESSION COMPLÈTE DES CONTRÔLES VIDÉO
+   ============================================ */
+
+/* Supprimer TOUS les contrôles vidéo - Chrome/Safari/Edge */
+video::-webkit-media-controls {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-timeline {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-current-time-display {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-mute-button {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-volume-slider {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Masquer les contrôles pour Firefox */
+video::-moz-media-controls {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Masquer tous les contrôles vidéo de manière globale */
+video {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  pointer-events: none !important;
+}
+
+/* Cacher les contrôles natifs - méthode complète */
+video[controls="false"],
+video:not([controls]),
+video {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Forcer la suppression des contrôles même si certains navigateurs les affichent */
+video[controls="false"]::-webkit-media-controls,
+video:not([controls])::-webkit-media-controls,
+video::-webkit-media-controls {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+}
+
+/* Supprimer les contrôles pour tous les navigateurs - règle universelle */
+video * {
+  pointer-events: none !important;
+}
+
+/* S'assurer que les vidéos elles-mêmes restent visibles mais sans contrôles */
+video {
+  pointer-events: auto !important;
+}
+
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  overflow: hidden !important;
+}
+
+/* Prévenir les débordements sur toutes les tailles d'écran */
+.hero-container,
+.welcome-section,
+.restaurant-section,
+.lounge-section,
+.experience-section,
+.faq-section,
+.lounge-gallery-section {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Responsive pour tablette - Ajustement des éléments décoratifs title-border */
+@media (max-width: 992px) {
+  .title-wrapper {
+    margin-bottom: 25px;
+  }
+
+  /* Taille uniforme pour TOUTES les title-border sur tablette */
+  .title-border,
+  .title-border-restaurant,
+  .title-border-restaurant-dishes,
+  .title-border-lounge,
+  .title-border-lounge-gallery,
+  .title-border-lounge-drinks,
+  .title-border-events {
+    width: 100%;
+    max-width: 514px !important; /* Taille uniforme pour toutes les decorative borders */
+    height: 57px !important; /* Taille uniforme pour toutes les decorative borders */
+    object-fit: contain;
+    border-radius: 28px; /* Arrondi proportionnel */
+  }
+
+  /* Ajustements responsives pour les sections spécifiques - title-border-flipped - Taille uniforme */
+  #chef .title-border-flipped-wrapper .title-border-flipped,
+  #lounge .title-wrapper.title-border-flipped-wrapper .title-border-flipped {
+    left: 49% !important;
+    width: 100% !important;
+    max-width: 514px !important; /* Taille uniforme pour toutes les decorative borders */
+    height: 57px !important; /* Taille uniforme pour toutes les decorative borders */
+    object-fit: contain;
+    border-radius: 28px; /* Arrondi proportionnel */
+  }
+
+  /* Taille uniforme pour les main-title dans les decorative borders pour tablette UNIQUEMENT (pas téléphone) */
+  @media (min-width: 768px) {
+    .title-wrapper .main-title,
+    .title-wrapper h1.main-title,
+    .title-wrapper h2.main-title,
+    .title-border-flipped-wrapper .main-title,
+    .title-border-flipped-wrapper h1.main-title,
+    .title-border-flipped-wrapper h2.main-title,
+    #chef .title-border-flipped-wrapper .main-title,
+    #lounge .title-wrapper.title-border-flipped-wrapper .main-title {
+      font-size: 32px !important; /* Taille uniforme de 32px pour toutes les decorative borders sur tablette */
+      line-height: 1.2 !important;
+      padding: 0 16px !important; /* Padding ajusté */
+    }
+  }
+
+  .main-title {
+    font-size: 20px !important; /* Augmenté de manière raisonnable pour tablette */
+    margin-left: 13px; /* Réduit de 15px à 13px - même que mobile */
+    line-height: 1.15;
+  }
+
+  /* Taille pour les main-title dans les decorative borders sur tablette uniquement (pas téléphone) */
+  @media (min-width: 768px) {
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title {
+    margin-right: 20px !important; /* Même que mobile */
+      font-size: 32px !important; /* Taille uniforme de 32px pour toutes les decorative borders sur tablette */
+      line-height: 1.2 !important;
+      padding: 0 16px !important;
+    }
+  }
+
+  /* Empêcher le retour à la ligne pour le titre "NOTRE CHEF & SES SPÉCIALITÉS" au responsive tablette uniquement - PRIORITÉ MAXIMALE */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    /* Exclure le titre du chef de la règle générale pour tablette */
+    #chef .title-border-flipped-wrapper .main-title,
+    #chef .title-border-flipped-wrapper h1.main-title,
+    #chef h1.main-title[data-translate="restaurantChefTitle"] {
+      white-space: nowrap !important;
+      font-size: 16px !important; /* Taille réduite pour tenir sur une ligne */
+      line-height: 1.1 !important;
+      padding: 0 6px !important;
+      letter-spacing: -0.02em !important; /* Réduire l'espacement des lettres */
+      display: inline-block !important;
+      width: auto !important;
+      max-width: 100% !important;
+    }
+
+    /* S'assurer que le span highlight ne cause pas de retour à la ligne */
+    #chef .title-border-flipped-wrapper .main-title .highlight,
+    #chef .title-border-flipped-wrapper h1.main-title .highlight,
+    #chef h1.main-title[data-translate="restaurantChefTitle"] .highlight {
+      white-space: nowrap !important;
+      display: inline !important;
+    }
+
+    /* S'assurer que le titre du chef n'hérite pas de la règle générale 32px */
+    #chef .title-border-flipped-wrapper .main-title {
+      font-size: 16px !important; /* Override la règle générale */
+    }
+  }
+
+  .subtitle {
+    font-size: 14.5px; /* Réduction pour mobile */
+  }
+}
+
+  .main-title {
+    font-size: 20px !important; /* Augmenté de manière raisonnable pour tablette */
+    margin-left: 13px; /* Réduit de 15px à 13px - même que mobile */
+    line-height: 1.15;
+  }
+
+  #chef .title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title {
+    margin-right: 20px !important; /* Même que mobile */
+  }
+
+  .subtitle {
+    font-size: 14.5px; /* Réduction pour mobile */
+  }
+}
+
+/* Responsive pour tablettes et petits écrans - même que mobile */
+@media (max-width: 640px) {
+  /* Cacher le menu-logo sur mobile */
+  .menu-header .menu-logo,
+  .menu-logo {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  .menu-header .menu-logo .logo-part,
+  .menu-logo .logo-part {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  /* Réduction spécifique pour les champs date-field et guest-field */
+  .form-field-wrapper.date-field .field-label,
+  .form-field-wrapper.date-field .field-label .label-text,
+  .form-field-wrapper.guest-field .field-label,
+  .form-field-wrapper.guest-field .field-label .label-text {
+    font-size: 11.5px !important;
+  }
+
+  .form-field-wrapper.date-field .field-label .date-value {
+    font-size: 10px !important;
+  }
+
+  .form-field-wrapper.guest-field .field-label .guest-value {
+    font-size: 11.5px !important;
+  }
+
+  .title-wrapper {
+    margin-bottom: 25px;
+  }
+
+  .title-border {
+    width: 100% !important;
+    max-width: 260px !important; /* Augmenté de 240px à 260px */
+    height: auto !important;
+  }
+
+  /* Ajustement spécifique pour title-border-events sur mobile/tablette - pousser vers la gauche */
+  .title-border-events {
+    left: 42% !important; /* Poussé vers la gauche pour mieux encadrer le titre */
+    transform: translate(-50%, -50%) !important;
+  }
+
+  /* Ajuster le margin-left du main-title dans la section ÉVÈNEMENTIEL sur mobile/tablette */
+  #evenementiel .main-title[style*="margin-left"],
+  #evenementiel .title-wrapper .main-title {
+    margin-left: 0 !important; /* Réinitialiser le margin-left sur mobile/tablette pour aligner avec la bordure */
+  }
+
+  /* Ajustements pour tablettes - sections spécifiques - même que mobile */
+  #chef .title-border-flipped-wrapper .title-border-flipped,
+  #lounge .title-wrapper.title-border-flipped-wrapper .title-border-flipped {
+    left: 49% !important;
+    max-width: 280px !important;
+  }
+
+  #chef .title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title {
+    margin-right: 20px !important;
+  }
+
+  .main-title {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem) !important; /* Réduit pour mobile */
+    margin-left: 13px !important; /* Réduit de 15px à 13px - même que mobile */
+    line-height: 1.15 !important;
+  }
+
+  /* Réduction supplémentaire pour les h2 avec main-title */
+  h2.main-title {
+    font-size: clamp(1.05rem, 4.2vw, 1.4rem) !important;
+  }
+
+  /* Réduction spécifique pour les h1 dans les decorative borders au responsive téléphone */
+  .title-wrapper .main-title,
+  .title-wrapper h1.main-title,
+  .title-wrapper h2.main-title,
+  .title-border-flipped-wrapper .main-title,
+  .title-border-flipped-wrapper h1.main-title,
+  .title-border-flipped-wrapper h2.main-title,
+  #chef .title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title,
+  /* Titre GALERIE dans la section lounge - Réduit pour correspondre à la page lounge.html */
+  #plats .title-wrapper .main-title,
+  #plats .title-wrapper h1.main-title,
+  .title-border-lounge-gallery ~ .main-title,
+  .title-border-lounge-gallery + .main-title,
+  #plats .title-border-lounge-gallery + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page lounge.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+
+  /* Titre NOS PLATS dans la section restaurant - Réduit pour correspondre à la page restaurant.html */
+  .title-border-restaurant-dishes ~ .main-title,
+  .title-border-restaurant-dishes + .main-title,
+  #restaurant .title-border-restaurant-dishes + .main-title,
+  [data-page="restaurant"] .title-border-restaurant-dishes + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page restaurant.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+}
+
+/* Responsive pour téléphones */
+@media (max-width: 480px) {
+  .title-wrapper {
+    margin-bottom: 25px;
+  }
+
+  .title-border {
+    width: 100% !important;
+    max-width: 320px !important; /* Augmenté de 280px à 320px */
+    height: auto !important;
+  }
+
+  /* Ajustement spécifique pour title-border-events sur mobile - pousser vers la gauche */
+  .title-border-events {
+    left: 38% !important; /* Poussé vers la gauche pour mieux encadrer le titre */
+    transform: translate(-50%, -50%) !important;
+  }
+
+  /* Ajuster le margin-left du main-title dans la section ÉVÈNEMENTIEL sur mobile */
+  #evenementiel .main-title[style*="margin-left"],
+  #evenementiel .title-wrapper .main-title {
+    margin-left: 0 !important; /* Réinitialiser le margin-left sur mobile pour aligner avec la bordure */
+  }
+
+    /* Ajustements pour mobile - sections spécifiques */
+  #chef .title-border-flipped-wrapper .title-border-flipped,
+  #lounge .title-wrapper.title-border-flipped-wrapper .title-border-flipped {
+    left: 49% !important;
+    max-width: 280px !important;
+  }
+
+  #chef .title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title {
+    margin-right: 20px !important;
+  }
+
+  .main-title {
+    font-size: clamp(0.95rem, 4vw, 1.3rem) !important; /* Réduit pour très petit mobile */
+    margin-left: 13px !important; /* Réduit de 15px à 13px */
+    line-height: 1.15 !important;
+  }
+
+  /* Réduction supplémentaire pour les h2 avec main-title */
+  h2.main-title {
+    font-size: clamp(0.9rem, 3.8vw, 1.2rem) !important;
+  }
+
+  /* Réduction spécifique pour les h1 dans les decorative borders au responsive téléphone */
+  .title-wrapper .main-title,
+  .title-wrapper h1.main-title,
+  .title-wrapper h2.main-title,
+  .title-border-flipped-wrapper .main-title,
+  .title-border-flipped-wrapper h1.main-title,
+  .title-border-flipped-wrapper h2.main-title,
+  #chef .title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title,
+  /* Titre GALERIE dans la section lounge - Réduit pour correspondre à la page lounge.html */
+  #plats .title-wrapper .main-title,
+  #plats .title-wrapper h1.main-title,
+  .title-border-lounge-gallery ~ .main-title,
+  .title-border-lounge-gallery + .main-title,
+  #plats .title-border-lounge-gallery + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page lounge.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+
+  /* Titre NOS PLATS dans la section restaurant - Réduit pour correspondre à la page restaurant.html */
+  .title-border-restaurant-dishes ~ .main-title,
+  .title-border-restaurant-dishes + .main-title,
+  #restaurant .title-border-restaurant-dishes + .main-title,
+  [data-page="restaurant"] .title-border-restaurant-dishes + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page restaurant.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+}
+
+/* Responsive pour très petits téléphones */
+@media (max-width: 360px) {
+  /* Réduction spécifique pour les champs date-field et guest-field sur très petits écrans */
+  .form-field-wrapper.date-field .field-label,
+  .form-field-wrapper.date-field .field-label .label-text,
+  .form-field-wrapper.guest-field .field-label,
+  .form-field-wrapper.guest-field .field-label .label-text {
+    font-size: 10px !important; /* Encore plus réduit pour très petits écrans */
+  }
+
+  .form-field-wrapper.date-field .field-label .date-value {
+    font-size: 9px !important; /* Encore plus réduit pour les dates */
+  }
+
+  .form-field-wrapper.guest-field .field-label .guest-value {
+    font-size: 10px !important;
+  }
+
+  .title-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .title-border {
+    width: 100% !important;
+    max-width: 200px !important; /* Réduit de 240px à 200px */
+    height: auto !important;
+  }
+
+  /* Ajustements pour très petits écrans - sections spécifiques */
+  #chef .title-border-flipped-wrapper .title-border-flipped,
+  #lounge .title-wrapper.title-border-flipped-wrapper .title-border-flipped {
+    left: 55% !important;
+    max-width: 240px !important;
+  }
+
+  #chef .title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title {
+    margin-right: 18px !important;
+  }
+
+  .main-title {
+    font-size: 14px !important; /* Augmenté de manière raisonnable pour très petits écrans */
+    margin-left: 10px !important; /* Réduit de 12px à 10px */
+    line-height: 1.1 !important;
+  }
+
+  /* Réduction spécifique pour les h1 dans les decorative borders sur très petits téléphones */
+  .title-wrapper .main-title,
+  .title-wrapper h1.main-title,
+  .title-wrapper h2.main-title,
+  .title-border-flipped-wrapper .main-title,
+  .title-border-flipped-wrapper h1.main-title,
+  .title-border-flipped-wrapper h2.main-title,
+  #chef .title-border-flipped-wrapper .main-title,
+  #lounge .title-wrapper.title-border-flipped-wrapper .main-title,
+  /* Titre GALERIE dans la section lounge - Réduit pour correspondre à la page lounge.html */
+  #plats .title-wrapper .main-title,
+  #plats .title-wrapper h1.main-title,
+  #plats .title-border-lounge-gallery + .main-title,
+  .title-border-lounge-gallery ~ .main-title,
+  .title-border-lounge-gallery + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page lounge.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+
+  /* Titre NOS PLATS dans la section restaurant - Réduit pour correspondre à la page restaurant.html */
+  .title-border-restaurant-dishes ~ .main-title,
+  .title-border-restaurant-dishes + .main-title,
+  #restaurant .title-border-restaurant-dishes + .main-title,
+  [data-page="restaurant"] .title-border-restaurant-dishes + .main-title {
+    font-size: 16px !important; /* Réduit de 18px à 16px pour correspondre à la page restaurant.html */
+    line-height: 1.1 !important;
+    padding: 0 8px !important;
+  }
+}
+
+/* CSS for section section:experience */
+.experience-section {
+  width: 100%;
+  height: 80vh;
+  overflow-y: hidden;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 785px;
+  padding: 0 20px;
+  text-align: center;
+  color: var(--color-text-inverse);
+  margin-top: 121px; /* Descend the hero-content */
+  position: relative;
+  z-index: 11;
+}
+
+.hero-text {
+  font-size: 20px; /* Réduction de 10% (24px * 0.9) */
+  line-height: 1.25; /* 30px */
+  margin: 0 0 24px 0; /* Increased margin for better spacing */
+  font-family: var(--font-body);
+  text-align: center; /* Centrer le texte */
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #B78F62;
+  color: var(--color-text-inverse);
+  font-size: 19px;
+  line-height: 1.2; /* 22.77px */
+  padding: 14px 32px;
+  text-decoration: none;
+  border-radius: 20px 0px 20px 0px;
+  transition: background-color 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  font-family: var(--font-body);
+}
+
+.hero-button:hover {
+  background-color: #6b4f35; /* Couleur beaucoup plus foncée au hover */
+}
+
+@media (max-width: 992px) {
+  /* Réduction des paragraphes */
+  p {
+    font-size: 0.85em !important;
+  }
+
+  /* Centrer hero-content au milieu de experience-section sur tablette - descendre un peu */
+  .hero-overlay {
+    justify-content: flex-start; /* Start from top */
+    align-items: center; /* Center horizontally */
+    padding-top: 80px !important; /* Descendre un peu */
+  }
+
+  .hero-content {
+    margin-top: 10px !important; /* Descendre un peu le hero-content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text {
+    font-size: 13px; /* Réduction pour mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Réduction des paragraphes */
+  p {
+    font-size: 0.8em !important;
+  }
+
+  .hero-overlay {
+    justify-content: flex-start; /* Start from top */
+    align-items: center; /* Center horizontally */
+    padding-top: 70px !important; /* Descendre un peu */
+  }
+
+  .hero-content {
+    margin-top: 5px !important; /* Descendre un peu le hero-content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text {
+    font-size: 12px !important; /* Réduction pour mobile */
+    margin-bottom: 20px;
+  }
+
+  .hero-button {
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Réduction des paragraphes */
+  p {
+    font-size: 0.75em !important;
+  }
+
+  .hero-overlay {
+    justify-content: flex-start; /* Start from top */
+    align-items: center; /* Center horizontally */
+    padding-top: 60px !important; /* Descendre un peu */
+  }
+
+  .hero-content {
+    margin-top: 0px !important; /* Descendre un peu le hero-content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text {
+    font-size: 11.5px !important; /* Réduction pour mobile */
+  }
+
+  .subtitle {
+    font-size: 15px !important;
+  }
+}
+
+/* CSS for section section:hero */
+#hero {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-container {
+  position: relative;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  overflow-y: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 1024px) {
+  #hero,
+  #hero .hero-container {
+    min-height: 100vh;
+    height: 100vh;
+  }
+  #hero .hero-bg-video {
+    min-height: 100%;
+    height: 100%;
+  }
+}
+
+/* Loader overlay */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, rgba(8, 8, 8, 0.98), rgba(0, 0, 0, 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Cacher TOUT le contenu sauf le loader pendant le chargement */
+body[data-loading="true"] > *:not(#page-loader),
+body[data-loading="true"] section:not(#page-loader),
+body[data-loading="true"] main,
+body[data-loading="true"] header:not(#page-loader),
+body[data-loading="true"] footer {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* S'assurer que le loader reste visible */
+#page-loader {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.loader-ring {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
+  animation: loader-spin 0.9s linear infinite;
+}
+
+.loader-text {
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Big Caslon', serif !important;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+  /* Overlay sombre pour assombrir la vidéo de fond */
+  .hero-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay sombre de 40% */
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  main section {
+    position: relative;
+    z-index: 1;
+  }
+
+  main h2 {
+    color: #ffffff !important;
+  }
+
+  .hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .hero-header,
+  .hero-main,
+  .hero-footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.65rem, 1vw + 0.45rem, 1.1rem) 0;
+    background: transparent;
+    border: none;
+    transition: padding 0.3s ease, transform 0.3s ease;
+  }
+
+  .hero-header {
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .site-header__inner {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(0.85rem, 2vw, 2.5rem);
+    padding: 0 clamp(0.35rem, 1.5vw, 1.5rem);
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  /* Style pour header sur fond blanc - éléments noirs SAUF le logo ESCAPADE */
+  .site-header.header-on-white .site-header__inner,
+  .site-header.header-on-white .site-header__inner * {
+    color: #000000 !important;
+  }
+
+  /* Logo ESCAPADE - NE PAS rendre noir (exclu du filtre) */
+  .site-header.header-on-white .site-header__logo img {
+    filter: none !important;
+  }
+
+  /* Tous les autres éléments du header en noir */
+  .site-header.header-on-white .menu-button,
+  .site-header.header-on-white .menu-button span,
+  .site-header.header-on-white .lang-switcher,
+  .site-header.header-on-white .lang-switcher a,
+  .site-header.header-on-white .header-nav .btn-text {
+    color: #000000 !important;
+  }
+
+  /* Assurer que les images du header deviennent noires sur fond blanc SAUF le logo */
+  .site-header.header-on-white .menu-button img {
+    filter: brightness(0);
+  }
+
+  .site-header.header-on-white .lang-switcher img {
+    filter: brightness(0);
+  }
+
+  /* Les images btn-bg (formes qui encadrent les boutons) en noir aussi */
+  .site-header.header-on-white .btn-bg {
+    filter: brightness(0);
+  }
+
+  /* Style pour site-header__inner sur fond blanc - tous les éléments en noir */
+  .site-header__inner.header-inner-on-white,
+  .site-header__inner.header-inner-on-white * {
+    color: #000000 !important;
+  }
+
+  /* Logo ESCAPADE - NE PAS rendre noir dans header-inner */
+  .site-header__inner.header-inner-on-white .site-header__logo img {
+    filter: none !important;
+  }
+
+  /* Tous les autres éléments du header-inner en noir */
+  .site-header__inner.header-inner-on-white .menu-button,
+  .site-header__inner.header-inner-on-white .menu-button span,
+  .site-header__inner.header-inner-on-white .lang-switcher,
+  .site-header__inner.header-inner-on-white .lang-switcher a,
+  .site-header__inner.header-inner-on-white .header-nav .btn-text {
+    color: #000000 !important;
+  }
+
+  /* Assurer que les images du header-inner deviennent noires sur fond blanc SAUF le logo */
+  .site-header__inner.header-inner-on-white .menu-button img {
+    filter: brightness(0);
+  }
+
+  .site-header__inner.header-inner-on-white .lang-switcher img {
+    filter: brightness(0);
+  }
+
+  /* Les images btn-bg dans header-inner en noir aussi */
+  .site-header__inner.header-inner-on-white .btn-bg {
+    filter: brightness(0);
+  }
+
+  /* Style pour hero-footer sur fond blanc - tous les éléments en noir */
+  .hero-footer.hero-footer-on-white,
+  .hero-footer.hero-footer-on-white * {
+    color: #000000 !important;
+  }
+
+  /* Tous les éléments du hero-footer en noir */
+  .hero-footer.hero-footer-on-white .btn-text {
+    color: #000000 !important;
+  }
+
+  /* Les images btn-bg dans hero-footer en noir */
+  .hero-footer.hero-footer-on-white .btn-bg {
+    filter: brightness(0);
+  }
+
+  .site-header__start,
+  .site-header__end {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.75rem, 1.8vw, 1.75rem);
+    width: auto;
+  }
+
+  .site-header__start {
+    flex: 1 1 0;
+    justify-content: flex-start;
+    margin-right: auto;
+  }
+
+  .site-header__logo {
+    display: inline-flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .site-header__end {
+    flex: 1 1 0;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .menu-cluster {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  .menu-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-family: 'Futura Md BT', 'Futura', sans-serif;
+    cursor: pointer;
+  }
+
+  .lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.4rem, 1.2vw, 0.85rem);
+    color: #ffffff;
+  }
+
+  .lang-switcher a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .lang-active {
+    font-weight: 500;
+  }
+
+  .logo-link {
+    display: inline-flex;
+    margin: 0 auto;
+  }
+
+  .header-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  @media (max-width: 1200px) {
+    .site-header {
+      padding: clamp(0.55rem, 2vw, 0.95rem) 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .site-header__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0;
+      z-index: 1;
+    }
+    .site-header__logo {
+      order: 0;
+      justify-content: center;
+    }
+    .site-header__start,
+    .site-header__end {
+      width: 100%;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .site-header__end,
+    .header-nav {
+      display: none !important;
+    }
+    .menu-cluster {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .menu-button {
+      margin-left: clamp(0.5rem, 4vw, 1.25rem);
+    }
+    .menu-cluster .lang-switcher {
+      width: auto;
+      justify-content: flex-end;
+      margin-right: clamp(0.5rem, 4vw, 1.25rem);
+    }
+    .lang-switcher {
+      justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .site-header {
+      padding: clamp(0.5rem, 4vw, 0.8rem) 0;
+    }
+    .site-header__start {
+      justify-content: space-between;
+      gap: 0.5rem;
+      width: 100%;
+    }
+    .menu-cluster {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .menu-button {
+      justify-content: flex-start;
+    }
+    .lang-switcher {
+      justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .menu-cluster {
+      gap: 0.5rem;
+    }
+  }
+
+
+
+  .btn-wrapper {
+    position: relative;
+  }
+
+  .btn-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .header-nav .btn-wrapper {
+    min-width: fit-content;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-nav .btn-wrapper:first-child {
+    min-width: 200px; /* Assez large pour "Réserver une suite" */
+  }
+
+  /* Ajuster le padding du texte pour qu'il soit bien contenu dans l'image */
+  .header-nav .btn-wrapper:first-child .btn-text {
+    white-space: nowrap;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .btn-text {
+    /* Font size responsive géré par Tailwind text-sm md:text-base */
+    letter-spacing: 0.625px;
+    font-family: var(--font-body);
+  }
+
+  .booking-form {
+    position: absolute;
+    top: 504px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 42px;
+  }
+
+  .form-field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px; /* Réduit de 20px à 18px */
+    height: 36px; /* Réduit de 38px à 36px pour desktop */
+    cursor: pointer;
+  }
+
+  .form-field-wrapper.date-field {
+    cursor: pointer;
+  }
+
+  .form-field-wrapper .field-bg {
+    position: absolute;
+    inset: 0;
+    width: 120%;
+    height: 120%;
+    z-index: -1;
+  }
+
+  .form-field-wrapper:nth-child(1) { width: 230px; /* Optimisé pour desktop */ }
+  .form-field-wrapper:nth-child(2) { width: 230px; /* Optimisé pour desktop */ }
+  .form-field-wrapper:nth-child(3) { width: 230px; /* Optimisé pour desktop */ justify-content: space-between; }
+
+  .field-label {
+    font-size: 24px; /* Réduit de 28px à 24px pour desktop */
+    letter-spacing: 1.1px;
+    line-height: 1;
+    font-family: var(--font-body);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .guest-field .field-label {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .date-field .field-label {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .field-label .label-text {
+    font-size: 24px; /* Réduit de 28px à 24px pour desktop */
+    display: inline;
+  }
+
+  .field-label .date-value {
+    font-size: 16px; /* Réduit de 18px à 16px pour desktop */
+    margin-top: 0;
+    opacity: 0.9;
+    min-height: 20px;
+    display: none;
+    font-family: var(--font-body);
+    letter-spacing: 1.1px;
+    line-height: 1;
+  }
+
+  .field-label .date-value[style*="display: inline"] {
+    display: inline !important;
+  }
+
+  /* Affichage de la date sélectionnée - remplacer le label-text */
+  .date-field .field-label .date-value {
+    position: relative;
+    top: 0;
+  }
+
+  /* Quand une date est sélectionnée, afficher la date au même niveau que le label-text */
+  .date-field .field-label .label-text[style*="display: none"] ~ .date-value {
+    display: inline !important;
+    font-size: 16px; /* Réduit de 18px à 16px pour desktop */
+    margin-top: 0;
+  }
+
+  .field-label .guest-value {
+    display: inline;
+    opacity: 1;
+    font-size: 24px; /* Réduit de 28px à 24px pour desktop */
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  /* Quand une valeur est affichée, masquer le label-text */
+  .field-label .label-text[style*="display: none"] + .guest-value,
+  .field-label .date-value[style*="display: inline"] {
+    display: inline !important;
+  }
+
+  /* Cacher les inputs natifs mais les garder accessibles */
+  .date-input,
+  .guest-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .date-input {
+    left: 0;
+    top: 0;
+  }
+
+  .guest-input {
+    left: 0;
+    width: 80%;
+  }
+
+  .guest-stepper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: -24px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .guest-stepper img {
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .guest-stepper img:hover {
+    opacity: 0.7;
+  }
+
+  .guest-stepper img:active {
+    opacity: 0.5;
+  }
+
+  .search-button {
+    font-family: var(--font-body);
+    font-size: 24px; /* Réduit de 28px à 24px pour desktop */
+    letter-spacing: 1.1px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    white-space: nowrap;
+  }
+
+  .hero-footer {
+    position: absolute;
+    bottom: 30px;
+    right: 56px;
+  }
+
+  .contact-btn {
+    min-width: 240px; /* Assez large pour "Nous Contactez" */
+    width: fit-content;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .contact-btn .btn-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .contact-btn .btn-text {
+    font-size: 22px;
+    letter-spacing: 0.85px;
+    white-space: nowrap;
+    padding-left: 28px;
+    padding-right: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- Hover polish for header contact button and nav links (site-wide) --- */
+  .site-header .contact-btn,
+  .site-header .header-nav a {
+    transition: box-shadow .25s ease, transform .25s ease;
+  }
+
+  .site-header .contact-btn:hover,
+  .site-header .header-nav a:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+  }
+
+  /* Ensure the floating contact anchor (#contactFab) also animates on hover */
+  #contactFab,
+  #contactFab .contact-btn {
+    transition: box-shadow .25s ease, transform .25s ease;
+  }
+  #contactFab:hover .contact-btn {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+  }
+
+  /* Hover animation for hero-footer contact button */
+  .hero-footer .btn-wrapper,
+  .hero-footer .contact-btn {
+    transition: box-shadow .25s ease, transform .25s ease;
+  }
+  .hero-footer .btn-wrapper:hover,
+  .hero-footer .contact-btn:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 1280px) {
+    .hero-container {
+      height: 80vh;
+      min-height: 400px;
+      width: 100%;
+    }
+
+    .hero-header, .booking-form, .hero-footer {
+      position: static;
+    }
+    /* Le responsive du header est géré par les classes Tailwind dans le HTML */
+    .hero-main {
+      padding: 22px 14px;
+      min-height: calc(100vh - 170px);
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      height: 100%;
+      width: 100%;
+      flex-direction: column !important;
+    }
+    .booking-form {
+      padding: 49px;
+      gap: 18px;
+      width: 98%;
+      margin: 0 auto !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      transform: none !important;
+      align-self: center !important;
+    }
+    .form-field-wrapper {
+      height: 30px;
+      padding: 0 15px;
+      text-align: center;
+    }
+    .form-field-wrapper:nth-child(1) { width: 200px; }
+    .form-field-wrapper:nth-child(2) { width: 200px; }
+    .form-field-wrapper:nth-child(3) { width: 200px; }
+    .field-label {
+      font-size: 14px;
+    }
+    .search-button {
+      font-size: 14px;
+      margin-left: 10px;
+      text-align: center;
+    }
+    .guest-stepper, .search-button {
+      margin-left: 0;
+      justify-content: center;
+    }
+    .hero-footer {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    .contact-btn {
+      width: 200px;
+      height: 35px;
+    }
+    .contact-btn .btn-text {
+      font-size: 14px;
+    }
+  }
+
+
+  @media (max-width: 1024px) {
+    .hero-container {
+      height: 80vh;
+      min-height: 400px;
+    }
+
+    /* Le responsive du header est géré par les classes Tailwind */
+    .hero-main {
+      padding: 22px 14px;
+      min-height: calc(100vh - 170px);
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      height: 100%;
+      width: 100%;
+    }
+    .booking-form {
+      padding: 49px;
+      gap: 18px;
+      width: 98%;
+      margin: 0 auto !important;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      transform: none !important;
+    }
+    .form-field-wrapper {
+      height: 30px;
+      padding: 0 15px;
+      text-align: center;
+    }
+    .form-field-wrapper:nth-child(1) { width: 200px; }
+    .form-field-wrapper:nth-child(2) { width: 200px; }
+    .form-field-wrapper:nth-child(3) { width: 200px; }
+    .field-label {
+      font-size: 14px;
+    }
+    .search-button {
+      font-size: 14px;
+      margin-left: 10px;
+      text-align: center;
+    }
+    .hero-footer {
+      padding: 10px;
+    }
+    .contact-btn {
+      width: 200px;
+      height: 35px;
+    }
+    .contact-btn .btn-text {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      height: 80vh;
+      min-height: 400px;
+    }
+    .header-nav .btn-wrapper {
+      display: none !important;
+    }
+    .hero-main {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      height: 100%;
+      width: 100%;
+      padding: 22px 14px;
+      flex-direction: column !important;
+      min-height: calc(100vh - 170px);
+    }
+    .booking-form {
+      padding: 49px;
+      gap: 18px;
+      width: 98%;
+      margin: 0 auto !important;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      transform: none !important;
+      align-self: center !important;
+    }
+    .form-field-wrapper {
+      height: 30px;
+      padding: 0 15px;
+      text-align: center;
+    }
+    .form-field-wrapper:nth-child(1) { width: 200px; }
+    .form-field-wrapper:nth-child(2) { width: 200px; }
+    .form-field-wrapper:nth-child(3) { width: 200px; }
+    .field-label {
+      font-size: 14px;
+    }
+    .search-button {
+      font-size: 14px;
+      margin-left: 10px;
+      text-align: center;
+    }
+    .hero-footer {
+      padding: 10px;
+    }
+    .contact-btn {
+      width: 200px;
+      height: 35px;
+    }
+    .contact-btn .btn-text {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-container {
+      height: 80vh;
+      min-height: 400px;
+    }
+
+    /* Augmentation raisonnable des H1 pour mobile */
+    .main-title {
+      font-size: 16px !important;
+    }
+
+    /* Le responsive du header est géré par les classes Tailwind (hidden md:inline-block pour nav) */
+    .hero-main {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      height: 100%;
+      width: 100%;
+      padding: 22px 14px;
+      flex-direction: column !important;
+      min-height: calc(100vh - 170px);
+    }
+    .booking-form {
+      padding: 49px;
+      gap: 18px;
+      width: 98%;
+      margin: 0 auto !important;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      transform: none !important;
+      align-self: center !important;
+    }
+    .form-field-wrapper {
+      height: 30px;
+      padding: 0 15px;
+      text-align: center;
+    }
+    .form-field-wrapper:nth-child(1) { width: 200px; }
+    .form-field-wrapper:nth-child(2) { width: 200px; }
+    .form-field-wrapper:nth-child(3) { width: 200px; }
+    .field-label {
+      font-size: 14px;
+    }
+    .search-button {
+      font-size: 14px;
+      margin-left: 10px;
+      text-align: center;
+    }
+    .hero-footer {
+      padding: 10px;
+    }
+    .contact-btn {
+      width: 200px;
+      height: 35px;
+    }
+    .contact-btn .btn-text {
+      font-size: 14px;
+    }
+  }
+
+
+  @media (max-width: 320px) {
+    /* Réduction des paragraphes pour très petits écrans */
+    p {
+      font-size: 0.65em !important;
+    }
+
+    .subtitle {
+      font-size: 13px !important;
+    }
+
+    .hero-container {
+      height: 60vh;
+      min-height: 350px;
+    }
+    /* Le responsive du header est géré par les classes Tailwind */
+    .hero-main {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      height: 100%;
+      width: 100%;
+      padding: 22px 14px;
+    }
+    .booking-form {
+      padding: 8px;
+      gap: 6px;
+      width: 99%;
+      margin: 0 auto !important;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      transform: none !important;
+    }
+    .form-field-wrapper {
+      height: 25px;
+      padding: 0 10px;
+      text-align: center;
+    }
+    .form-field-wrapper:nth-child(1) { width: 150px; }
+    .form-field-wrapper:nth-child(2) { width: 150px; }
+    .form-field-wrapper:nth-child(3) { width: 150px; }
+    .field-label {
+      font-size: 12px;
+    }
+    .search-button {
+      font-size: 12px;
+      margin-left: 8px;
+      text-align: center;
+    }
+    .hero-footer {
+      padding: 8px;
+    }
+    .contact-btn {
+      width: 150px;
+      height: 30px;
+    }
+    .contact-btn .btn-text {
+      font-size: 12px;
+    }
+  }

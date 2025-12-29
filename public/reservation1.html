@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // La page reservation1.html est déjà la page step2, pas besoin de redirection
+    // Si vous voulez rediriger, utilisez: window.location.href = '/reservation1.html';
+  </script>
+<link rel="icon" type="image/png" href="images/568_819.png">
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/reservation1.css">
+<link rel="stylesheet" href="css/suite.css">
+<script src="js/page-loader.js" defer></script>
+   <style>
+    /* Style pour les liens cliquables de la progress bar */
+    .progress-step__link {
+      transition: opacity 0.2s ease;
+    }
+    .progress-step__link:hover {
+      opacity: 0.7;
+    }
+
+    /* Application des mêmes border-radius que reservation4.html pour mobile et tablette */
+    .summary-card,
+    .suite-card {
+      border-radius: 0 140px 0 140px;
+    }
+
+    /* Tablette */
+    @media (max-width: 1024px) {
+      .summary-card,
+      .suite-card {
+        border-radius: 0 100px 0 100px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .summary-card,
+      .suite-card {
+        border-radius: 0 70px 0 70px;
+      }
+    }
+
+    /* Petit mobile */
+    @media (max-width: 480px) {
+      .summary-card,
+      .suite-card {
+        border-radius: 0 50px 0 50px;
+      }
+    }
+.counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  z-index: 3;
+}
+
+.counter img {
+  cursor: pointer;
+  transition: opacity 0.2s;
+  filter: brightness(0);
+  width: 20px;
+  height: 20px;
+}
+
+.counter img:hover {
+  opacity: 0.7;
+}
+
+.counter img:active {
+  opacity: 0.5;
+}
+
+.counter-number {
+  font-size: 28px;
+  font-weight: 500;
+  min-width: 20px;
+  text-align: center;
+  color: var(--color-text, #000);
+}
+</style>
+
+</head>
+<body data-page="reservation-step2">
+<section id="progress-bar">
+  <header class="progress-header">
+    <div class="progress-header__container">
+      <a href="index.html" class="progress-header__logo" aria-label="Homepage">
+        <img src="images/427_501.svg" alt="L'escapade Logo">
+      </a>
+      <nav class="progress-header__nav" aria-label="Checkout Progress">
+        <ol class="progress-steps">
+          <li class="progress-step is-complete">
+            <a href="page_reservation1.html" class="progress-step__link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/11d0ffacd4ff82d0273fcea40309ad0ecc3b1fc6.png" alt="Step 1 Completed">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepDate">Date</span>
+            </a>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+          <li class="progress-step is-active">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/324_442.svg" alt="Step 2: Current Step">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepCategory">Catégorie</span>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+          <li class="progress-step">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/324_445.svg" alt="Step 3">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepDetails">Details & confirmation</span>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+          <li class="progress-step">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/324_447.svg" alt="Step 4">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepPayment">Paiement</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+</section>
+<section id="booking-info" class="booking-info-section">
+  <div class="container">
+    <h1 class="section-title" data-translate="reservationSelectCategory">Sélectionnez une catégorie de suite</h1>
+    <div class="summary-card">
+      <div class="summary-content">
+        <p class="nights-summary"><span data-translate="reservationNightsSelected">Nuits sélectionnées</span> 3</p>
+        <div class="details-group">
+          <span class="detail-item">Lun. 20/10/2025</span>
+          <img src="images/324_672.svg" alt="arrow icon" class="arrow-icon">
+          <span class="detail-item">Mer. 22/10/2025</span>
+        </div>
+        <p class="guests-summary"><span data-translate="reservationGuests">Invités</span> : 5</p>
+      </div>
+      <a href="#" class="btn btn-primary" data-translate="reservationModify">Modifier</a>
+    </div>
+  </div>
+</section>
+<section id="suites" class="suites-section">
+  <div class="container">
+    <div class="suite-grid">
+
+      <!-- Les suites seront chargées dynamiquement par reservation-step2.js -->
+      <!-- Fallback statique si l'API ne répond pas -->
+      <article class="suite-card" data-suite-type="junior">
+        <img src="img/4.jpg" alt="SUITES JUNIOR" class="suite-image">
+        <div class="suite-content">
+          <div class="suite-header">
+            <h2 class="suite-title"><span data-translate="reservationSuiteJunior">SUITES JUNIOR</span></h2>
+            <p class="suite-price">250 000 FCFA - <span data-translate="reservationWeekend">Week-end</span></p>
+          </div>
+          <img src="images/324_579.svg" alt="Divider" class="suite-divider">
+          <div class="suite-details">
+            <div class="suite-amenities">
+              <div class="amenity-item">
+                <img src="images/324_691.svg" alt="Area icon" class="amenity-icon">
+                <span class="amenity-label">45 m²</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/iconeTerrasse.jpg" alt="Pool icon" class="amenity-icon">
+                <span class="amenity-label" data-translate="reservationTerrace">Terrasse</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/4549a4342843ea65a58fc8c16959a3919cfb25dd.png" alt="TV icon" class="amenity-icon tv-icon">
+                <span class="amenity-label" data-translate="reservationTV">TV</span>
+              </div>
+            </div>
+            <p class="suite-price">200 000 FCFA - <span data-translate="reservationWeek">Semaine</span></p>
+          </div>
+          <p class="suite-info" data-translate="suiteCapacityInfo">Capacité maximale : 2 personnes (dont 2 enfants).<br><span style="color: #B78F62;">Possibilité d'ajouter un matelas supplémentaire pour 15 000 FCFA, augmentant la capacité.</span></p>
+          <img src="images/324_579.svg" alt="Divider" class="suite-divider">
+          <div class="suite-footer">
+            <a href="suite_junior.html" class="details-link" data-translate="reservationViewSuite">Voir la suite</a>
+            <a href="#" class="btn btn-primary" data-translate="reservationSelect">Sélectionner</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="suite-card" data-suite-type="senior">
+        <img src="images/fed713276c2b8f97b67e33b6a240df722bb83d82.jpg" alt="SUITES SÉNIOR" class="suite-image">
+        <div class="suite-content">
+          <div class="suite-header">
+            <h2 class="suite-title"><span data-translate="reservationSuiteSenior">SUITES SÉNIOR</span></h2>
+            <p class="suite-price">350 000 FCFA - <span data-translate="reservationWeekend">Week-end</span></p>
+          </div>
+          <img src="images/324_579.svg" alt="Divider" class="suite-divider">
+          <div class="suite-details">
+            <div class="suite-amenities">
+              <div class="amenity-item">
+                <!--merged image-->
+                <div class="amenity-icon-merged">
+                  <img src="images/324_583.svg" alt="Area icon part" style="position: absolute; top: 3px; left: 10px;">
+                  <img src="images/324_587.svg" alt="Area icon part" style="position: absolute; top: 6px; left: 6px;">
+                  <img src="images/324_589.svg" alt="Area icon part" style="position: absolute; top: 9.9px; left: 41.9px;">
+                  <img src="images/324_591.svg" alt="Area icon part" style="position: absolute; top: 29.9px; left: 23px;">
+                </div>
+                <span class="amenity-label">70 m²</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/iconeTerrasse.jpg" class="amenity-icon">
+                <span class="amenity-label" data-translate="reservationTerrace">Terrasse</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/4549a4342843ea65a58fc8c16959a3919cfb25dd.png" alt="TV icon" class="amenity-icon tv-icon">
+                <span class="amenity-label" data-translate="reservationTV">TV</span>
+              </div>
+            </div>
+            <p class="suite-price">280 000 FCFA - <span data-translate="reservationWeek">Semaine</span></p>
+          </div>
+          <p class="suite-info" data-translate="suiteCapacityInfo">Capacité maximale : 2 personnes. <span style="color: #B78F62;">Possibilité d'ajouter un matelas supplémentaire pour 15 000 FCFA, augmentant la capacité.</span></p>
+          <img src="images/324_579.svg" alt="Divider" class="suite-divider">
+          <div class="suite-footer">
+            <a href="suite_senior.html" class="details-link" data-translate="reservationViewSuite">Voir la suite</a>
+            <a href="#" class="btn btn-primary" data-translate="reservationSelect">Sélectionner</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="suite-card suite-senior-piscine" data-suite-type="senior_pool">
+        <img src="img/5.jpg" alt="LES SUITES SÉNIOR AVEC PISCINES" class="suite-image">
+        <div class="suite-content">
+          <div class="suite-header">
+            <h2 class="suite-title"><span data-translate="reservationSuiteSeniorPool">SUITES SÉNIOR AVEC PISCINE</span></h2>
+            <p class="suite-price">400 000 FCFA - <span data-translate="reservationWeekend">Week-end</span></p>
+          </div>
+          <img src="images/324_579.svg" alt="Divider" class="suite-divider">
+          <div class="suite-details">
+            <div class="suite-amenities">
+              <div class="amenity-item">
+                <!--merged image-->
+                <div class="amenity-icon-merged">
+                    <img src="images/324_616.svg" alt="Area icon part" style="position: absolute; top: 2px; left: 4px;">
+                    <img src="images/324_621.svg" alt="Area icon part" style="position: absolute; top: 5px; left: 0px;">
+                    <img src="images/324_623.svg" alt="Area icon part" style="position: absolute; top: 2.99px; left: 44.96px;">
+                    <img src="images/324_625.svg" alt="Area icon part" style="position: absolute; top: 22.98px; left: 26.01px;">
+                </div>
+                <span class="amenity-label">70 m²</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/324_620.svg" alt=" icon" class="amenity-icon">
+                <span class="amenity-label" data-translate="reservationPool">Piscine</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/4549a4342843ea65a58fc8c16959a3919cfb25dd.png" alt="TV icon" class="amenity-icon tv-icon">
+                <span class="amenity-label" data-translate="reservationTV">TV</span>
+              </div>
+            </div>
+            <p class="suite-price">320 000 FCFA - <span data-translate="reservationWeek">Semaine</span></p>
+          </div>
+          <img src="images/324_579.svg" alt="Divider" class="suite-divider">
+          <div class="suite-footer">
+            <a href="suite_senior_vip.html" class="details-link" data-translate="reservationViewSuite">Voir la suite</a>
+            <a href="#" class="btn btn-primary" data-translate="reservationSelect">Sélectionner</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="suite-card suite-villa-familiale" data-suite-type="villa">
+        <img src="images/DJI_0956.jpg" alt="Villa Familiale" class="suite-image">
+        <div class="suite-content">
+          <div class="suite-header">
+            <h2 class="suite-title"><span data-translate="reservationVillaFamiliale">VILLA FAMILIALE AVEC PISCINE PRIVÉE</span></h2>
+            <p class="suite-price">650 000 FCFA  - <span data-translate="reservationWeekend">Week-end</span></p>
+          </div>
+          <img src="images/324_579.svg" alt="Divider" class="suite-divider">
+          <div class="suite-details">
+            <div class="suite-amenities">
+              <div class="amenity-item">
+                <img src="images/324_692.svg" alt="Area icon" class="amenity-icon">
+                <span class="amenity-label">170 m²</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/324_618.svg" alt="Pool icon" class="amenity-icon">
+                <span class="amenity-label" data-translate="reservationPool">Piscine</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/4549a4342843ea65a58fc8c16959a3919cfb25dd.png" alt="TV icon" class="amenity-icon tv-icon">
+                <span class="amenity-label" data-translate="reservationTV">TV</span>
+              </div>
+            </div>
+            <p class="suite-price">520 000 FCFA  - <span data-translate="reservationWeek">Semaine</span></p>
+          </div>
+          <p class="suite-info" data-translate="suiteCapacityInfoVilla">Capacité par défaut : 4 adultes. <br><span style="color: #B78F62;">Possibilité d'ajouter des matelas supplémentaires pour 15 000 FCFA chacun, jusqu'à 8 personnes.</span></p>
+          <img src="images/324_579.svg" alt="Divider" class="suite-divider">
+          <div class="suite-footer">
+            <a href="suite_villa_familiale.html" class="details-link" data-translate="reservationViewSuite">Voir la suite</a>
+            <a href="#" class="btn btn-primary" data-translate="reservationSelect">Sélectionner</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<section id="navigation" class="navigation-section">
+    <div class="container">
+        <a href="reservation3.html" class="btn btn-dark" data-translate="reservationNext">Suivant</a>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.suite-card .btn-primary');
+
+  // Helper pour envoyer la sélection au backend (type + quantité)
+  function updateSelectedSuite(suiteType, quantity) {
+    if (!suiteType) return;
+    const qty = Math.max(1, parseInt(quantity || 1, 10));
+
+    fetch(`/api/select-suite?suite_type=${encodeURIComponent(suiteType)}&quantity=${qty}`)
+      .catch((error) => {
+        console.error('Erreur lors de la mise à jour de la suite sélectionnée :', error);
+      });
+  }
+
+  // Réinitialiser les autres compteurs quand on sélectionne une nouvelle suite
+  function resetOtherCounters(currentCard) {
+    document.querySelectorAll('.suite-card').forEach(card => {
+      if (card === currentCard) return;
+      const existingCounter = card.querySelector('.counter.guest-stepper');
+      const originalButton = card.querySelector('.suite-footer .btn.btn-primary');
+
+      if (!existingCounter && originalButton) {
+        // Rien à faire, bouton d'origine déjà présent
+        return;
+      }
+
+      if (existingCounter && originalButton) {
+        // Si pour une raison quelconque les deux existent, on supprime le compteur
+        existingCounter.remove();
+        originalButton.classList.remove('selected');
+      }
+    });
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const suiteCard = button.closest('.suite-card');
+      const suiteType = suiteCard ? suiteCard.getAttribute('data-suite-type') : null;
+
+      // Réinitialiser les autres compteurs pour ne garder qu'une suite sélectionnée visuellement
+      resetOtherCounters(suiteCard);
+
+      // Si le bouton n'a pas encore été transformé
+      if (!button.classList.contains('selected')) {
+        button.classList.add('selected');
+
+        // Créer le conteneur du compteur (similaire à guest-stepper)
+        const counter = document.createElement('div');
+        counter.classList.add('counter', 'guest-stepper');
+
+        // Image moins
+        const minusImg = document.createElement('img');
+        minusImg.src = 'images/568_943.svg';
+        minusImg.alt = 'minus';
+        minusImg.classList.add('guest-minus');
+
+        // Nombre (au milieu)
+        const number = document.createElement('span');
+        number.textContent = '1';
+        number.classList.add('counter-number', 'guest-value');
+
+        // Image plus
+        const plusImg = document.createElement('img');
+        plusImg.src = 'images/568_944.svg';
+        plusImg.alt = 'plus';
+        plusImg.classList.add('guest-plus');
+
+        // Ajout des éléments dans l'ordre: moins, nombre, plus
+        counter.appendChild(minusImg);
+        counter.appendChild(number);
+        counter.appendChild(plusImg);
+
+        // Remplacer le bouton d'origine
+        button.replaceWith(counter);
+
+        // Enregistrer la suite sélectionnée avec quantité 1
+        updateSelectedSuite(suiteType, 1);
+
+        // Événements du compteur
+        plusImg.addEventListener('click', () => {
+          const current = parseInt(number.textContent, 10) || 1;
+          const next = current + 1;
+          number.textContent = String(next);
+          updateSelectedSuite(suiteType, next);
+        });
+
+        minusImg.addEventListener('click', () => {
+          let value = parseInt(number.textContent, 10) || 1;
+          if (value > 1) {
+            const next = value - 1;
+            number.textContent = String(next);
+            updateSelectedSuite(suiteType, next);
+          } else {
+            // Si on retombe à 1, on remet le bouton d'origine
+            counter.replaceWith(button);
+            button.classList.remove('selected');
+            // On garde la dernière quantité connue dans la session (au moins 1)
+            updateSelectedSuite(suiteType, 1);
+          }
+        });
+      }
+    });
+  });
+});
+</script>
+<script src="js/translations.js"></script>
+
+<!-- Bouton de retour -->
+<button id="back-button" class="back-button" aria-label="Retour à la page précédente" title="Retour">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+  </svg>
+</button>
+
+<!-- Bouton scroll to top -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page" title="Haut de page">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<script src="js/navigation-tracker.js" defer></script>
+<link rel="stylesheet" href="css/back-button.css">
+<script src="js/back-button.js" defer></script>
+<link rel="stylesheet" href="css/scroll-to-top.css">
+<script src="js/scroll-to-top.js" defer></script>
+<link rel="stylesheet" href="css/responsive.css">
+<!-- Script pour charger dynamiquement les suites disponibles depuis Laravel -->
+<script src="js/reservation-step2.js" defer></script>
+
+</body>
+</html>
+

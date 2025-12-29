@@ -1,0 +1,113 @@
+/* Bouton scroll to top - Position fixe en bas à droite, au-dessus du bouton contact */
+.scroll-to-top {
+  position: fixed;
+  bottom: 90px; /* Positionné au-dessus du bouton contact (qui est à ~60px du bas) */
+  right: 20px;
+  z-index: 998; /* Juste en dessous du bouton de retour (z-index 999) */
+  width: 50px;
+  height: 50px;
+  background-color: #B78F62;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: #9a7549;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-1px) scale(0.95);
+}
+
+/* Flèche vers le haut */
+.scroll-to-top svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Animation scroll-hide */
+.scroll-to-top.scroll-hide {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(100%) !important;
+}
+
+.scroll-to-top {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
+}
+
+/* Responsive - Téléphone */
+@media (max-width: 640px) {
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 130px; /* Au-dessus du bouton de retour (75px + 45px + 10px d'espace) */
+    right: 15px;
+  }
+  
+  .scroll-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Responsive - Tablette */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .scroll-to-top {
+    width: 48px;
+    height: 48px;
+    bottom: 140px; /* Au-dessus du bouton de retour (80px + 48px + 12px d'espace) */
+    right: 18px;
+  }
+  
+  .scroll-to-top svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Responsive - Desktop */
+@media (min-width: 1025px) {
+  .scroll-to-top {
+    width: 50px;
+    height: 50px;
+    bottom: 90px;
+    right: 20px;
+  }
+  
+  .scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Ajustement si le bouton contact est plus haut */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 75px; /* Ajusté pour mobile avec bouton contact */
+  }
+}
+

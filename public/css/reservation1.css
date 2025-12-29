@@ -1,0 +1,657 @@
+:root {
+  --font-primary: 'Big Caslon', serif;
+  --font-secondary: 'Futura Md BT', 'Futura', sans-serif;
+  --color-text: #000000;
+  --color-gold: #b78f62;
+  --color-dark-gold: #673800;
+  --color-white: #ffffff;
+  --color-light-gray: #ebebeb;
+  --color-border: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-secondary);
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+}
+
+p, a, li, td, th, label, input, textarea, button {
+  font-family: var(--font-secondary);
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+  font-family: var(--font-primary);
+}
+
+[class*="font-[Big_Caslon"] {
+  font-family: var(--font-primary) !important;
+}
+
+[class*="font-[Futura_Md_BT"] {
+  font-family: var(--font-secondary) !important;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 20px 0px 20px 0px;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--color-white);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+}
+
+.btn-dark {
+    background-color: var(--color-dark-gold);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+/* CSS for section section:header */
+.progress-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #000000;
+  }
+
+  .progress-header__container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 13px 40px 34px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .progress-header__logo {
+    position: absolute;
+    left: -109px;
+  }
+
+  .progress-header__logo img {
+    display: block;
+    height: 59px;
+    width: 67px;
+  }
+
+  .progress-steps {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .progress-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: max-content;
+  }
+
+  .progress-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    margin-bottom: 8px;
+  }
+
+  .progress-arrow__icon {
+    width: 96px;
+    height: 30px;
+  }
+
+  .progress-step__icon-wrapper {
+    height: 24px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .progress-step__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .progress-step__label {
+    font-family: var(--font-secondary);
+    font-size: 10px;
+    font-weight: 0;
+    line-height: 1.8;
+    letter-spacing: 0.39px;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+
+  @media (max-width: 1024px) {
+    .progress-header__container {
+      padding: 8px 15px 15px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .progress-header__logo {
+      position: static;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+
+    .progress-header__logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    .progress-header__nav {
+      margin-top: 0;
+      width: 100%;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .progress-header__nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .progress-steps {
+      gap: 6px;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      min-width: max-content;
+    }
+
+    .progress-step {
+      flex-shrink: 0;
+    }
+
+    .progress-arrow__icon {
+      width: 30px;
+      height: 20px;
+    }
+
+    .progress-step__icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .progress-step__label {
+      font-size: 9px;
+      line-height: 1.4;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .progress-header__container {
+      padding: 6px 10px 10px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .progress-header__logo {
+      position: static;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+
+    .progress-header__logo img {
+      height: 46px;
+      width: auto;
+    }
+
+    .progress-header__nav {
+      width: 100%;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      margin-top: 0;
+    }
+
+    .progress-header__nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .progress-steps {
+      justify-content: flex-start;
+      padding: 0 5px 5px;
+      gap: 4px;
+      flex-wrap: nowrap;
+      min-width: max-content;
+    }
+
+    .progress-step {
+      flex-shrink: 0;
+    }
+
+    .progress-arrow__icon {
+      width: 24px;
+      height: 16px;
+    }
+
+    .progress-step__icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .progress-step__icon-wrapper {
+      height: 18px;
+      margin-bottom: 4px;
+    }
+
+    .progress-step__label {
+      font-size: 8px;
+      line-height: 1.3;
+      letter-spacing: 0.2px;
+    }
+
+    .progress-arrow {
+      height: 18px;
+      margin-bottom: 4px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .progress-header__container {
+      padding: 5px 8px 8px;
+    }
+
+    .progress-steps {
+      gap: 3px;
+      padding: 0 4px 4px;
+    }
+
+    .progress-arrow__icon {
+      width: 20px;
+      height: 14px;
+    }
+
+    .progress-step__icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .progress-step__icon-wrapper {
+      height: 16px;
+      margin-bottom: 3px;
+    }
+
+    .progress-step__label {
+      font-size: 7px;
+      line-height: 1.2;
+    }
+
+    .progress-arrow {
+      height: 16px;
+      margin-bottom: 3px;
+    }
+  }
+
+/* CSS for section section:booking-info */
+.booking-info-section {
+    padding-top: 103px;
+    padding-bottom: 92px;
+  }
+
+  .section-title {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 31px;
+    text-align: center;
+    margin: 0 0 19px 0;
+  }
+
+  .summary-card {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--color-light-gray);
+    padding: 30px 40px;
+    max-width: 630px;
+    margin: 0 auto;
+    min-height: 200px;
+  }
+
+  .summary-content {
+    font-family: var(--font-secondary);
+  }
+
+  .nights-summary {
+    font-size: 24px;
+    margin: 0 0 21px 0;
+  }
+
+  .details-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+  }
+
+  .detail-item, .guests-summary {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .arrow-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media (max-width: 768px) {
+    .booking-info-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .section-title {
+        font-size: 24px;
+    }
+    .summary-card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        min-height: 180px;
+    }
+    .summary-content {
+        text-align: center;
+    }
+  }
+
+/* CSS for section section:suites */
+.suites-section {
+    padding-bottom: 37px;
+  }
+  .suite-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 148px 42px;
+  }
+  .suite-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .suite-card-full {
+    grid-column: 1 / -1;
+    max-width: 582px;
+    justify-self: center;
+  }
+  .suite-image {
+    width: 100%;
+    height: 388px;
+    object-fit: cover;
+    border-radius: 85px 0px 85px 0px;
+  }
+  .suite-content {
+    padding: 0 7px;
+  }
+  .suite-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+  }
+  .suite-title {
+    font-family: var(--font-primary);
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.1;
+  }
+  .suite-price {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    margin: 0;
+    text-align: right;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+  .suite-divider {
+    width: 100%;
+    height: auto;
+    margin: 16px 0;
+    display: block;
+  }
+  .suite-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .suite-amenities {
+    display: flex;
+    gap: 20px;
+  }
+  .amenity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .amenity-icon {
+    height: 30px;
+  }
+  .tv-icon {
+      height: 29px;
+      width: 42px;
+  }
+  .amenity-icon-merged {
+    position: relative;
+    width: 42px;
+    height: 31px;
+  }
+  .amenity-label {
+    font-family: var(--font-secondary);
+    font-size: 14px;
+  }
+  .suite-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .details-link {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    color: var(--color-text);
+    text-decoration: none;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 1px;
+  }
+
+  .details-link::after {
+    content: '';
+    display: block;
+    width: 88%;
+    height: auto;
+    background-image: url('../images/324_637.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-height: 1px;
+    margin: 0 auto;
+  }
+  .text-gold {
+    color: var(--color-gold);
+  }
+
+  @media (max-width: 1200px) {
+    .suite-grid {
+        gap: 100px 30px;
+    }
+    .suite-header, .suite-details, .suite-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .suite-price {
+        text-align: left;
+    }
+
+    /* Aligner le compteur à droite comme le bouton */
+    .counter.guest-stepper,
+    .suite-footer .counter {
+      align-self: flex-end;
+      margin-left: auto;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .suite-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .suite-details {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .suite-footer {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .suite-price {
+      text-align: right;
+      order: 2;
+    }
+
+    .suite-amenities {
+      order: 1;
+    }
+
+    .details-link {
+      order: 1;
+    }
+
+    .btn {
+      order: 2;
+    }
+
+    /* Aligner le compteur à droite comme le bouton */
+    .counter.guest-stepper,
+    .suite-footer .counter {
+      order: 2;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .suite-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .suite-title {
+        font-size: 22px;
+    }
+
+    .suite-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .suite-details {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .suite-footer {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .suite-price {
+      text-align: right;
+      order: 2;
+      font-size: 14px;
+    }
+
+    .suite-amenities {
+      order: 1;
+    }
+
+    .details-link {
+      order: 1;
+      font-size: 14px;
+    }
+
+    .btn {
+      order: 2;
+      padding: 8px 16px;
+      font-size: 16px;
+    }
+
+    /* Aligner le compteur à droite comme le bouton */
+    .counter.guest-stepper,
+    .suite-footer .counter {
+      order: 2;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+  }
+
+/* CSS for section section:navigation */
+.navigation-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .navigation-section .container {
+        text-align: center;
+    }

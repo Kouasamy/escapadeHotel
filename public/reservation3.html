@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-translate="reservationPageTitleStep3">Détails & Confirmation</title>
+
+  <link rel="icon" type="image/png" href="images/568_819.png">
+  <link rel="stylesheet" href="css/style1.css">
+  <link rel="stylesheet" href="css/reservation3.css">
+  <script src="js/page-loader.js" defer></script>
+  <style>
+    /* Style pour les liens cliquables de la progress bar */
+    .progress-step__link {
+      transition: opacity 0.2s ease;
+    }
+    .progress-step__link:hover {
+      opacity: 0.7;
+    }
+
+    /* Application des mêmes border-radius que reservation4.html pour mobile et tablette */
+    .confirmation-card {
+      border-radius: 110px 0px 110px 0px;
+    }
+
+    /* Tablette */
+    @media (max-width: 1024px) {
+      .confirmation-card {
+        border-radius: 0 100px 0 100px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .confirmation-card {
+        border-radius: 0 70px 0 70px;
+      }
+    }
+
+    /* Petit mobile */
+    @media (max-width: 480px) {
+      .confirmation-card {
+        border-radius: 0 50px 0 50px;
+      }
+    }
+  </style>
+
+</head>
+<body data-page="reservation-step3">
+<div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="" data-translate-attr="aria-label" data-translate="loading">
+  <div class="loader-inner">
+    <span class="loader-ring" aria-hidden="true"></span>
+    <p class="loader-text" data-translate="escapadeLoader">L'ESCAPADE</p>
+  </div>
+</div>
+  <section id="progress-bar">
+  <header class="progress-header">
+    <div class="progress-header__container">
+      <a href="index.html" class="progress-header__logo" aria-label="Homepage">
+        <img src="images/427_501.svg" alt="L'escapade Logo">
+      </a>
+      <nav class="progress-header__nav" aria-label="Checkout Progress">
+        <ol class="progress-steps">
+          <li class="progress-step is-complete">
+            <a href="page_reservation1.html" class="progress-step__link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/11d0ffacd4ff82d0273fcea40309ad0ecc3b1fc6.png" alt="Step 1 Completed">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepDate">Date</span>
+            </a>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+          <li class="progress-step is-active">
+            <a href="reservation1.html" class="progress-step__link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/11d0ffacd4ff82d0273fcea40309ad0ecc3b1fc6.png" alt="Step 1 Completed">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepCategory">Catégorie</span>
+            </a>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+          <li class="progress-step">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/11d0ffacd4ff82d0273fcea40309ad0ecc3b1fc6.png" alt="Step 1 Completed">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepDetails">Details & confirmation</span>
+          </li>
+          <li class="progress-arrow">
+            <img src="images/324_439.svg" alt="Arrow" class="progress-arrow__icon">
+          </li>
+         <li class="progress-step">
+            <div class="progress-step__icon-wrapper">
+              <img class="progress-step__icon" src="images/324_447.svg" alt="Step 4">
+            </div>
+            <span class="progress-step__label" data-translate="reservationStepPayment">Paiement</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+</section>
+
+<section id="confirmation" class="confirmation-section">
+  <div class="container">
+    <h1 class="main-title" data-translate="reservationDetailsTitle">Détails & Confirmation</h1>
+    <div class="card-wrapper">
+      <!--merged image-->
+      <div class="decorative-lines">
+        <img src="images/688_812.svg" alt="Decorative corner element" class="line-top-right">
+        <img src="images/688_815.svg" alt="Decorative corner element" class="line-bottom-left">
+      </div>
+      <div class="confirmation-card">
+        <div class="card-image-container">
+          <img src="images/4e8bd77d88ebb1c9f445970808bcf56230320041.png" alt="Interior of a luxurious hotel suite" class="card-image">
+        </div>
+        <div class="card-details">
+          <div class="details-header">
+            <h2 class="suite-title" data-translate="reservationSuiteSenior">SUITES SÉNIOR</h2>
+            <span class="suite-quantity">1 × 3</span>
+          </div>
+          <div class="booking-dates">
+            <span class="date">Lun. 20/10/2025</span>
+            <img src="images/688_802.svg" alt="to" class="date-arrow">
+            <span class="date">Mer. 22/10/2025</span>
+          </div>
+          <p class="guest-count"><span data-translate="reservationGuests">Invités</span> : 5</p>
+          <p class="total-price"><span data-translate="reservationTotal">TOTAL</span> : 840 000 Franc CFA</p>
+          <a href="reservation4.html" class="next-button" data-translate="reservationNext">Suivant</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bouton de retour -->
+<button id="back-button" class="back-button" aria-label="Retour à la page précédente" title="Retour">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+  </svg>
+</button>
+
+<!-- Bouton scroll to top -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page" title="Haut de page">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<script src="js/translations.js"></script>
+<script src="js/navigation-tracker.js" defer></script>
+<link rel="stylesheet" href="css/back-button.css">
+<script src="js/back-button.js" defer></script>
+<link rel="stylesheet" href="css/scroll-to-top.css">
+<script src="js/scroll-to-top.js" defer></script>
+<link rel="stylesheet" href="css/responsive.css">
+<!-- Script pour mettre à jour les informations de réservation depuis Laravel -->
+<script src="js/reservation-step3.js" defer></script>
+</body>
+</html>
+
