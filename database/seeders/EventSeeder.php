@@ -18,6 +18,7 @@ class EventSeeder extends Seeder
                 'title' => 'La Boutique Éphémère',
                 'slug' => Str::slug('La Boutique Éphémère'),
                 'event_date' => '2025-12-20',
+                'end_date' => '2026-01-05',
                 'location' => 'L\'Escapade Hotel',
                 'excerpt' => 'Une alliance inédite entre trois maisons de prestige s\'unissent pour créer une expérience lifestyle inédite au cœur de L\'Escapade Hotel. Du 20 décembre au 5 janvier, plongez dans un univers où la Haute Couture, la Maroquinerie d\'art et la Beauté premium se rencontrent pour sublimer vos fêtes de fin d\'année. La Boutique éphémère vous ouvre ses portes de 16H à 21H.',
                 'description' => 'Une alliance inédite entre trois maisons de prestige s\'unissent pour créer une expérience lifestyle inédite au cœur de L\'Escapade Hotel. Du 20 décembre au 5 janvier, plongez dans un univers où la Haute Couture, la Maroquinerie d\'art et la Beauté premium se rencontrent pour sublimer vos fêtes de fin d\'année. La Boutique éphémère vous ouvre ses portes de 16H à 21H.',

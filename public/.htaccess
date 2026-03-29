@@ -82,12 +82,22 @@
     # Types MIME corrects
     AddType image/svg+xml .svg
     AddType image/webp .webp
+    AddType image/x-icon .ico
+    AddType image/png .png
     AddType application/font-woff .woff
     AddType application/font-woff2 .woff2
 </IfModule>
 
 # Désactiver le listage des répertoires
 Options -Indexes
+
+# Redirection favicon vers le logo de l'hôtel
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Si favicon.ico n'existe pas ou est demandé, servir l'image du logo
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^favicon\.ico$ /images/568_819.png [L]
+</IfModule>
 
 # Page d'erreur personnalisée (optionnel)
 # ErrorDocument 404 /404.html

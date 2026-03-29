@@ -45,10 +45,28 @@ function initReservationStep3() {
             return s.join(dec);
         }
 
+        // Fonction pour obtenir la clé de traduction selon le type de suite
+        function getSuiteTranslateKey(suite) {
+            const suiteType = (suite.suite_type || suite.type || '').toLowerCase();
+            const translateKeyMap = {
+                'junior': 'reservationSuiteJunior',
+                'senior': 'reservationSuiteSenior',
+                'senior_vip': 'reservationSuiteSeniorPool',
+                'senior_pool': 'reservationSuiteSeniorPool',
+                'villa_familiale': 'reservationVillaFamiliale',
+                'villa': 'reservationVillaFamiliale'
+            };
+            return translateKeyMap[suiteType] || null;
+        }
+
         // Fonction pour créer une carte de suite
         function createSuiteCard(suite, index) {
             const cardWrapper = document.createElement('div');
             cardWrapper.className = 'card-wrapper';
+            
+            // Obtenir la clé de traduction pour le titre
+            const translateKey = getSuiteTranslateKey(suite);
+            const translateAttr = translateKey ? ` data-translate="${translateKey}"` : '';
             
             cardWrapper.innerHTML = `
                 <!--merged image-->
@@ -62,7 +80,7 @@ function initReservationStep3() {
                     </div>
                     <div class="card-details">
                         <div class="details-header">
-                            <h2 class="suite-title">${suite.title || suite.name || 'SUITE'}</h2>
+                            <h2 class="suite-title"${translateAttr}>${suite.title || suite.name || 'SUITE'}</h2>
                             <span class="suite-quantity">1 × ${suite.quantity || 1}</span>
                         </div>
                         <div class="booking-dates">
@@ -171,6 +189,23 @@ function initReservationStep3() {
                 cardDetails.appendChild(nextButton);
             }
         }
+
+        // Réappliquer les traductions après le chargement des suites
+        setTimeout(() => {
+            const currentLang = localStorage.getItem('escapade-lang') || 'fr';
+            
+            // Réappliquer les traductions plusieurs fois pour s'assurer que tout est traduit
+            if (window.applyTranslations) {
+                // D'abord enregistrer les valeurs françaises
+                window.applyTranslations('fr');
+                // Puis appliquer la langue actuelle
+                setTimeout(() => {
+                    window.applyTranslations(currentLang);
+                }, 50);
+            }
+            
+            window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: currentLang } }));
+        }, 100);
 
     } catch (error) {
         console.error('Erreur lors du chargement des détails de réservation:', error);

@@ -50,20 +50,32 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     margin-right: auto;
     padding: 13px 40px 34px;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     position: relative;
+    flex-wrap: nowrap;
+    gap: 20px;
   }
 
   .progress-header__logo {
-    position: absolute;
-    left: -109px;
+    position: static !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+    margin-right: 20px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
   }
 
   .progress-header__logo img {
-    display: block;
+    display: block !important;
     height: 59px;
-    width: 67px;
+    width: auto;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .progress-steps {

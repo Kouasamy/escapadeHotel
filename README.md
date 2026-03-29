@@ -1,59 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# L'Escapade Hotel - Luxury Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel 12](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
+[![Filament 4](https://img.shields.io/badge/Filament-4.x-EEBB00?style=for-the-badge&logo=filament)](https://filamentphp.com)
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🇫🇷 VERSION FRANÇAISE
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. Présentation du Projet
+**L'Escapade Hotel** est une plateforme de gestion hôtelière haut de gamme conçue pour offrir une expérience fluide tant pour les administrateurs que pour les clients. Alliant élégance visuelle et robustesse technique, ce système centralise toutes les opérations critiques d'un établissement hôtelier moderne : de la gestion fine des suites à la réservation interactive, en passant par l'organisation d'événements exclusifs.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. Fonctionnalités Clés
+- **Gestion des Suites & Chambres** : Catalogue complet de suites avec options personnalisées (Jacuzzi, Terrasse, vue Mer, etc.), galeries d'images et tarification dynamique.
+- **Système de Réservation Avancé** : Gestion du cycle de vie complet des réservations (En attente, Confirmée, Annulée, Terminée) avec suivi automatique des dates d'arrivée et de départ.
+- **Calendrier d'Événements** : Organisation et promotion d'événements hôteliers (Dégustations, Soirées privées, Séminaires) avec description détaillée et mise en avant.
+- **Tableau de Bord "Manager"** : Interface d'administration puissante offrant des statistiques en temps réel sur l'occupation, les revenus et les arrivées imminentes.
+- **Génération de Documents Pro** : Création automatique de factures et récapitulatifs au format PDF haute fidélité.
 
-## Learning Laravel
+### 3. Stack Technique
+- **Framework** : Laravel 12.x
+- **Panneau Admin** : Filament PHP v4
+- **Gestion d'Images** : Intervention Image v3
+- **Export PDF** : Spatie Laravel PDF
+- **Base de Données** : Support flexible SQLite / PostgreSQL
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🇺🇸 ENGLISH VERSION
 
-## Laravel Sponsors
+### 1. Project Overview
+**L'Escapade Hotel** is a premium hotel management platform designed to deliver a seamless experience for both administrators and guests. Combining visual elegance with technical robustness, this system centralizes all critical operations of a modern hotel establishment: from fine-tuned suite management to interactive booking and exclusive event organization.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. Key Features
+- **Suite & Room Management**: A complete catalog of suites with personalized options (Jacuzzi, Terrace, Sea view, etc.), image galleries, and dynamic pricing.
+- **Advanced Reservation System**: Management of the full booking lifecycle (Pending, Confirmed, Canceled, Completed) with automatic tracking of check-in and check-out dates.
+- **Event Calendar**: Organization and promotion of hotel events (Tastings, Private parties, Seminars) with detailed descriptions and highlighting.
+- **Manager Dashboard**: A powerful administrative interface offering real-time stats on occupancy, revenue, and upcoming arrivals.
+- **Professional Document Generation**: Automatic creation of high-fidelity PDF invoices and summaries.
 
-### Premium Partners
+### 3. Tech Stack
+- **Framework**: Laravel 12.x
+- **Admin Panel**: Filament PHP v4
+- **Image Processing**: Intervention Image v3
+- **PDF Export**: Spatie Laravel PDF
+- **Database**: Flexible SQLite / PostgreSQL support
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
+**Développé par : Kouat Ekra Samuel**
+*Février 2026*
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+© 2024-2026 L'Escapade Hotel - Excellence in Hospitality Management.

@@ -9,9 +9,18 @@
         html, body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            min-height: 100%;
+            height: auto;
             font-family: 'Futura Md BT', 'Futura', sans-serif;
+        }
+        
+        /* S'assurer que le viewport est correctement configuré */
+        @supports (-webkit-touch-callout: none) {
+            html, body {
+                height: -webkit-fill-available;
+            }
         }
 
         /* Vidéo et overlay en arrière-plan */
@@ -20,9 +29,18 @@
             top: 0;
             left: 0;
             width: 100vw;
+            width: 100%;
             height: 100vh;
+            height: 100%;
+            min-height: 100vh;
             overflow: hidden;
             z-index: 0;
+        }
+        
+        @supports (-webkit-touch-callout: none) {
+            .login-page-wrapper {
+                height: -webkit-fill-available;
+            }
         }
 
         .login-background-video {
@@ -53,17 +71,21 @@
             position: relative;
             z-index: 10;
             min-height: 100vh;
+            min-height: -webkit-fill-available;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1rem;
             background: transparent !important;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         .fi-simple-page {
             background: transparent !important;
             max-width: 450px;
             width: 100%;
+            margin: 0 auto;
         }
 
         /* Container du formulaire avec glassmorphism */
@@ -76,7 +98,10 @@
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             padding: 3rem;
             width: 100%;
+            max-width: 100%;
             position: relative;
+            box-sizing: border-box;
+            margin: 0 auto;
         }
 
         /* Forcer TOUS les labels dans le conteneur à être blancs */
@@ -269,18 +294,160 @@
             display: none !important;
         }
 
-        /* Responsive */
+        /* Responsive - Tablettes */
+        @media (max-width: 1024px) {
+            .fi-main {
+                padding: 1.5rem 1rem;
+            }
+            
+            .login-form-container {
+                padding: 2.5rem 2rem;
+            }
+        }
+
+        /* Responsive - Mobiles */
         @media (max-width: 768px) {
+            html, body {
+                overflow-y: auto;
+            }
+            
+            .fi-main {
+                padding: 1rem 0.75rem;
+                align-items: flex-start;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            .fi-simple-page {
+                max-width: 100%;
+                padding: 0;
+            }
+
             .login-form-container {
                 padding: 2rem 1.5rem;
+                border-radius: 20px;
+                margin: 0;
             }
 
             .login-logo img {
                 width: 180px;
+                max-width: 80%;
             }
 
             .login-title {
                 font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .fi-input {
+                padding: 0.65rem 0.9rem !important;
+                font-size: 16px !important; /* Évite le zoom automatique sur iOS */
+            }
+            
+            .fi-btn-primary,
+            button[type="submit"] {
+                padding: 0.75rem 1.5rem !important;
+                font-size: 1rem !important;
+            }
+        }
+
+        /* Responsive - Très petits écrans */
+        @media (max-width: 480px) {
+            .fi-main {
+                padding: 0.75rem 0.5rem;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .login-form-container {
+                padding: 1.5rem 1rem;
+                border-radius: 16px;
+            }
+
+            .login-logo img {
+                width: 150px;
+            }
+
+            .login-title {
+                font-size: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .fi-input {
+                padding: 0.6rem 0.8rem !important;
+            }
+        }
+
+        /* Orientation paysage sur mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .fi-main {
+                align-items: flex-start;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            
+            .login-form-container {
+                padding: 1.5rem 1.25rem;
+                max-width: 90%;
+            }
+            
+            .login-logo img {
+                width: 140px;
+            }
+            
+            .login-title {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Hauteur minimale pour éviter les problèmes de scroll */
+        @media (max-height: 600px) {
+            .fi-main {
+                align-items: flex-start;
+                padding-top: 1rem;
+            }
+            
+            .login-form-container {
+                padding: 1.5rem 1.25rem;
+            }
+            
+            .login-logo {
+                margin-bottom: 1rem;
+            }
+            
+            .login-logo img {
+                width: 140px;
+            }
+            
+            .login-title {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Responsive - Très grands écrans */
+        @media (min-width: 1400px) {
+            .fi-simple-page {
+                max-width: 500px;
+            }
+            
+            .login-form-container {
+                padding: 3.5rem;
+            }
+        }
+
+        /* S'assurer que le formulaire est toujours visible */
+        .login-form-container {
+            visibility: visible !important;
+            opacity: 1 !important;
+            display: block !important;
+        }
+
+        /* Améliorer la lisibilité sur petits écrans */
+        @media (max-width: 768px) {
+            .login-overlay {
+                background: rgba(0, 0, 0, 0.6);
             }
         }
     </style>

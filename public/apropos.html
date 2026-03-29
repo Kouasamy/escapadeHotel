@@ -30,7 +30,8 @@
   <!-- Optimisations de performance -->
   <meta http-equiv="x-dns-prefetch-control" content="on">
 
-  <link rel="icon" type="image/png" href="images/568_819.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" href="/images/568_819.png">
 
   <!-- Preconnect pour améliorer les performances des CDN -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
@@ -209,7 +210,7 @@
               <a href="page_suite.html" class="nav-item" data-image="Menu/images/IMG_1341.jpg">
                 <img src="Menu/images/542_575.svg" class="nav-line" alt="" loading="lazy" decoding="async" fetchpriority="low">
                 <img src="Menu/images/542_560.svg" class="nav-bg" alt="" loading="lazy" decoding="async" fetchpriority="low">
-                <span class="nav-text" data-translate="roomsSuites">CHAMBRES & SUITES</span>
+                <span class="nav-text" data-translate="roomsSuites">NOS SUITES</span>
               </a>
             </li>
             <li>
@@ -237,7 +238,7 @@
               <a href="apropos.html" class="nav-item" data-image="Menu/images/IMG_1837.jpg">
                 <img src="Menu/images/542_575.svg" class="nav-line" alt="" loading="lazy" decoding="async" fetchpriority="low">
                 <img src="Menu/images/542_567.svg" class="nav-bg" alt="" loading="lazy" decoding="async" fetchpriority="low">
-                <span class="nav-text" data-translate="about">A PROPOS</span>
+                <span class="nav-text" data-translate="about">À PROPOS</span>
               </a>
             </li>
           </ul>
@@ -634,7 +635,7 @@
   .deco-corner-top {
     position: absolute;
     top: 193px;
-    right: 219px; /* Tout en haut à droite de l'image */
+    right: 0px; /* Tout en haut à droite de l'image */
     z-index: 6;
     transform: rotate(-0.38deg);
   }
@@ -961,7 +962,7 @@
     .menu-nav .nav-item .nav-bg,
     .menu-nav li .nav-item .nav-bg,
     .menu-nav li a .nav-bg,
-    /* Sélecteurs spécifiques pour LOUNGE et A PROPOS */
+    /* Sélecteurs spécifiques pour LOUNGE et À PROPOS */
     .nav-item[href*="lounge"] .nav-bg,
     .nav-item[href*="apropos"] .nav-bg,
     .nav-item[href*="lounge.html"] .nav-bg,
@@ -1320,7 +1321,7 @@
 
 
 
-      <h1 class="text-7xl text-white font-[Big_Caslon]" data-translate="aboutHeroTitle">A propos</h1>
+      <h1 class="text-7xl text-white font-[Big_Caslon]" data-translate="aboutHeroTitle">À PROPOS</h1>
     </div>
 
     <footer class="hero-footer">
@@ -1349,7 +1350,7 @@
           <img src="images/574_538.png" alt="Decorative border" class="title-border"
             loading="lazy" decoding="async" fetchpriority="low">
           <h1 class="main-title" data-translate="aboutSectionTitle">
-            A <span class="highlight">PROPOS</span>
+            À <span class="highlight">PROPOS</span>
           </h1>
         </div>
 
@@ -1374,9 +1375,9 @@
 
         <!-- Texte descriptif -->
         <div class="w-full md:w-1/2 space-y-6">
-          <p class="font-[Futura_Md_BT] text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-[#000000]">
-            L’Escapade Hôtel, depuis mai 2025.  Venez découvrir un refuge élégant posé en bordure de lagune à Assinie.
-            Ici, le temps s’étire et les sens s’éveillent. Entre nature apaisante et raffinement discret,  votre voyage commence là où le luxe rencontre la quiétude.  Érigé sur 3,5 hectares, le domaine abrite 22 suites  juniors et séniors au design épuré,  pensées pour offrir confort, intimité et sérénité à chaque hôte.  À L’Escapade, chaque instant devient une invitation au lâcher-prise.
+          <p class="font-[Futura_Md_BT] text-[20px] md:text-[24px] leading-[30px] md:leading-[34px] text-[#000000]" data-translate="aboutParagraph1">
+            L'Escapade Hôtel, depuis mai 2025.  Venez découvrir un refuge élégant posé en bordure de lagune à Assinie.
+            Ici, le temps s'étire et les sens s'éveillent. Entre nature apaisante et raffinement discret,  votre voyage commence là où le luxe rencontre la quiétude.  Érigé sur 3,5 hectares, le domaine abrite 22 suites  juniors et séniors au design épuré,  pensées pour offrir confort, intimité et sérénité à chaque hôte.  À L'Escapade, chaque instant devient une invitation au lâcher-prise.
           </p>
         </div>
       </div>
@@ -1425,15 +1426,15 @@
               <div class="footer-title-wrapper">
                 <img src="images/427_66.svg" alt="" class="footer-title-bg"
                   loading="lazy" decoding="async" fetchpriority="low">
-                <h3 class="footer-title">MENU</h3>
+                <h3 class="footer-title" data-translate="footerMenu">MENU</h3>
               </div>
               <nav>
                 <ul>
-                  <li><a href="page_suite.html">Chambres & Suites</a></li>
-                  <li><a href="restaurant.html">Restaurant</a></li>
-                  <li><a href="lounge.html">Lounge</a></li>
-                  <li><a href="page_evenementiel.html">Évènementiel</a></li>
-                  <li><a href="apropos.html">À propos</a></li>
+                  <li><a href="page_suite.html" data-translate="footerMenuRooms">Chambres & Suites</a></li>
+                  <li><a href="restaurant.html" data-translate="footerMenuRestaurant">Restaurant</a></li>
+                  <li><a href="lounge.html" data-translate="footerMenuLounge">Lounge</a></li>
+                  <li><a href="page_evenementiel.html" data-translate="footerMenuEvents">Évènementiel</a></li>
+                  <li><a href="apropos.html" data-translate="footerMenuAbout">À propos</a></li>
                 </ul>
               </nav>
             </div>
@@ -1442,15 +1443,15 @@
               <div class="footer-title-wrapper">
                 <img src="images/427_67.svg" alt="" class="footer-title-bg"
                   loading="lazy" decoding="async" fetchpriority="low">
-                <h3 class="footer-title">CONTACT</h3>
+                <h3 class="footer-title" data-translate="footerContact">CONTACT</h3>
               </div>
               <form id="contact-form">
-                <div class="form-group"><input type="text" name="name" placeholder="Nom" required></div>
-                <div class="form-group"><input type="text" name="first_name" placeholder="Prénom" required></div>
-                <div class="form-group"><input type="email" name="email" placeholder="Adresse e-mail" required></div>
-                <div class="form-group"><input type="tel" name="phone" placeholder="Numéro de téléphone"></div>
-                <div class="form-group"><textarea name="message" placeholder="Ecrivez votre message" rows="3" required></textarea></div>
-                <button type="submit" class="btn-submit">Envoyer</button>
+                <div class="form-group"><input type="text" name="name" placeholder="Nom" data-translate="footerPlaceholderName" data-translate-attr="placeholder" required></div>
+                <div class="form-group"><input type="text" name="first_name" placeholder="Prénom" data-translate="footerPlaceholderFirstName" data-translate-attr="placeholder" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Adresse e-mail" data-translate="footerPlaceholderEmail" data-translate-attr="placeholder" required></div>
+                <div class="form-group"><input type="tel" name="phone" placeholder="Numéro de téléphone" data-translate="footerPlaceholderPhone" data-translate-attr="placeholder"></div>
+                <div class="form-group"><textarea name="message" placeholder="Ecrivez votre message" rows="3" data-translate="footerPlaceholderMessage" data-translate-attr="placeholder" required></textarea></div>
+                <button type="submit" class="btn-submit" data-translate="footerSubmit">Envoyer</button>
               </form>
             </div>
           </div>
@@ -1483,11 +1484,11 @@
         </div>
         <hr class="footer-divider">
         <div class="footer-bottom">
-          <a href="#">Termes & Conditions</a>
+          <a href="#" data-translate="footerTerms">Termes & Conditions</a>
 
-          <span>©2025 – Tous droits réservés par L'Escapade.</span>
+          <span data-translate="footerRights">©2025 – Tous droits réservés par L'Escapade.</span>
 
-          <a href="#">Politique de confidentialité</a>
+          <a href="#" data-translate="footerPrivacy">Politique de confidentialité</a>
         </div>
       </div>
     </footer>

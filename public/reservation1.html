@@ -7,7 +7,8 @@
     // La page reservation1.html est déjà la page step2, pas besoin de redirection
     // Si vous voulez rediriger, utilisez: window.location.href = '/reservation1.html';
   </script>
-<link rel="icon" type="image/png" href="images/568_819.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/images/568_819.png">
 <link rel="stylesheet" href="css/style1.css">
 <link rel="stylesheet" href="css/reservation1.css">
 <link rel="stylesheet" href="css/suite.css">
@@ -182,7 +183,7 @@
             </div>
             <p class="suite-price">200 000 FCFA - <span data-translate="reservationWeek">Semaine</span></p>
           </div>
-          <p class="suite-info" data-translate="suiteCapacityInfo">Capacité maximale : 2 personnes (dont 2 enfants).<br><span style="color: #B78F62;">Possibilité d'ajouter un matelas supplémentaire pour 15 000 FCFA, augmentant la capacité.</span></p>
+          <p class="suite-info"><span style="color: #B78F62;" data-translate="reservationExtraMattress">Possibilité d'ajouter un matelas supplémentaire pour 15 000 FCFA, augmentant la capacité.</span></p>
           <img src="images/324_579.svg" alt="Divider" class="suite-divider">
           <div class="suite-footer">
             <a href="suite_junior.html" class="details-link" data-translate="reservationViewSuite">Voir la suite</a>
@@ -222,7 +223,7 @@
             </div>
             <p class="suite-price">280 000 FCFA - <span data-translate="reservationWeek">Semaine</span></p>
           </div>
-          <p class="suite-info" data-translate="suiteCapacityInfo">Capacité maximale : 2 personnes. <span style="color: #B78F62;">Possibilité d'ajouter un matelas supplémentaire pour 15 000 FCFA, augmentant la capacité.</span></p>
+          <p class="suite-info"><span data-translate="reservationCapacityMax">Capacité maximale :</span> 2 <span data-translate="reservationPersonsPlural">personnes</span>. <span style="color: #B78F62;" data-translate="reservationExtraMattress">Possibilité d'ajouter un matelas supplémentaire pour 15 000 FCFA, augmentant la capacité.</span></p>
           <img src="images/324_579.svg" alt="Divider" class="suite-divider">
           <div class="suite-footer">
             <a href="suite_senior.html" class="details-link" data-translate="reservationViewSuite">Voir la suite</a>
@@ -250,6 +251,10 @@
                     <img src="images/324_625.svg" alt="Area icon part" style="position: absolute; top: 22.98px; left: 26.01px;">
                 </div>
                 <span class="amenity-label">70 m²</span>
+              </div>
+              <div class="amenity-item">
+                <img src="images/iconeTerrasse.jpg" alt="Terrasse icon" class="amenity-icon">
+                <span class="amenity-label" data-translate="reservationTerrace">Terrasse</span>
               </div>
               <div class="amenity-item">
                 <img src="images/324_620.svg" alt=" icon" class="amenity-icon">
@@ -285,6 +290,10 @@
                 <span class="amenity-label">170 m²</span>
               </div>
               <div class="amenity-item">
+                <img src="images/iconeTerrasse.jpg" alt="Terrasse icon" class="amenity-icon">
+                <span class="amenity-label" data-translate="reservationTerrace">Terrasse</span>
+              </div>
+              <div class="amenity-item">
                 <img src="images/324_618.svg" alt="Pool icon" class="amenity-icon">
                 <span class="amenity-label" data-translate="reservationPool">Piscine</span>
               </div>
@@ -295,7 +304,7 @@
             </div>
             <p class="suite-price">520 000 FCFA  - <span data-translate="reservationWeek">Semaine</span></p>
           </div>
-          <p class="suite-info" data-translate="suiteCapacityInfoVilla">Capacité par défaut : 4 adultes. <br><span style="color: #B78F62;">Possibilité d'ajouter des matelas supplémentaires pour 15 000 FCFA chacun, jusqu'à 8 personnes.</span></p>
+          <p class="suite-info"><span style="color: #B78F62;" data-translate="reservationExtraMattresses">Possibilité d'ajouter des matelas supplémentaires pour 15 000 FCFA chacun, jusqu'à 8 personnes.</span></p>
           <img src="images/324_579.svg" alt="Divider" class="suite-divider">
           <div class="suite-footer">
             <a href="suite_villa_familiale.html" class="details-link" data-translate="reservationViewSuite">Voir la suite</a>
@@ -313,114 +322,7 @@
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.suite-card .btn-primary');
-
-  // Helper pour envoyer la sélection au backend (type + quantité)
-  function updateSelectedSuite(suiteType, quantity) {
-    if (!suiteType) return;
-    const qty = Math.max(1, parseInt(quantity || 1, 10));
-
-    fetch(`/api/select-suite?suite_type=${encodeURIComponent(suiteType)}&quantity=${qty}`)
-      .catch((error) => {
-        console.error('Erreur lors de la mise à jour de la suite sélectionnée :', error);
-      });
-  }
-
-  // Réinitialiser les autres compteurs quand on sélectionne une nouvelle suite
-  function resetOtherCounters(currentCard) {
-    document.querySelectorAll('.suite-card').forEach(card => {
-      if (card === currentCard) return;
-      const existingCounter = card.querySelector('.counter.guest-stepper');
-      const originalButton = card.querySelector('.suite-footer .btn.btn-primary');
-
-      if (!existingCounter && originalButton) {
-        // Rien à faire, bouton d'origine déjà présent
-        return;
-      }
-
-      if (existingCounter && originalButton) {
-        // Si pour une raison quelconque les deux existent, on supprime le compteur
-        existingCounter.remove();
-        originalButton.classList.remove('selected');
-      }
-    });
-  }
-
-  buttons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      const suiteCard = button.closest('.suite-card');
-      const suiteType = suiteCard ? suiteCard.getAttribute('data-suite-type') : null;
-
-      // Réinitialiser les autres compteurs pour ne garder qu'une suite sélectionnée visuellement
-      resetOtherCounters(suiteCard);
-
-      // Si le bouton n'a pas encore été transformé
-      if (!button.classList.contains('selected')) {
-        button.classList.add('selected');
-
-        // Créer le conteneur du compteur (similaire à guest-stepper)
-        const counter = document.createElement('div');
-        counter.classList.add('counter', 'guest-stepper');
-
-        // Image moins
-        const minusImg = document.createElement('img');
-        minusImg.src = 'images/568_943.svg';
-        minusImg.alt = 'minus';
-        minusImg.classList.add('guest-minus');
-
-        // Nombre (au milieu)
-        const number = document.createElement('span');
-        number.textContent = '1';
-        number.classList.add('counter-number', 'guest-value');
-
-        // Image plus
-        const plusImg = document.createElement('img');
-        plusImg.src = 'images/568_944.svg';
-        plusImg.alt = 'plus';
-        plusImg.classList.add('guest-plus');
-
-        // Ajout des éléments dans l'ordre: moins, nombre, plus
-        counter.appendChild(minusImg);
-        counter.appendChild(number);
-        counter.appendChild(plusImg);
-
-        // Remplacer le bouton d'origine
-        button.replaceWith(counter);
-
-        // Enregistrer la suite sélectionnée avec quantité 1
-        updateSelectedSuite(suiteType, 1);
-
-        // Événements du compteur
-        plusImg.addEventListener('click', () => {
-          const current = parseInt(number.textContent, 10) || 1;
-          const next = current + 1;
-          number.textContent = String(next);
-          updateSelectedSuite(suiteType, next);
-        });
-
-        minusImg.addEventListener('click', () => {
-          let value = parseInt(number.textContent, 10) || 1;
-          if (value > 1) {
-            const next = value - 1;
-            number.textContent = String(next);
-            updateSelectedSuite(suiteType, next);
-          } else {
-            // Si on retombe à 1, on remet le bouton d'origine
-            counter.replaceWith(button);
-            button.classList.remove('selected');
-            // On garde la dernière quantité connue dans la session (au moins 1)
-            updateSelectedSuite(suiteType, 1);
-          }
-        });
-      }
-    });
-  });
-});
-</script>
+<!-- Script inline supprimé - la gestion de la sélection des suites est maintenant gérée par reservation-step2.js -->
 <script src="js/translations.js"></script>
 
 <!-- Bouton de retour -->

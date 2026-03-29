@@ -14,12 +14,15 @@ class AdminUserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
+        // Créer ou mettre à jour l'administrateur par défaut
+        User::updateOrCreate(
+            ['email' => 'admin@escapade.ci'],
+            [
             'name' => 'Administrateur',
-            'email' => 'admin@escapade.ci',
             'password' => Hash::make('password'), // À CHANGER EN PRODUCTION
             'role' => 'admin',
             'is_active' => true,
-        ]);
+            ]
+        );
     }
 }

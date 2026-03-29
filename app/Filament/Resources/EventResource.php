@@ -68,8 +68,12 @@ class EventResource extends Resource
                         ->unique(ignoreRecord: true)
                         ->maxLength(255),
                     Forms\Components\DatePicker::make('event_date')
-                        ->label('Date de l\'événement')
+                        ->label('Date de début')
                         ->native(false),
+                    Forms\Components\DatePicker::make('end_date')
+                        ->label('Date de fin')
+                        ->native(false)
+                        ->helperText('Date à laquelle l\'événement se termine. Si vide, la date de début sera utilisée.'),
                     Forms\Components\TextInput::make('date_text')
                         ->label('Texte de date (ex: "Édition du 20 décembre 2025 au 5 janvier 2026")')
                         ->maxLength(255)

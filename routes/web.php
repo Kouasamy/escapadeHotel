@@ -35,6 +35,15 @@ Route::get('/about', function () {
 })->name('about');
 
 // Routes de réservation (uniquement traitement backend, les pages sont en HTML statique)
+Route::get('/reservations/step1', function () {
+    // Servir la page HTML statique
+    if (file_exists(public_path('reservation1.html'))) {
+        return response()->file(public_path('reservation1.html'));
+    }
+    // Fallback : redirection
+    return redirect('/reservation1.html');
+})->name('reservations.step1');
+
 Route::post('/reservations/step1', [ReservationController::class, 'storeStep1'])->name('reservations.storeStep1');
 Route::post('/reservations/step3', [ReservationController::class, 'storeStep3'])->name('reservations.storeStep3');
 Route::post('/reservations/step4', [ReservationController::class, 'storeStep4'])->name('reservations.storeStep4');
@@ -258,20 +267,88 @@ Route::get('/api/events', function () {
             $imageUrl = asset('images/Event.jpg');
         }
 
+        // Déterminer le statut de l'événement : À venir, EN COURS, ou PASSÉ
+        $status = 'À venir';
+        $isPast = false;
+        $isOngoing = false;
+
+        if ($event->event_date) {
+            $today = now()->startOfDay();
+            $startDate = $event->event_date->startOfDay();
+            $endDate = $event->end_date ? $event->end_date->startOfDay() : null;
+
+            // Si l'événement a une date de fin
+            if ($endDate) {
+                if ($endDate < $today) {
+                    // La date de fin est passée → PASSÉ
+                    $status = 'PASSÉ';
+                    $isPast = true;
+                } elseif ($startDate <= $today && $today <= $endDate) {
+                    // Aujourd'hui est entre la date de début et la date de fin → EN COURS
+                    $status = 'EN COURS';
+                    $isOngoing = true;
+                } else {
+                    // La date de début n'est pas encore arrivée → À venir
+                    $status = 'À venir';
+                }
+            } else {
+                // Pas de date de fin, utiliser uniquement la date de début
+                if ($startDate < $today) {
+                    // La date de début est passée → PASSÉ
+                    $status = 'PASSÉ';
+                    $isPast = true;
+                } elseif ($startDate == $today) {
+                    // Aujourd'hui est le jour de l'événement → EN COURS
+                    $status = 'EN COURS';
+                    $isOngoing = true;
+                } else {
+                    // La date de début n'est pas encore arrivée → À venir
+                    $status = 'À venir';
+                }
+            }
+        }
+
         return [
             'id' => $event->id,
             'title' => $event->title,
             'slug' => $event->slug,
             'date' => $event->event_date ? $event->event_date->format('Y-m-d') : null,
             'date_formatted' => $event->event_date ? $event->event_date->format('d/m/Y') : null,
+            'end_date' => $event->end_date ? $event->end_date->format('Y-m-d') : null,
+            'end_date_formatted' => $event->end_date ? $event->end_date->format('d/m/Y') : null,
             'date_text' => $event->date_text,
             'location' => $event->location,
             'summary' => $event->excerpt,
             'description' => $event->description,
             'image' => $imageUrl,
+            'is_past' => $isPast,
+            'is_ongoing' => $isOngoing,
+            'status' => $status,
         ];
     }));
 })->name('api.events');
+
+// Route temporaire pour mettre à jour l'événement La Boutique Éphémère avec la date de fin
+Route::get('/api/update-boutique-event', function () {
+    $event = \App\Models\Event::where('slug', 'la-boutique-ephemere')->first();
+
+    if (!$event) {
+        return response()->json(['error' => 'Événement non trouvé'], 404);
+    }
+
+    $event->end_date = '2026-01-05';
+    $event->save();
+
+    return response()->json([
+        'success' => true,
+        'message' => 'Événement mis à jour avec la date de fin : 2026-01-05',
+        'event' => [
+            'title' => $event->title,
+            'event_date' => $event->event_date ? $event->event_date->format('Y-m-d') : null,
+            'end_date' => $event->end_date ? $event->end_date->format('Y-m-d') : null,
+        ]
+    ]);
+})->name('api.update-boutique-event');
 
 // Route pour obtenir le token CSRF (pour les pages HTML statiques)
 Route::get('/api/csrf-token', function () {
@@ -610,6 +687,8 @@ Route::get('/api/reservation-details', function () {
             'image' => $imageUrl,
             'quantity' => $selectedSuite['quantity'] ?? 1,
             'total_price' => $suiteTotalPrice,
+            'suite_type' => $selectedSuite['suite_type'] ?? $suite->type, // Ajouter suite_type pour la traduction
+            'type' => $suite->type, // Ajouter type aussi pour compatibilité
         ];
 
         $grandTotal += $suiteTotalPrice;

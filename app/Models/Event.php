@@ -13,6 +13,7 @@ class Event extends Model
         'title',
         'slug',
         'event_date',
+        'end_date',
         'location',
         'excerpt',
         'description',
@@ -23,6 +24,7 @@ class Event extends Model
 
     protected $casts = [
         'event_date' => 'date',
+        'end_date' => 'date',
         'is_active' => 'boolean',
     ];
 
